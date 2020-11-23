@@ -1,4 +1,5 @@
 import Country from './countries.model';
+import { NEGATIVE_TEST_REQUIRED, OPEN_BORDER } from '../../config/constants';
 
 export const bulkUpsert = async (countries) => Country.bulkWrite(countries.map((country) => ({
   updateOne: {
@@ -10,4 +11,8 @@ export const bulkUpsert = async (countries) => Country.bulkWrite(countries.map((
   ordered: false,
 });
 
-export const getCountryList = async () => Country.find({});
+export const getCountryList = async () => Country.find({
+  status: {
+    $in: [NEGATIVE_TEST_REQUIRED, OPEN_BORDER],
+  },
+});

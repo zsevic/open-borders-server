@@ -5,7 +5,7 @@ export const getPageSource = async (url) => axios(url).then((res) => res.data);
 
 export const getParsedPageSource = (data) => {
   const $ = cheerio.load(data);
-  const countryElements = $('strong');
+  const countryElements = $('#text strong');
   const elements = countryElements.parent().contents();
 
   const countries = [];

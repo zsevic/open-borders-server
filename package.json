@@ -1,0 +1,48 @@
+{
+  "name": "open-borders-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "babel src --out-dir dist",
+    "classifier:train-save": "babel-node src/nlp/classifier",
+    "dev": "NODE_ENV=development nodemon -r dotenv/config --exec babel-node src",
+    "lint": "eslint --ignore-path .eslintignore .",
+    "lint:fix": "npm run lint -- --fix",
+    "start": "node dist",
+    "test": "NODE_ENV=test mocha"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@hapi/boom": "^9.1.0",
+    "axios": "^0.21.0",
+    "body-parser": "^1.18.3",
+    "celebrate": "^13.0.3",
+    "cheerio": "^1.0.0-rc.3",
+    "cors": "^2.8.5",
+    "cron": "^1.8.2",
+    "dotenv": "^7.0.0",
+    "express": "^4.16.4",
+    "express-oas-generator": "^1.0.28",
+    "joi": "^17.2.1",
+    "mongoose": "^5.4.19",
+    "morgan": "^1.9.1",
+    "natural": "^2.1.5"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.3.4",
+    "@babel/node": "^7.2.2",
+    "@babel/preset-env": "^7.3.4",
+    "@babel/register": "^7.0.0",
+    "chai": "^4.2.0",
+    "eslint": "^6.6.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.18.2",
+    "mocha": "^6.0.2",
+    "nodemon": "^1.18.10",
+    "supertest": "^4.0.2"
+  }
+}

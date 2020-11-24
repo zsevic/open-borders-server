@@ -14,10 +14,13 @@ export const upsertData = async () => {
     const classifier = await loadClassifierAsync(path.join(__dirname, '../nlp/classifier.json'), null);
     const data = await getPageSource(config.WEBPAGE_URL);
     const parsedPageSource = getParsedPageSource(data);
-    const countries = parsedPageSource.map((country) => ({
-      ...country,
-      status: classifier.classify(country.info),
-    }));
+    const countries = parsedPageSource.map((country) => {
+      const countryInfo = country.info.split('.').slice(0, 2).join('.');
+      return {
+        ...country,
+        status: classifier.classify(countryInfo),
+      };
+    });
     return countriesService.bulkUpsert(countries);
   } catch (err) {
     console.error(err);

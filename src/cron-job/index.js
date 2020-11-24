@@ -4,6 +4,7 @@ import { BayesClassifier } from 'natural';
 import * as countriesService from '../api/countries/countries.service';
 import config from '../config/constants';
 import { getPageSource, getParsedPageSource } from '../scraper';
+// import { data } from '../scraper/page-source';
 
 const loadClassifierAsync = promisify(BayesClassifier.load);
 

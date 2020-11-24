@@ -1,5 +1,5 @@
 import Country from './countries.model';
-import { NEGATIVE_TEST_REQUIRED, OPEN_BORDER } from '../../config/constants';
+import { NEGATIVE_TEST_REQUIRED, OPEN_BORDER, QUARANTINE_REQUIRED } from '../../config/constants';
 
 export const bulkUpsert = async (countries) => Country.bulkWrite(countries.map((country) => ({
   updateOne: {
@@ -13,6 +13,6 @@ export const bulkUpsert = async (countries) => Country.bulkWrite(countries.map((
 
 export const getCountryList = async () => Country.find({
   status: {
-    $in: [NEGATIVE_TEST_REQUIRED, OPEN_BORDER],
+    $in: [NEGATIVE_TEST_REQUIRED, OPEN_BORDER, QUARANTINE_REQUIRED],
   },
 });

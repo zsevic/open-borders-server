@@ -7,7 +7,7 @@ import { getPageSource, getParsedPageSource } from '../scraper';
 
 const loadClassifierAsync = promisify(BayesClassifier.load);
 
-export const scrapeAndClassify = async () => {
+export const upsertData = async () => {
   try {
     const classifier = await loadClassifierAsync(path.join(__dirname, '../nlp/classifier.json'), null);
     const data = await getPageSource(config.WEBPAGE_URL);

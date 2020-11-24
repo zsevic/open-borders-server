@@ -7,7 +7,7 @@ import morgan from 'morgan';
 import './config/database';
 import apiRoutes from './api';
 import constants from './config/constants';
-import { scrapeAndClassify } from './cron-job';
+import { upsertData } from './cron-job';
 
 const app = express();
 const { PORT } = constants;
@@ -23,7 +23,7 @@ app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
 
-const job = new CronJob('0 */12 * * *', scrapeAndClassify);
+const job = new CronJob('0 */12 * * *', upsertData);
 job.start();
 
 export default app;

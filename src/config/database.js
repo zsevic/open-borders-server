@@ -1,5 +1,6 @@
 import mongoose from 'mongoose';
 import constants from './constants';
+import { upsertData } from '../cron-job';
 
 mongoose.Promise = global.Promise;
 mongoose.set('useCreateIndex', true);
@@ -15,6 +16,7 @@ try {
 mongoose.connection
   .once('open', () => {
     console.log('Connection with database is established');
+    upsertData();
   })
   .on('error', (e) => {
     throw e;

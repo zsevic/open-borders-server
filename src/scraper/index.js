@@ -11,10 +11,12 @@ export const getParsedPageSource = (data) => {
   const countries = [];
   elements.each((_, element) => {
     if (element.name === 'strong') {
-      const [countryElement] = element.children;
-      if (!countryElement.data) return;
-
-      return countries.push([countryElement.data, []]);
+      const [mainElement, secondElement] = element.children;
+      if (!mainElement.data) {
+        if (!secondElement) return;
+        return countries.push([secondElement.data, []]);
+      }
+      return countries.push([mainElement.data, []]);
     }
     if (element.type === 'text') {
       if (countries.length === 0) return;

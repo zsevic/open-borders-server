@@ -1,6 +1,6 @@
 # open-borders-server
 
-> open-borders server
+> Back-end for [open-borders](https://github.com/zsevic/open-borders)
 
 ### Setup
 
@@ -39,4 +39,7 @@ Generated at `/api-docs` endpoint
 
 ### Technologies used
 
-- Node.js, Express, MongoDB
+- Node.js, Express, MongoDB (for API)
+- cron (for cron job)
+- cheerio (for scraping)
+- natural (for NLP)

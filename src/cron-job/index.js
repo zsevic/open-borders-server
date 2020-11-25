@@ -1,5 +1,6 @@
 import path from 'path';
 import { promisify } from 'util';
+import latinize from 'latinize';
 import { BayesClassifier } from 'natural';
 import * as countriesService from '../api/countries/countries.service';
 import config from '../config/constants';
@@ -15,7 +16,7 @@ export const upsertData = async () => {
     const data = await getPageSource(config.WEBPAGE_URL);
     const parsedPageSource = getParsedPageSource(data);
     const countries = parsedPageSource.map((country) => {
-      const countryInfo = country.info.split('.').slice(0, 2).join('.');
+      const countryInfo = latinize(country.info.split('.').slice(0, 2).join('.'));
       return {
         ...country,
         status: classifier.classify(countryInfo),

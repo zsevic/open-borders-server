@@ -27,6 +27,7 @@
     "express": "^4.16.4",
     "express-oas-generator": "^1.0.28",
     "joi": "^17.2.1",
+    "latinize": "^0.4.1",
     "mongoose": "^5.10.15",
     "morgan": "^1.9.1",
     "natural": "^2.1.5"

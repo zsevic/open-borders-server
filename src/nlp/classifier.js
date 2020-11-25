@@ -1,6 +1,8 @@
 import latinize from 'latinize';
 import natural from 'natural';
-import { CLOSED_BORDER, NEGATIVE_TEST_REQUIRED, OPEN_BORDER, QUARANTINE_REQUIRED } from '../config/constants';
+import {
+  CLOSED_BORDER, NEGATIVE_TEST_REQUIRED, OPEN_BORDER, QUARANTINE_REQUIRED,
+} from '../config/constants';
 
 const classifier = new natural.BayesClassifier();
 classifier.addDocument(latinize('Državljani Srbije ne mogu da uđu u zemlju'), CLOSED_BORDER);

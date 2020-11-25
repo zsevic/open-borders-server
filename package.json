@@ -5,6 +5,8 @@
   "main": "index.js",
   "scripts": {
     "build": "babel src --copy-files --out-dir dist",
+    "classifier:remove": "rimraf src/nlp/classifier.json",
+    "preclassifier:train-save": "npm run classifier:remove",
     "classifier:train-save": "babel-node src/nlp/classifier",
     "dev": "NODE_ENV=development nodemon -r dotenv/config --exec babel-node src",
     "lint": "eslint --ignore-path .eslintignore .",
@@ -44,6 +46,7 @@
     "eslint-plugin-import": "^2.18.2",
     "mocha": "^6.0.2",
     "nodemon": "^1.18.10",
+    "rimraf": "^3.0.2",
     "supertest": "^4.0.2"
   }
 }

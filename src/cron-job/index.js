@@ -10,7 +10,7 @@ import { getPageSource, getParsedPageSource } from '../scraper';
 const loadClassifierAsync = promisify(BayesClassifier.load);
 
 export const upsertData = async () => {
-  console.log('Running upsertData cron job...');
+  console.log('Started upsertData cron job...');
   try {
     const classifier = await loadClassifierAsync(path.join(__dirname, '../nlp/classifier.json'), null);
     const data = await getPageSource(config.WEBPAGE_URL);
@@ -22,7 +22,7 @@ export const upsertData = async () => {
         status: classifier.classify(countryInfo),
       };
     });
-    return countriesService.bulkUpsert(countries);
+    return countriesService.bulkUpsert(countries).then(() => console.log('Finished upsertData cron job...'));
   } catch (err) {
     console.error(err);
   }

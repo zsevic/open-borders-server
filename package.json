@@ -9,7 +9,7 @@
     "dev": "NODE_ENV=development nodemon -r dotenv/config --exec babel-node src",
     "lint": "eslint --ignore-path .eslintignore .",
     "lint:fix": "npm run lint -- --fix",
-    "start": "NODE_ENV=production node -r dotenv/config dist",
+    "start": "NODE_ENV=production node dist",
     "test": "NODE_ENV=test mocha"
   },
   "keywords": [],

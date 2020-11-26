@@ -42,4 +42,4 @@ Generated at `/api-docs` endpoint
 - Node.js, Express, MongoDB (for API)
 - cron (for cron job)
 - cheerio (for scraping)
-- natural (for NLP)
+- node-nlp (for NLP)

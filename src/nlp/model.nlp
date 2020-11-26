@@ -1,0 +1,3823 @@
+{
+  "settings": {
+    "languages": [
+      "sr"
+    ],
+    "forceNER": true,
+    "modelFileName": "/Users/zeljkosevic/projects/personal/open-borders-server/src/nlp/model.nlp",
+    "tag": "nlp",
+    "threshold": 0.5,
+    "autoLoad": true,
+    "autoSave": true,
+    "calculateSentiment": true
+  },
+  "nluManager": {
+    "settings": {
+      "tag": "nlu-manager"
+    },
+    "locales": [
+      "sr"
+    ],
+    "languageNames": {},
+    "domainManagers": {
+      "sr": {
+        "settings": {
+          "locale": "sr",
+          "trainByDomain": false,
+          "tag": "domain-manager-sr",
+          "nluByDomain": {
+            "default": {
+              "className": "NeuralNlu",
+              "settings": {}
+            }
+          },
+          "useStemDict": true
+        },
+        "stemDict": {
+          "aerodrom,da,drzavljan,granic,i,mog,ne,srbij,su,u,ud,zatvoren,zemlj": {
+            "intent": "CLOSED_BORDER",
+            "domain": "default"
+          },
+          "72,argentin,boravak,diplomatsk,drzav,drzavljan,i,il,ima,je,ka,koj,lic,mog,ne,negativn,nek,neophoda,nosioc,od,osim,pasos,pcr,pogranicn,regulisa,sat,sluzben,srbij,starij,test,u,uc": {
+            "intent": "CLOSED_BORDER",
+            "domain": "default"
+          },
+          "ak,boravak,clanov,da,dovoljn,dozvol,drzavljan,humanitarn,i,il,ima,koj,lic,mog,mogucn,nadlezn,ne,njihov,od,odobren,onih,organ,osim,pitanj,porodic,postoj,prethodn,pribavljanj,razlog,srbij,staln,stran,su,u,ubedljiv,ud,ulask,uz,zemlj": {
+            "intent": "CLOSED_BORDER",
+            "domain": "default"
+          },
+          "72,administrativn,aktivnost,austrij,austrijsk,boravak,cilj,clanov,da,diplomatsk,dogadaj,dolaz,domacinstv,dozvolen,drzavljan,humanitarn,i,il,ima,istrazivanj,iz,jedn,ka,kategorij,koj,krstenj,krug,lecenj,lic,medicinsk,medunarodn,moraj,nadlezn,nastavk,naucn,naveden,ne,negativn,neperiodicn,nij,njima,od,odnosn,organ,organizacij,osim,osob,osoblj,partner,pcr,planiran,pocetk,porodic,posebn,poset,poslovn,postupc,pratnj,pred,predstavnistav,prilik,prisustvovanj,putuj,rad,razlog,regulisa,rodendan,sa,sat,skolsk,slucaj,srbij,starij,studij,sudsk,sve,svrh,test,to,u,ucesc,ulask,ulazak,vazn,vencanj,za,zajednick,zaposlen,zbog,ziv,zivotn": {
+            "intent": "CLOSED_BORDER",
+            "domain": "default"
+          },
+          "14-dnevn,bocvan,boravk,da,drzavljan,je,karantin,lic,mog,ne,obaveza,osim,regulisan,sa,srbij,u,ud": {
+            "intent": "CLOSED_BORDER",
+            "domain": "default"
+          },
+          "daljn,do,drzavljan,i,je,srbij,stran,svim,u,ukljucuj,ulazak,zabranen,zemlj": {
+            "intent": "CLOSED_BORDER",
+            "domain": "default"
+          },
+          "alban,bez,da,drzavljan,il,mog,nem,ogranicenj,posebn,srbij,tranzitir,u,ud,uslov": {
+            "intent": "OPEN_BORDER",
+            "domain": "default"
+          },
+          "12,bez,bih,da,drzavljan,il,iz,je,mog,negativn,od,ogranicenj,pcr,potreba,septembr,srbij,stran,test,tranzitir,u,ud": {
+            "intent": "OPEN_BORDER",
+            "domain": "default"
+          },
+          "brazi,da,drzavljan,i,kopnen,mog,ne,pute,putev,srbij,strani,u,ud,vazdusn,voden": {
+            "intent": "OPEN_BORDER",
+            "domain": "default"
+          },
+          "72,ak,andor,arapsk,australij,belorusij,bez,britanij,bugarsk,clanic,dolaz,drzav,drzavljan,e,emirat,gruzij,i,il,irsk,iz,japan,je,kanad,koj,korej,marin,mog,monak,navedan,ne,negativn,neophoda,nij,nov,od,pcr,prethodn,republik,ruand,san,sat,sengensk,severn,sporazum,srbij,starij,tajland,test,tunis,tursk,u,uc,ujedinen,ukljucuj,urugvaj,v,vatika,zeland,zemlj": {
+            "intent": "OPEN_BORDER",
+            "domain": "default"
+          },
+          "da,drzavljan,jamajk,je,mog,na,neophodn,pre,prijavi,putovanj,sajt,se,sledec,srbij,ud": {
+            "intent": "OPEN_BORDER",
+            "domain": "default"
+          },
+          "bez,drzavljan,i,lekarsk,merenj,mog,negativn,obavezn,pcr,postoj,pregled,pri,srbij,temperatur,test,tursk,u,uc,ulask,zemlj": {
+            "intent": "OPEN_BORDER",
+            "domain": "default"
+          },
+          "3,avi,da,dan,drzavljan,i,let,mog,naveden,ne,negativn,od,srbij,starij,stran,test,u,ud,uz,vaz,za,zemlj": {
+            "intent": "NEGATIVE_TEST_REQUIRED",
+            "domain": "default"
+          },
+          "72,boravak,da,dec,dolask,dolaz,dozvol,drugi,drzav,drzavljan,i,ima,iz,kategorij,kipar,kiparsk,kipr,koj,kojoj,koron,lic,maloletn,mog,moguc,na,ne,negativn,nij,njihov,o,od,odreden,pcr,po,poseduj,regulisa,sat,se,sopstven,specijaln,srbij,starij,stran,supruznic,teritorij,test,testiranj,trosk,u,ud,ukolik,ulazak,urad,virus,vlad,za,zemalj": {
+            "intent": "NEGATIVE_TEST_REQUIRED",
+            "domain": "default"
+          },
+          "d,da,dan,drzavljan,ivoar,je,kot,mog,ne,negativn,neophoda,od,pcr,pet,srbij,starij,test,u,ud": {
+            "intent": "NEGATIVE_TEST_REQUIRED",
+            "domain": "default"
+          },
+          "avio-kompanij,da,doputova,drazav,drzavljan,il,ka,koj,mog,negativn,obavezn,pokaz,polask,prilik,putnic,putovanj,rezulta,srbij,su,tanzan,test,traz,u,ukolik,ulask,ulazi,uslov,za": {
+            "intent": "NEGATIVE_TEST_REQUIRED",
+            "domain": "default"
+          },
+          "da,drzavljan,dzibut,je,mog,negativn,neophoda,pcr,srbij,test,u,ud": {
+            "intent": "NEGATIVE_TEST_REQUIRED",
+            "domain": "default"
+          },
+          "48,5,antitel,da,dan,drzavljan,formular,grenadin,i,ic,il,ima,karantin,koj,mog,moraj,moz,na,nac,ne,negativn,obavez,od,pcr,podnes,popun,pre,put,putnic,sat,se,sent,srbij,starij,test,u,ud,uz,vinsent": {
+            "intent": "NEGATIVE_TEST_REQUIRED",
+            "domain": "default"
+          },
+          "14,angol,boravak,da,dan,dolask,drzavljan,drzavn,il,karantin,mog,na,obavezn,od,po,poseduj,regulisan,se,smesta,srbij,teritorij,trajanj,u,ud,ukolik,viz": {
+            "intent": "QUARANTINE_REQUIRED",
+            "domain": "default"
+          },
+          "14,da,dan,drzav,drzavljan,je,karantin,koj,mog,obaveza,od,odredi,prostor,srbij,trajanj,u,ud,zambij": {
+            "intent": "QUARANTINE_REQUIRED",
+            "domain": "default"
+          },
+          "14,bez,bit,ce,da,dan,dolask,dolaz,drzavljan,dva,i,il,island,izabra,karantin,koj,koji,li,mog,na,naredn,pet,po,prv,putnic,srbij,test,testiranj,tok,u,uc,urad,za": {
+            "intent": "QUARANTINE_REQUIRED",
+            "domain": "default"
+          },
+          "13,14,apri,dan,drzavljan,je,karantin,korej,obaveza,od,potrebn,r,srbij,u,ulaz,viz,za": {
+            "intent": "QUARANTINE_REQUIRED",
+            "domain": "default"
+          },
+          "15,3,adres,aerodrom,boravk,ceg,da,dan,do,dobijanj,dolask,drzavljan,karantin,kub,medunarodn,mog,na,nakon,novembr,obaveza,od,pcr,po,pocev,podvrgava,predviden,putnic,rezultat,se,sled,srbij,svim,test,ud": {
+            "intent": "QUARANTINE_REQUIRED",
+            "domain": "default"
+          },
+          "000,100,14,25,bolesc,boravi,broj,covid-19,dan,dolaz,dozvoljav,drzavljan,i,il,iz,je,ka,koj,kroz,leton,lic,na,ne,obavez,obolel,od,po,pogoden,prethodn,samoizolacij,se,srbij,stanovnik,stran,su,sva,trajanj,tranzitir,u,ulask,ulazak,vec,zarazn,zemlj": {
+            "intent": "QUARANTINE_REQUIRED",
+            "domain": "default"
+          }
+        },
+        "intentDict": {
+          "CLOSED_BORDER": "default",
+          "OPEN_BORDER": "default",
+          "NEGATIVE_TEST_REQUIRED": "default",
+          "QUARANTINE_REQUIRED": "default"
+        },
+        "sentences": [
+          {
+            "domain": "default",
+            "utterance": "Drzavljani Srbije ne mogu da udu u zemlju. Granice i aerodromi su zatvoreni.",
+            "intent": "CLOSED_BORDER"
+          },
+          {
+            "domain": "default",
+            "utterance": "Drzavljani Srbije ne mogu uci u Argentinu osim lica koja imaju regulisan boravak u Argentini ili nekoj od pogranicnih drzava, kao i nosioci diplomatskih i sluzbenih pasosa.,Neophodan je negativan PCR test, ne stariji od 72 sata.",
+            "intent": "CLOSED_BORDER"
+          },
+          {
+            "domain": "default",
+            "utterance": "Drzavljani Srbije ne mogu da udu u zemlju, osim onih lica koja imaju odobren stalni boravak i clanova njihove uze porodice. Mogucnost ulaska postoji ako su u pitanju humanitarni ili dovoljno ubedljivi razlozi, uz prethodno pribavljanje dozvole od strane nadleznih organa.",
+            "intent": "CLOSED_BORDER"
+          },
+          {
+            "domain": "default",
+            "utterance": "Drzavljanima Srbije nije dozvoljen ulazak u Austriju osim licima koja imaju regulisan boravak, kao i u posebnim slucajevima, i to za lica koja u Austriju putuju: iz poslovnih razloga; jednom licu u pratnji osobe koja u Austriju dolazi u svrhu medicinskog lecenja; radi pocetka ili nastavka studija, odnosno u cilju naucnog istrazivanja; radi ucesca u skolskim aktivnostima; radi prisustvovanja sudskim ili administrativnim postupcima pred austrijskim nadleznim organima; clanovima osoblja diplomatskih predstavnistava, zaposlenima u medunarodnim organizacijama i licima koja sa njima zive u zajednickom domacinstvu; humanitarno osoblje; zbog planiranih vaznih dogadaja u krugu porodice (vencanja, krstenja, rodendani, neperiodicne posete zivotnom partneru).,Sve navedene kategorije lica prilikom ulaska u Austriju moraju da imaju negativan PCR test, ne stariji od 72 sata.",
+            "intent": "CLOSED_BORDER"
+          },
+          {
+            "domain": "default",
+            "utterance": "Drzavljani Srbije ne mogu da udu u Bocvanu osim lica sa regulisanim boravkom. Obavezan je 14-dnevni karantin.",
+            "intent": "CLOSED_BORDER"
+          },
+          {
+            "domain": "default",
+            "utterance": "Svim stranim drzavljanima, ukljucujuci i drzavljane Srbije, do daljnjeg je zabranjen ulazak u zemlju.",
+            "intent": "CLOSED_BORDER"
+          },
+          {
+            "domain": "default",
+            "utterance": "Drzavljani Srbije mogu bez ogranicenja da udu u Albaniju ili tranzitiraju. Nema posebnih uslova.",
+            "intent": "OPEN_BORDER"
+          },
+          {
+            "domain": "default",
+            "utterance": "Drzavljani Srbije mogu bez ogranicenja iz Srbije da udu u BiH ili da tranzitiraju.,Od 12.septembra stranim drzavljanima je potreban negativan PCR test.",
+            "intent": "OPEN_BORDER"
+          },
+          {
+            "domain": "default",
+            "utterance": "Drzavljani Srbije mogu da udu u Brazil vazdusnim putem.,Strani drzavljani ne mogu da udu u Brazil kopnenim i vodenim putevima.",
+            "intent": "OPEN_BORDER"
+          },
+          {
+            "domain": "default",
+            "utterance": "Drzavljani Srbije mogu uci u Bugarsku bez negativnog PCR testa ako dolaze iz Srbije ili drzava clanica EU ili Sengenskog sporazuma (ukljucujuci San Marino, Andoru, Monako i Vatikan), V.Britanije, Severne Irske, Australije, Kanade, Gruzije, Japana, Novog Zelanda, Ruande, Republike Koreje, Tajlanda, Tunisa, Urugvaja, Ujedinjenih Arapskih Emirata, Belorusije i Turske. Ako drzavljanin Srbije dolazi iz zemlje koja nije prethodno navedana, neophodan je negativan PCR test, ne stariji od 72 sata.",
+            "intent": "OPEN_BORDER"
+          },
+          {
+            "domain": "default",
+            "utterance": "Drzavljani Srbije mogu da udu na Jamajku. Pre putovanja, neophodno je prijaviti se na sledecem sajtu: ",
+            "intent": "OPEN_BORDER"
+          },
+          {
+            "domain": "default",
+            "utterance": "Drzavljani Srbije mogu uci u Tursku bez negativnog PCR testa. Pri ulasku u zemlju postoji obavezni lekarski pregled i merenje temperature.",
+            "intent": "OPEN_BORDER"
+          },
+          {
+            "domain": "default",
+            "utterance": "Drzavljani Srbije mogu da udu u zemlju avio letom uz negativan test, ne stariji od 3 dana. Navedeno vazi i za strane drzavljane.",
+            "intent": "NEGATIVE_TEST_REQUIRED"
+          },
+          {
+            "domain": "default",
+            "utterance": "Drzavljani Srbije mogu da udu na teritoriju Kipra ukoliko poseduju negativan PCR test, ne stariji od 72 sata. Odredene kategorije lica test mogu da urade po dolasku na Kipar (o sopstvenom trosku): kiparski drzavljani, njihovi supruznici iz drugih zemalja i njihova maloletna deca; lica koja imaju regulisan boravak na Kipru; lica koja imaju specijalnu dozvolu za ulazak od strane Vlade Kipara; lica koja dolaze iz drzave u kojoj nije moguce da se uradi testiranje na korona virus.",
+            "intent": "NEGATIVE_TEST_REQUIRED"
+          },
+          {
+            "domain": "default",
+            "utterance": "Drzavljani Srbije mogu da udu u Kot D'Ivoar. Neophodan je negativan PCR test, ne stariji od pet dana.",
+            "intent": "NEGATIVE_TEST_REQUIRED"
+          },
+          {
+            "domain": "default",
+            "utterance": "Drzavljani Srbije mogu ulaziti u Tanzaniju. Ukoliko drazava polaska ili avio-kompanija kojom su doputovali traze negativan test kao uslov za putovanje, putnici su obavezni da pokazu rezultate testa prilikom ulaska u Tanzaniju",
+            "intent": "NEGATIVE_TEST_REQUIRED"
+          },
+          {
+            "domain": "default",
+            "utterance": "Drzavljani Srbije mogu da udu u Dzibuti. Neophodan je negativan PCR test.",
+            "intent": "NEGATIVE_TEST_REQUIRED"
+          },
+          {
+            "domain": "default",
+            "utterance": "Drzavljani Srbije mogu da udu u Sent Vinsent i Grenadine uz obavezu da pre puta popune i podnesu formular koji se moze naci na ,. Putnici koji imaju negativan PCR test, ne stariji od 48 sati ili negativan test na antitela, ne stariji od 5 dana, ne moraju ici u karantin",
+            "intent": "NEGATIVE_TEST_REQUIRED"
+          },
+          {
+            "domain": "default",
+            "utterance": "Drzavljani Srbije mogu da udu na teritoriju Angole ukoliko poseduju vizu ili regulisani boravak. Po dolasku, smestaju se u obavezni drzavni karantin u trajanju od 14 dana.",
+            "intent": "QUARANTINE_REQUIRED"
+          },
+          {
+            "domain": "default",
+            "utterance": "Drzavljani Srbije mogu da udu u Zambiju. Obavezan je karantin u trajanju od 14 dana u prostorima koje je odredila drzava.",
+            "intent": "QUARANTINE_REQUIRED"
+          },
+          {
+            "domain": "default",
+            "utterance": "Drzavljani Srbije mogu uci na Island.,Putnici koji dolaze na Island mogu izabrati da li ce da urade dva testa, prvi po dolasku i naredni za pet dana tokom kojih ce biti u karantinu ili ce bez testiranja biti u karantinu 14 dana po dolasku.",
+            "intent": "QUARANTINE_REQUIRED"
+          },
+          {
+            "domain": "default",
+            "utterance": "Drzavljanima Srbije je od 13. aprila potrebna viza za ulaz u R. Koreju. Obavezan je karantin od 14 dana.",
+            "intent": "QUARANTINE_REQUIRED"
+          },
+          {
+            "domain": "default",
+            "utterance": "Drzavljani Srbije mogu da udu na Kubu pocev od 15.novembra.,Po dolasku na Kubu, na svim medunarodnim aerodromima, putnici se podvrgavaju PCR testu, nakon cega sledi obavezan karantin na adresi predvidenog boravka, do dobijanja rezultata testa (do 3 dana).",
+            "intent": "QUARANTINE_REQUIRED"
+          },
+          {
+            "domain": "default",
+            "utterance": "Drzavljani Srbije, kao i sva lica koja dolaze iz Srbije ili tranzitiraju kroz Srbiju, u obavezi su na samoizolaciju u trajanju od 14 dana po ulasku u Letoniju. Ne dozvoljava se ulazak stranim drzavljanima koji su prethodnih 14 dana boravili ili tranzitirali u zemljama pogodenim zaraznom bolescu COVID-19, u kojima je broj obolelih 25, ili veci, na 100.000 stanovnika.",
+            "intent": "QUARANTINE_REQUIRED"
+          }
+        ],
+        "domains": {
+          "master_domain": {
+            "settings": {
+              "locale": "sr",
+              "tag": "nlu-sr",
+              "keepStopwords": true,
+              "nonefeatureValue": 1,
+              "nonedeltaMultiplier": 1.2,
+              "spellCheck": false,
+              "spellCheckDistance": 1,
+              "filterZeros": true,
+              "log": true
+            },
+            "features": {
+              "3": 1,
+              "5": 1,
+              "12": 1,
+              "13": 1,
+              "14": 1,
+              "15": 1,
+              "25": 1,
+              "48": 1,
+              "72": 1,
+              "100": 1,
+              "drzavljan": 1,
+              "srbij": 1,
+              "ne": 1,
+              "mog": 1,
+              "da": 1,
+              "ud": 1,
+              "u": 1,
+              "zemlj": 1,
+              "granic": 1,
+              "i": 1,
+              "aerodrom": 1,
+              "su": 1,
+              "zatvoren": 1,
+              "uc": 1,
+              "argentin": 1,
+              "osim": 1,
+              "lic": 1,
+              "koj": 1,
+              "ima": 1,
+              "regulisa": 1,
+              "boravak": 1,
+              "il": 1,
+              "nek": 1,
+              "od": 1,
+              "pogranicn": 1,
+              "drzav": 1,
+              "ka": 1,
+              "nosioc": 1,
+              "diplomatsk": 1,
+              "sluzben": 1,
+              "pasos": 1,
+              "neophoda": 1,
+              "je": 1,
+              "negativn": 1,
+              "pcr": 1,
+              "test": 1,
+              "starij": 1,
+              "sat": 1,
+              "onih": 1,
+              "odobren": 1,
+              "staln": 1,
+              "clanov": 1,
+              "njihov": 1,
+              "uz": 1,
+              "porodic": 1,
+              "mogucn": 1,
+              "ulask": 1,
+              "postoj": 1,
+              "ak": 1,
+              "pitanj": 1,
+              "humanitarn": 1,
+              "dovoljn": 1,
+              "ubedljiv": 1,
+              "razlog": 1,
+              "prethodn": 1,
+              "pribavljanj": 1,
+              "dozvol": 1,
+              "stran": 1,
+              "nadlezn": 1,
+              "organ": 1,
+              "nij": 1,
+              "dozvolen": 1,
+              "ulazak": 1,
+              "austrij": 1,
+              "posebn": 1,
+              "slucaj": 1,
+              "to": 1,
+              "za": 1,
+              "putuj": 1,
+              "iz": 1,
+              "poslovn": 1,
+              "jedn": 1,
+              "pratnj": 1,
+              "osob": 1,
+              "dolaz": 1,
+              "svrh": 1,
+              "medicinsk": 1,
+              "lecenj": 1,
+              "rad": 1,
+              "pocetk": 1,
+              "nastavk": 1,
+              "studij": 1,
+              "odnosn": 1,
+              "cilj": 1,
+              "naucn": 1,
+              "istrazivanj": 1,
+              "ucesc": 1,
+              "skolsk": 1,
+              "aktivnost": 1,
+              "prisustvovanj": 1,
+              "sudsk": 1,
+              "administrativn": 1,
+              "postupc": 1,
+              "pred": 1,
+              "austrijsk": 1,
+              "osoblj": 1,
+              "predstavnistav": 1,
+              "zaposlen": 1,
+              "medunarodn": 1,
+              "organizacij": 1,
+              "sa": 1,
+              "njima": 1,
+              "ziv": 1,
+              "zajednick": 1,
+              "domacinstv": 1,
+              "zbog": 1,
+              "planiran": 1,
+              "vazn": 1,
+              "dogadaj": 1,
+              "krug": 1,
+              "vencanj": 1,
+              "krstenj": 1,
+              "rodendan": 1,
+              "neperiodicn": 1,
+              "poset": 1,
+              "zivotn": 1,
+              "partner": 1,
+              "sve": 1,
+              "naveden": 1,
+              "kategorij": 1,
+              "prilik": 1,
+              "moraj": 1,
+              "bocvan": 1,
+              "regulisan": 1,
+              "boravk": 1,
+              "obaveza": 1,
+              "14-dnevn": 1,
+              "karantin": 1,
+              "svim": 1,
+              "ukljucuj": 1,
+              "do": 1,
+              "daljn": 1,
+              "zabranen": 1,
+              "bez": 1,
+              "ogranicenj": 1,
+              "alban": 1,
+              "tranzitir": 1,
+              "nem": 1,
+              "uslov": 1,
+              "bih": 1,
+              "septembr": 1,
+              "potreba": 1,
+              "brazi": 1,
+              "vazdusn": 1,
+              "pute": 1,
+              "strani": 1,
+              "kopnen": 1,
+              "voden": 1,
+              "putev": 1,
+              "bugarsk": 1,
+              "clanic": 1,
+              "e": 1,
+              "sengensk": 1,
+              "sporazum": 1,
+              "san": 1,
+              "marin": 1,
+              "andor": 1,
+              "monak": 1,
+              "vatika": 1,
+              "v": 1,
+              "britanij": 1,
+              "severn": 1,
+              "irsk": 1,
+              "australij": 1,
+              "kanad": 1,
+              "gruzij": 1,
+              "japan": 1,
+              "nov": 1,
+              "zeland": 1,
+              "ruand": 1,
+              "republik": 1,
+              "korej": 1,
+              "tajland": 1,
+              "tunis": 1,
+              "urugvaj": 1,
+              "ujedinen": 1,
+              "arapsk": 1,
+              "emirat": 1,
+              "belorusij": 1,
+              "tursk": 1,
+              "navedan": 1,
+              "na": 1,
+              "jamajk": 1,
+              "pre": 1,
+              "putovanj": 1,
+              "neophodn": 1,
+              "prijavi": 1,
+              "se": 1,
+              "sledec": 1,
+              "sajt": 1,
+              "pri": 1,
+              "obavezn": 1,
+              "lekarsk": 1,
+              "pregled": 1,
+              "merenj": 1,
+              "temperatur": 1,
+              "avi": 1,
+              "let": 1,
+              "dan": 1,
+              "vaz": 1,
+              "teritorij": 1,
+              "kipr": 1,
+              "ukolik": 1,
+              "poseduj": 1,
+              "odreden": 1,
+              "urad": 1,
+              "po": 1,
+              "dolask": 1,
+              "kipar": 1,
+              "o": 1,
+              "sopstven": 1,
+              "trosk": 1,
+              "kiparsk": 1,
+              "supruznic": 1,
+              "drugi": 1,
+              "zemalj": 1,
+              "maloletn": 1,
+              "dec": 1,
+              "specijaln": 1,
+              "vlad": 1,
+              "kojoj": 1,
+              "moguc": 1,
+              "testiranj": 1,
+              "koron": 1,
+              "virus": 1,
+              "kot": 1,
+              "d": 1,
+              "ivoar": 1,
+              "pet": 1,
+              "ulazi": 1,
+              "tanzan": 1,
+              "drazav": 1,
+              "polask": 1,
+              "avio-kompanij": 1,
+              "doputova": 1,
+              "traz": 1,
+              "putnic": 1,
+              "pokaz": 1,
+              "rezulta": 1,
+              "dzibut": 1,
+              "sent": 1,
+              "vinsent": 1,
+              "grenadin": 1,
+              "obavez": 1,
+              "put": 1,
+              "popun": 1,
+              "podnes": 1,
+              "formular": 1,
+              "moz": 1,
+              "nac": 1,
+              "antitel": 1,
+              "ic": 1,
+              "angol": 1,
+              "viz": 1,
+              "smesta": 1,
+              "drzavn": 1,
+              "trajanj": 1,
+              "zambij": 1,
+              "prostor": 1,
+              "odredi": 1,
+              "island": 1,
+              "izabra": 1,
+              "li": 1,
+              "ce": 1,
+              "dva": 1,
+              "prv": 1,
+              "naredn": 1,
+              "tok": 1,
+              "koji": 1,
+              "bit": 1,
+              "apri": 1,
+              "potrebn": 1,
+              "ulaz": 1,
+              "r": 1,
+              "kub": 1,
+              "pocev": 1,
+              "novembr": 1,
+              "podvrgava": 1,
+              "nakon": 1,
+              "ceg": 1,
+              "sled": 1,
+              "adres": 1,
+              "predviden": 1,
+              "dobijanj": 1,
+              "rezultat": 1,
+              "sva": 1,
+              "kroz": 1,
+              "samoizolacij": 1,
+              "leton": 1,
+              "dozvoljav": 1,
+              "boravi": 1,
+              "pogoden": 1,
+              "zarazn": 1,
+              "bolesc": 1,
+              "covid-19": 1,
+              "broj": 1,
+              "obolel": 1,
+              "vec": 1,
+              "000": 1,
+              "stanovnik": 1
+            },
+            "intents": {
+              "CLOSED_BORDER": 1,
+              "OPEN_BORDER": 1,
+              "NEGATIVE_TEST_REQUIRED": 1,
+              "QUARANTINE_REQUIRED": 1
+            },
+            "intentFeatures": {
+              "CLOSED_BORDER": {
+                "72": 1,
+                "drzavljan": 1,
+                "srbij": 1,
+                "ne": 1,
+                "mog": 1,
+                "da": 1,
+                "ud": 1,
+                "u": 1,
+                "zemlj": 1,
+                "granic": 1,
+                "i": 1,
+                "aerodrom": 1,
+                "su": 1,
+                "zatvoren": 1,
+                "uc": 1,
+                "argentin": 1,
+                "osim": 1,
+                "lic": 1,
+                "koj": 1,
+                "ima": 1,
+                "regulisa": 1,
+                "boravak": 1,
+                "il": 1,
+                "nek": 1,
+                "od": 1,
+                "pogranicn": 1,
+                "drzav": 1,
+                "ka": 1,
+                "nosioc": 1,
+                "diplomatsk": 1,
+                "sluzben": 1,
+                "pasos": 1,
+                "neophoda": 1,
+                "je": 1,
+                "negativn": 1,
+                "pcr": 1,
+                "test": 1,
+                "starij": 1,
+                "sat": 1,
+                "onih": 1,
+                "odobren": 1,
+                "staln": 1,
+                "clanov": 1,
+                "njihov": 1,
+                "uz": 1,
+                "porodic": 1,
+                "mogucn": 1,
+                "ulask": 1,
+                "postoj": 1,
+                "ak": 1,
+                "pitanj": 1,
+                "humanitarn": 1,
+                "dovoljn": 1,
+                "ubedljiv": 1,
+                "razlog": 1,
+                "prethodn": 1,
+                "pribavljanj": 1,
+                "dozvol": 1,
+                "stran": 1,
+                "nadlezn": 1,
+                "organ": 1,
+                "nij": 1,
+                "dozvolen": 1,
+                "ulazak": 1,
+                "austrij": 1,
+                "posebn": 1,
+                "slucaj": 1,
+                "to": 1,
+                "za": 1,
+                "putuj": 1,
+                "iz": 1,
+                "poslovn": 1,
+                "jedn": 1,
+                "pratnj": 1,
+                "osob": 1,
+                "dolaz": 1,
+                "svrh": 1,
+                "medicinsk": 1,
+                "lecenj": 1,
+                "rad": 1,
+                "pocetk": 1,
+                "nastavk": 1,
+                "studij": 1,
+                "odnosn": 1,
+                "cilj": 1,
+                "naucn": 1,
+                "istrazivanj": 1,
+                "ucesc": 1,
+                "skolsk": 1,
+                "aktivnost": 1,
+                "prisustvovanj": 1,
+                "sudsk": 1,
+                "administrativn": 1,
+                "postupc": 1,
+                "pred": 1,
+                "austrijsk": 1,
+                "osoblj": 1,
+                "predstavnistav": 1,
+                "zaposlen": 1,
+                "medunarodn": 1,
+                "organizacij": 1,
+                "sa": 1,
+                "njima": 1,
+                "ziv": 1,
+                "zajednick": 1,
+                "domacinstv": 1,
+                "zbog": 1,
+                "planiran": 1,
+                "vazn": 1,
+                "dogadaj": 1,
+                "krug": 1,
+                "vencanj": 1,
+                "krstenj": 1,
+                "rodendan": 1,
+                "neperiodicn": 1,
+                "poset": 1,
+                "zivotn": 1,
+                "partner": 1,
+                "sve": 1,
+                "naveden": 1,
+                "kategorij": 1,
+                "prilik": 1,
+                "moraj": 1,
+                "bocvan": 1,
+                "regulisan": 1,
+                "boravk": 1,
+                "obaveza": 1,
+                "14-dnevn": 1,
+                "karantin": 1,
+                "svim": 1,
+                "ukljucuj": 1,
+                "do": 1,
+                "daljn": 1,
+                "zabranen": 1
+              },
+              "OPEN_BORDER": {
+                "12": 1,
+                "72": 1,
+                "drzavljan": 1,
+                "srbij": 1,
+                "mog": 1,
+                "bez": 1,
+                "ogranicenj": 1,
+                "da": 1,
+                "ud": 1,
+                "u": 1,
+                "alban": 1,
+                "il": 1,
+                "tranzitir": 1,
+                "nem": 1,
+                "posebn": 1,
+                "uslov": 1,
+                "iz": 1,
+                "bih": 1,
+                "od": 1,
+                "septembr": 1,
+                "stran": 1,
+                "je": 1,
+                "potreba": 1,
+                "negativn": 1,
+                "pcr": 1,
+                "test": 1,
+                "brazi": 1,
+                "vazdusn": 1,
+                "pute": 1,
+                "strani": 1,
+                "ne": 1,
+                "kopnen": 1,
+                "i": 1,
+                "voden": 1,
+                "putev": 1,
+                "uc": 1,
+                "bugarsk": 1,
+                "ak": 1,
+                "dolaz": 1,
+                "drzav": 1,
+                "clanic": 1,
+                "e": 1,
+                "sengensk": 1,
+                "sporazum": 1,
+                "ukljucuj": 1,
+                "san": 1,
+                "marin": 1,
+                "andor": 1,
+                "monak": 1,
+                "vatika": 1,
+                "v": 1,
+                "britanij": 1,
+                "severn": 1,
+                "irsk": 1,
+                "australij": 1,
+                "kanad": 1,
+                "gruzij": 1,
+                "japan": 1,
+                "nov": 1,
+                "zeland": 1,
+                "ruand": 1,
+                "republik": 1,
+                "korej": 1,
+                "tajland": 1,
+                "tunis": 1,
+                "urugvaj": 1,
+                "ujedinen": 1,
+                "arapsk": 1,
+                "emirat": 1,
+                "belorusij": 1,
+                "tursk": 1,
+                "zemlj": 1,
+                "koj": 1,
+                "nij": 1,
+                "prethodn": 1,
+                "navedan": 1,
+                "neophoda": 1,
+                "starij": 1,
+                "sat": 1,
+                "na": 1,
+                "jamajk": 1,
+                "pre": 1,
+                "putovanj": 1,
+                "neophodn": 1,
+                "prijavi": 1,
+                "se": 1,
+                "sledec": 1,
+                "sajt": 1,
+                "pri": 1,
+                "ulask": 1,
+                "postoj": 1,
+                "obavezn": 1,
+                "lekarsk": 1,
+                "pregled": 1,
+                "merenj": 1,
+                "temperatur": 1
+              },
+              "NEGATIVE_TEST_REQUIRED": {
+                "3": 1,
+                "5": 1,
+                "48": 1,
+                "72": 1,
+                "drzavljan": 1,
+                "srbij": 1,
+                "mog": 1,
+                "da": 1,
+                "ud": 1,
+                "u": 1,
+                "zemlj": 1,
+                "avi": 1,
+                "let": 1,
+                "uz": 1,
+                "negativn": 1,
+                "test": 1,
+                "ne": 1,
+                "starij": 1,
+                "od": 1,
+                "dan": 1,
+                "naveden": 1,
+                "vaz": 1,
+                "i": 1,
+                "za": 1,
+                "stran": 1,
+                "na": 1,
+                "teritorij": 1,
+                "kipr": 1,
+                "ukolik": 1,
+                "poseduj": 1,
+                "pcr": 1,
+                "sat": 1,
+                "odreden": 1,
+                "kategorij": 1,
+                "lic": 1,
+                "urad": 1,
+                "po": 1,
+                "dolask": 1,
+                "kipar": 1,
+                "o": 1,
+                "sopstven": 1,
+                "trosk": 1,
+                "kiparsk": 1,
+                "njihov": 1,
+                "supruznic": 1,
+                "iz": 1,
+                "drugi": 1,
+                "zemalj": 1,
+                "maloletn": 1,
+                "dec": 1,
+                "koj": 1,
+                "ima": 1,
+                "regulisa": 1,
+                "boravak": 1,
+                "specijaln": 1,
+                "dozvol": 1,
+                "ulazak": 1,
+                "vlad": 1,
+                "dolaz": 1,
+                "drzav": 1,
+                "kojoj": 1,
+                "nij": 1,
+                "moguc": 1,
+                "se": 1,
+                "testiranj": 1,
+                "koron": 1,
+                "virus": 1,
+                "kot": 1,
+                "d": 1,
+                "ivoar": 1,
+                "neophoda": 1,
+                "je": 1,
+                "pet": 1,
+                "ulazi": 1,
+                "tanzan": 1,
+                "drazav": 1,
+                "polask": 1,
+                "il": 1,
+                "avio-kompanij": 1,
+                "su": 1,
+                "doputova": 1,
+                "traz": 1,
+                "ka": 1,
+                "uslov": 1,
+                "putovanj": 1,
+                "putnic": 1,
+                "obavezn": 1,
+                "pokaz": 1,
+                "rezulta": 1,
+                "prilik": 1,
+                "ulask": 1,
+                "dzibut": 1,
+                "sent": 1,
+                "vinsent": 1,
+                "grenadin": 1,
+                "obavez": 1,
+                "pre": 1,
+                "put": 1,
+                "popun": 1,
+                "podnes": 1,
+                "formular": 1,
+                "moz": 1,
+                "nac": 1,
+                "antitel": 1,
+                "moraj": 1,
+                "ic": 1,
+                "karantin": 1
+              },
+              "QUARANTINE_REQUIRED": {
+                "3": 1,
+                "13": 1,
+                "14": 1,
+                "15": 1,
+                "25": 1,
+                "100": 1,
+                "drzavljan": 1,
+                "srbij": 1,
+                "mog": 1,
+                "da": 1,
+                "ud": 1,
+                "na": 1,
+                "teritorij": 1,
+                "angol": 1,
+                "ukolik": 1,
+                "poseduj": 1,
+                "viz": 1,
+                "il": 1,
+                "regulisan": 1,
+                "boravak": 1,
+                "po": 1,
+                "dolask": 1,
+                "smesta": 1,
+                "se": 1,
+                "u": 1,
+                "obavezn": 1,
+                "drzavn": 1,
+                "karantin": 1,
+                "trajanj": 1,
+                "od": 1,
+                "dan": 1,
+                "zambij": 1,
+                "obaveza": 1,
+                "je": 1,
+                "prostor": 1,
+                "koj": 1,
+                "odredi": 1,
+                "drzav": 1,
+                "uc": 1,
+                "island": 1,
+                "putnic": 1,
+                "dolaz": 1,
+                "izabra": 1,
+                "li": 1,
+                "ce": 1,
+                "urad": 1,
+                "dva": 1,
+                "test": 1,
+                "prv": 1,
+                "i": 1,
+                "naredn": 1,
+                "za": 1,
+                "pet": 1,
+                "tok": 1,
+                "koji": 1,
+                "bit": 1,
+                "bez": 1,
+                "testiranj": 1,
+                "apri": 1,
+                "potrebn": 1,
+                "ulaz": 1,
+                "r": 1,
+                "korej": 1,
+                "kub": 1,
+                "pocev": 1,
+                "novembr": 1,
+                "svim": 1,
+                "medunarodn": 1,
+                "aerodrom": 1,
+                "podvrgava": 1,
+                "pcr": 1,
+                "nakon": 1,
+                "ceg": 1,
+                "sled": 1,
+                "adres": 1,
+                "predviden": 1,
+                "boravk": 1,
+                "do": 1,
+                "dobijanj": 1,
+                "rezultat": 1,
+                "ka": 1,
+                "sva": 1,
+                "lic": 1,
+                "iz": 1,
+                "tranzitir": 1,
+                "kroz": 1,
+                "obavez": 1,
+                "su": 1,
+                "samoizolacij": 1,
+                "ulask": 1,
+                "leton": 1,
+                "ne": 1,
+                "dozvoljav": 1,
+                "ulazak": 1,
+                "stran": 1,
+                "prethodn": 1,
+                "boravi": 1,
+                "zemlj": 1,
+                "pogoden": 1,
+                "zarazn": 1,
+                "bolesc": 1,
+                "covid-19": 1,
+                "broj": 1,
+                "obolel": 1,
+                "vec": 1,
+                "000": 1,
+                "stanovnik": 1
+              }
+            },
+            "featuresToIntent": {
+              "3": [
+                "NEGATIVE_TEST_REQUIRED",
+                "QUARANTINE_REQUIRED"
+              ],
+              "5": [
+                "NEGATIVE_TEST_REQUIRED"
+              ],
+              "12": [
+                "OPEN_BORDER"
+              ],
+              "13": [
+                "QUARANTINE_REQUIRED"
+              ],
+              "14": [
+                "QUARANTINE_REQUIRED"
+              ],
+              "15": [
+                "QUARANTINE_REQUIRED"
+              ],
+              "25": [
+                "QUARANTINE_REQUIRED"
+              ],
+              "48": [
+                "NEGATIVE_TEST_REQUIRED"
+              ],
+              "72": [
+                "CLOSED_BORDER",
+                "OPEN_BORDER",
+                "NEGATIVE_TEST_REQUIRED"
+              ],
+              "100": [
+                "QUARANTINE_REQUIRED"
+              ],
+              "drzavljan": [
+                "CLOSED_BORDER",
+                "OPEN_BORDER",
+                "NEGATIVE_TEST_REQUIRED",
+                "QUARANTINE_REQUIRED"
+              ],
+              "srbij": [
+                "CLOSED_BORDER",
+                "OPEN_BORDER",
+                "NEGATIVE_TEST_REQUIRED",
+                "QUARANTINE_REQUIRED"
+              ],
+              "ne": [
+                "CLOSED_BORDER",
+                "OPEN_BORDER",
+                "NEGATIVE_TEST_REQUIRED",
+                "QUARANTINE_REQUIRED"
+              ],
+              "mog": [
+                "CLOSED_BORDER",
+                "OPEN_BORDER",
+                "NEGATIVE_TEST_REQUIRED",
+                "QUARANTINE_REQUIRED"
+              ],
+              "da": [
+                "CLOSED_BORDER",
+                "OPEN_BORDER",
+                "NEGATIVE_TEST_REQUIRED",
+                "QUARANTINE_REQUIRED"
+              ],
+              "ud": [
+                "CLOSED_BORDER",
+                "OPEN_BORDER",
+                "NEGATIVE_TEST_REQUIRED",
+                "QUARANTINE_REQUIRED"
+              ],
+              "u": [
+                "CLOSED_BORDER",
+                "OPEN_BORDER",
+                "NEGATIVE_TEST_REQUIRED",
+                "QUARANTINE_REQUIRED"
+              ],
+              "zemlj": [
+                "CLOSED_BORDER",
+                "OPEN_BORDER",
+                "NEGATIVE_TEST_REQUIRED",
+                "QUARANTINE_REQUIRED"
+              ],
+              "granic": [
+                "CLOSED_BORDER"
+              ],
+              "i": [
+                "CLOSED_BORDER",
+                "OPEN_BORDER",
+                "NEGATIVE_TEST_REQUIRED",
+                "QUARANTINE_REQUIRED"
+              ],
+              "aerodrom": [
+                "CLOSED_BORDER",
+                "QUARANTINE_REQUIRED"
+              ],
+              "su": [
+                "CLOSED_BORDER",
+                "NEGATIVE_TEST_REQUIRED",
+                "QUARANTINE_REQUIRED"
+              ],
+              "zatvoren": [
+                "CLOSED_BORDER"
+              ],
+              "uc": [
+                "CLOSED_BORDER",
+                "OPEN_BORDER",
+                "QUARANTINE_REQUIRED"
+              ],
+              "argentin": [
+                "CLOSED_BORDER"
+              ],
+              "osim": [
+                "CLOSED_BORDER"
+              ],
+              "lic": [
+                "CLOSED_BORDER",
+                "NEGATIVE_TEST_REQUIRED",
+                "QUARANTINE_REQUIRED"
+              ],
+              "koj": [
+                "CLOSED_BORDER",
+                "OPEN_BORDER",
+                "NEGATIVE_TEST_REQUIRED",
+                "QUARANTINE_REQUIRED"
+              ],
+              "ima": [
+                "CLOSED_BORDER",
+                "NEGATIVE_TEST_REQUIRED"
+              ],
+              "regulisa": [
+                "CLOSED_BORDER",
+                "NEGATIVE_TEST_REQUIRED"
+              ],
+              "boravak": [
+                "CLOSED_BORDER",
+                "NEGATIVE_TEST_REQUIRED",
+                "QUARANTINE_REQUIRED"
+              ],
+              "il": [
+                "CLOSED_BORDER",
+                "OPEN_BORDER",
+                "NEGATIVE_TEST_REQUIRED",
+                "QUARANTINE_REQUIRED"
+              ],
+              "nek": [
+                "CLOSED_BORDER"
+              ],
+              "od": [
+                "CLOSED_BORDER",
+                "OPEN_BORDER",
+                "NEGATIVE_TEST_REQUIRED",
+                "QUARANTINE_REQUIRED"
+              ],
+              "pogranicn": [
+                "CLOSED_BORDER"
+              ],
+              "drzav": [
+                "CLOSED_BORDER",
+                "OPEN_BORDER",
+                "NEGATIVE_TEST_REQUIRED",
+                "QUARANTINE_REQUIRED"
+              ],
+              "ka": [
+                "CLOSED_BORDER",
+                "NEGATIVE_TEST_REQUIRED",
+                "QUARANTINE_REQUIRED"
+              ],
+              "nosioc": [
+                "CLOSED_BORDER"
+              ],
+              "diplomatsk": [
+                "CLOSED_BORDER"
+              ],
+              "sluzben": [
+                "CLOSED_BORDER"
+              ],
+              "pasos": [
+                "CLOSED_BORDER"
+              ],
+              "neophoda": [
+                "CLOSED_BORDER",
+                "OPEN_BORDER",
+                "NEGATIVE_TEST_REQUIRED"
+              ],
+              "je": [
+                "CLOSED_BORDER",
+                "OPEN_BORDER",
+                "NEGATIVE_TEST_REQUIRED",
+                "QUARANTINE_REQUIRED"
+              ],
+              "negativn": [
+                "CLOSED_BORDER",
+                "OPEN_BORDER",
+                "NEGATIVE_TEST_REQUIRED"
+              ],
+              "pcr": [
+                "CLOSED_BORDER",
+                "OPEN_BORDER",
+                "NEGATIVE_TEST_REQUIRED",
+                "QUARANTINE_REQUIRED"
+              ],
+              "test": [
+                "CLOSED_BORDER",
+                "OPEN_BORDER",
+                "NEGATIVE_TEST_REQUIRED",
+                "QUARANTINE_REQUIRED"
+              ],
+              "starij": [
+                "CLOSED_BORDER",
+                "OPEN_BORDER",
+                "NEGATIVE_TEST_REQUIRED"
+              ],
+              "sat": [
+                "CLOSED_BORDER",
+                "OPEN_BORDER",
+                "NEGATIVE_TEST_REQUIRED"
+              ],
+              "onih": [
+                "CLOSED_BORDER"
+              ],
+              "odobren": [
+                "CLOSED_BORDER"
+              ],
+              "staln": [
+                "CLOSED_BORDER"
+              ],
+              "clanov": [
+                "CLOSED_BORDER"
+              ],
+              "njihov": [
+                "CLOSED_BORDER",
+                "NEGATIVE_TEST_REQUIRED"
+              ],
+              "uz": [
+                "CLOSED_BORDER",
+                "NEGATIVE_TEST_REQUIRED"
+              ],
+              "porodic": [
+                "CLOSED_BORDER"
+              ],
+              "mogucn": [
+                "CLOSED_BORDER"
+              ],
+              "ulask": [
+                "CLOSED_BORDER",
+                "OPEN_BORDER",
+                "NEGATIVE_TEST_REQUIRED",
+                "QUARANTINE_REQUIRED"
+              ],
+              "postoj": [
+                "CLOSED_BORDER",
+                "OPEN_BORDER"
+              ],
+              "ak": [
+                "CLOSED_BORDER",
+                "OPEN_BORDER"
+              ],
+              "pitanj": [
+                "CLOSED_BORDER"
+              ],
+              "humanitarn": [
+                "CLOSED_BORDER"
+              ],
+              "dovoljn": [
+                "CLOSED_BORDER"
+              ],
+              "ubedljiv": [
+                "CLOSED_BORDER"
+              ],
+              "razlog": [
+                "CLOSED_BORDER"
+              ],
+              "prethodn": [
+                "CLOSED_BORDER",
+                "OPEN_BORDER",
+                "QUARANTINE_REQUIRED"
+              ],
+              "pribavljanj": [
+                "CLOSED_BORDER"
+              ],
+              "dozvol": [
+                "CLOSED_BORDER",
+                "NEGATIVE_TEST_REQUIRED"
+              ],
+              "stran": [
+                "CLOSED_BORDER",
+                "OPEN_BORDER",
+                "NEGATIVE_TEST_REQUIRED",
+                "QUARANTINE_REQUIRED"
+              ],
+              "nadlezn": [
+                "CLOSED_BORDER"
+              ],
+              "organ": [
+                "CLOSED_BORDER"
+              ],
+              "nij": [
+                "CLOSED_BORDER",
+                "OPEN_BORDER",
+                "NEGATIVE_TEST_REQUIRED"
+              ],
+              "dozvolen": [
+                "CLOSED_BORDER"
+              ],
+              "ulazak": [
+                "CLOSED_BORDER",
+                "NEGATIVE_TEST_REQUIRED",
+                "QUARANTINE_REQUIRED"
+              ],
+              "austrij": [
+                "CLOSED_BORDER"
+              ],
+              "posebn": [
+                "CLOSED_BORDER",
+                "OPEN_BORDER"
+              ],
+              "slucaj": [
+                "CLOSED_BORDER"
+              ],
+              "to": [
+                "CLOSED_BORDER"
+              ],
+              "za": [
+                "CLOSED_BORDER",
+                "NEGATIVE_TEST_REQUIRED",
+                "QUARANTINE_REQUIRED"
+              ],
+              "putuj": [
+                "CLOSED_BORDER"
+              ],
+              "iz": [
+                "CLOSED_BORDER",
+                "OPEN_BORDER",
+                "NEGATIVE_TEST_REQUIRED",
+                "QUARANTINE_REQUIRED"
+              ],
+              "poslovn": [
+                "CLOSED_BORDER"
+              ],
+              "jedn": [
+                "CLOSED_BORDER"
+              ],
+              "pratnj": [
+                "CLOSED_BORDER"
+              ],
+              "osob": [
+                "CLOSED_BORDER"
+              ],
+              "dolaz": [
+                "CLOSED_BORDER",
+                "OPEN_BORDER",
+                "NEGATIVE_TEST_REQUIRED",
+                "QUARANTINE_REQUIRED"
+              ],
+              "svrh": [
+                "CLOSED_BORDER"
+              ],
+              "medicinsk": [
+                "CLOSED_BORDER"
+              ],
+              "lecenj": [
+                "CLOSED_BORDER"
+              ],
+              "rad": [
+                "CLOSED_BORDER"
+              ],
+              "pocetk": [
+                "CLOSED_BORDER"
+              ],
+              "nastavk": [
+                "CLOSED_BORDER"
+              ],
+              "studij": [
+                "CLOSED_BORDER"
+              ],
+              "odnosn": [
+                "CLOSED_BORDER"
+              ],
+              "cilj": [
+                "CLOSED_BORDER"
+              ],
+              "naucn": [
+                "CLOSED_BORDER"
+              ],
+              "istrazivanj": [
+                "CLOSED_BORDER"
+              ],
+              "ucesc": [
+                "CLOSED_BORDER"
+              ],
+              "skolsk": [
+                "CLOSED_BORDER"
+              ],
+              "aktivnost": [
+                "CLOSED_BORDER"
+              ],
+              "prisustvovanj": [
+                "CLOSED_BORDER"
+              ],
+              "sudsk": [
+                "CLOSED_BORDER"
+              ],
+              "administrativn": [
+                "CLOSED_BORDER"
+              ],
+              "postupc": [
+                "CLOSED_BORDER"
+              ],
+              "pred": [
+                "CLOSED_BORDER"
+              ],
+              "austrijsk": [
+                "CLOSED_BORDER"
+              ],
+              "osoblj": [
+                "CLOSED_BORDER"
+              ],
+              "predstavnistav": [
+                "CLOSED_BORDER"
+              ],
+              "zaposlen": [
+                "CLOSED_BORDER"
+              ],
+              "medunarodn": [
+                "CLOSED_BORDER",
+                "QUARANTINE_REQUIRED"
+              ],
+              "organizacij": [
+                "CLOSED_BORDER"
+              ],
+              "sa": [
+                "CLOSED_BORDER"
+              ],
+              "njima": [
+                "CLOSED_BORDER"
+              ],
+              "ziv": [
+                "CLOSED_BORDER"
+              ],
+              "zajednick": [
+                "CLOSED_BORDER"
+              ],
+              "domacinstv": [
+                "CLOSED_BORDER"
+              ],
+              "zbog": [
+                "CLOSED_BORDER"
+              ],
+              "planiran": [
+                "CLOSED_BORDER"
+              ],
+              "vazn": [
+                "CLOSED_BORDER"
+              ],
+              "dogadaj": [
+                "CLOSED_BORDER"
+              ],
+              "krug": [
+                "CLOSED_BORDER"
+              ],
+              "vencanj": [
+                "CLOSED_BORDER"
+              ],
+              "krstenj": [
+                "CLOSED_BORDER"
+              ],
+              "rodendan": [
+                "CLOSED_BORDER"
+              ],
+              "neperiodicn": [
+                "CLOSED_BORDER"
+              ],
+              "poset": [
+                "CLOSED_BORDER"
+              ],
+              "zivotn": [
+                "CLOSED_BORDER"
+              ],
+              "partner": [
+                "CLOSED_BORDER"
+              ],
+              "sve": [
+                "CLOSED_BORDER"
+              ],
+              "naveden": [
+                "CLOSED_BORDER",
+                "NEGATIVE_TEST_REQUIRED"
+              ],
+              "kategorij": [
+                "CLOSED_BORDER",
+                "NEGATIVE_TEST_REQUIRED"
+              ],
+              "prilik": [
+                "CLOSED_BORDER",
+                "NEGATIVE_TEST_REQUIRED"
+              ],
+              "moraj": [
+                "CLOSED_BORDER",
+                "NEGATIVE_TEST_REQUIRED"
+              ],
+              "bocvan": [
+                "CLOSED_BORDER"
+              ],
+              "regulisan": [
+                "CLOSED_BORDER",
+                "QUARANTINE_REQUIRED"
+              ],
+              "boravk": [
+                "CLOSED_BORDER",
+                "QUARANTINE_REQUIRED"
+              ],
+              "obaveza": [
+                "CLOSED_BORDER",
+                "QUARANTINE_REQUIRED"
+              ],
+              "14-dnevn": [
+                "CLOSED_BORDER"
+              ],
+              "karantin": [
+                "CLOSED_BORDER",
+                "NEGATIVE_TEST_REQUIRED",
+                "QUARANTINE_REQUIRED"
+              ],
+              "svim": [
+                "CLOSED_BORDER",
+                "QUARANTINE_REQUIRED"
+              ],
+              "ukljucuj": [
+                "CLOSED_BORDER",
+                "OPEN_BORDER"
+              ],
+              "do": [
+                "CLOSED_BORDER",
+                "QUARANTINE_REQUIRED"
+              ],
+              "daljn": [
+                "CLOSED_BORDER"
+              ],
+              "zabranen": [
+                "CLOSED_BORDER"
+              ],
+              "bez": [
+                "OPEN_BORDER",
+                "QUARANTINE_REQUIRED"
+              ],
+              "ogranicenj": [
+                "OPEN_BORDER"
+              ],
+              "alban": [
+                "OPEN_BORDER"
+              ],
+              "tranzitir": [
+                "OPEN_BORDER",
+                "QUARANTINE_REQUIRED"
+              ],
+              "nem": [
+                "OPEN_BORDER"
+              ],
+              "uslov": [
+                "OPEN_BORDER",
+                "NEGATIVE_TEST_REQUIRED"
+              ],
+              "bih": [
+                "OPEN_BORDER"
+              ],
+              "septembr": [
+                "OPEN_BORDER"
+              ],
+              "potreba": [
+                "OPEN_BORDER"
+              ],
+              "brazi": [
+                "OPEN_BORDER"
+              ],
+              "vazdusn": [
+                "OPEN_BORDER"
+              ],
+              "pute": [
+                "OPEN_BORDER"
+              ],
+              "strani": [
+                "OPEN_BORDER"
+              ],
+              "kopnen": [
+                "OPEN_BORDER"
+              ],
+              "voden": [
+                "OPEN_BORDER"
+              ],
+              "putev": [
+                "OPEN_BORDER"
+              ],
+              "bugarsk": [
+                "OPEN_BORDER"
+              ],
+              "clanic": [
+                "OPEN_BORDER"
+              ],
+              "e": [
+                "OPEN_BORDER"
+              ],
+              "sengensk": [
+                "OPEN_BORDER"
+              ],
+              "sporazum": [
+                "OPEN_BORDER"
+              ],
+              "san": [
+                "OPEN_BORDER"
+              ],
+              "marin": [
+                "OPEN_BORDER"
+              ],
+              "andor": [
+                "OPEN_BORDER"
+              ],
+              "monak": [
+                "OPEN_BORDER"
+              ],
+              "vatika": [
+                "OPEN_BORDER"
+              ],
+              "v": [
+                "OPEN_BORDER"
+              ],
+              "britanij": [
+                "OPEN_BORDER"
+              ],
+              "severn": [
+                "OPEN_BORDER"
+              ],
+              "irsk": [
+                "OPEN_BORDER"
+              ],
+              "australij": [
+                "OPEN_BORDER"
+              ],
+              "kanad": [
+                "OPEN_BORDER"
+              ],
+              "gruzij": [
+                "OPEN_BORDER"
+              ],
+              "japan": [
+                "OPEN_BORDER"
+              ],
+              "nov": [
+                "OPEN_BORDER"
+              ],
+              "zeland": [
+                "OPEN_BORDER"
+              ],
+              "ruand": [
+                "OPEN_BORDER"
+              ],
+              "republik": [
+                "OPEN_BORDER"
+              ],
+              "korej": [
+                "OPEN_BORDER",
+                "QUARANTINE_REQUIRED"
+              ],
+              "tajland": [
+                "OPEN_BORDER"
+              ],
+              "tunis": [
+                "OPEN_BORDER"
+              ],
+              "urugvaj": [
+                "OPEN_BORDER"
+              ],
+              "ujedinen": [
+                "OPEN_BORDER"
+              ],
+              "arapsk": [
+                "OPEN_BORDER"
+              ],
+              "emirat": [
+                "OPEN_BORDER"
+              ],
+              "belorusij": [
+                "OPEN_BORDER"
+              ],
+              "tursk": [
+                "OPEN_BORDER"
+              ],
+              "navedan": [
+                "OPEN_BORDER"
+              ],
+              "na": [
+                "OPEN_BORDER",
+                "NEGATIVE_TEST_REQUIRED",
+                "QUARANTINE_REQUIRED"
+              ],
+              "jamajk": [
+                "OPEN_BORDER"
+              ],
+              "pre": [
+                "OPEN_BORDER",
+                "NEGATIVE_TEST_REQUIRED"
+              ],
+              "putovanj": [
+                "OPEN_BORDER",
+                "NEGATIVE_TEST_REQUIRED"
+              ],
+              "neophodn": [
+                "OPEN_BORDER"
+              ],
+              "prijavi": [
+                "OPEN_BORDER"
+              ],
+              "se": [
+                "OPEN_BORDER",
+                "NEGATIVE_TEST_REQUIRED",
+                "QUARANTINE_REQUIRED"
+              ],
+              "sledec": [
+                "OPEN_BORDER"
+              ],
+              "sajt": [
+                "OPEN_BORDER"
+              ],
+              "pri": [
+                "OPEN_BORDER"
+              ],
+              "obavezn": [
+                "OPEN_BORDER",
+                "NEGATIVE_TEST_REQUIRED",
+                "QUARANTINE_REQUIRED"
+              ],
+              "lekarsk": [
+                "OPEN_BORDER"
+              ],
+              "pregled": [
+                "OPEN_BORDER"
+              ],
+              "merenj": [
+                "OPEN_BORDER"
+              ],
+              "temperatur": [
+                "OPEN_BORDER"
+              ],
+              "avi": [
+                "NEGATIVE_TEST_REQUIRED"
+              ],
+              "let": [
+                "NEGATIVE_TEST_REQUIRED"
+              ],
+              "dan": [
+                "NEGATIVE_TEST_REQUIRED",
+                "QUARANTINE_REQUIRED"
+              ],
+              "vaz": [
+                "NEGATIVE_TEST_REQUIRED"
+              ],
+              "teritorij": [
+                "NEGATIVE_TEST_REQUIRED",
+                "QUARANTINE_REQUIRED"
+              ],
+              "kipr": [
+                "NEGATIVE_TEST_REQUIRED"
+              ],
+              "ukolik": [
+                "NEGATIVE_TEST_REQUIRED",
+                "QUARANTINE_REQUIRED"
+              ],
+              "poseduj": [
+                "NEGATIVE_TEST_REQUIRED",
+                "QUARANTINE_REQUIRED"
+              ],
+              "odreden": [
+                "NEGATIVE_TEST_REQUIRED"
+              ],
+              "urad": [
+                "NEGATIVE_TEST_REQUIRED",
+                "QUARANTINE_REQUIRED"
+              ],
+              "po": [
+                "NEGATIVE_TEST_REQUIRED",
+                "QUARANTINE_REQUIRED"
+              ],
+              "dolask": [
+                "NEGATIVE_TEST_REQUIRED",
+                "QUARANTINE_REQUIRED"
+              ],
+              "kipar": [
+                "NEGATIVE_TEST_REQUIRED"
+              ],
+              "o": [
+                "NEGATIVE_TEST_REQUIRED"
+              ],
+              "sopstven": [
+                "NEGATIVE_TEST_REQUIRED"
+              ],
+              "trosk": [
+                "NEGATIVE_TEST_REQUIRED"
+              ],
+              "kiparsk": [
+                "NEGATIVE_TEST_REQUIRED"
+              ],
+              "supruznic": [
+                "NEGATIVE_TEST_REQUIRED"
+              ],
+              "drugi": [
+                "NEGATIVE_TEST_REQUIRED"
+              ],
+              "zemalj": [
+                "NEGATIVE_TEST_REQUIRED"
+              ],
+              "maloletn": [
+                "NEGATIVE_TEST_REQUIRED"
+              ],
+              "dec": [
+                "NEGATIVE_TEST_REQUIRED"
+              ],
+              "specijaln": [
+                "NEGATIVE_TEST_REQUIRED"
+              ],
+              "vlad": [
+                "NEGATIVE_TEST_REQUIRED"
+              ],
+              "kojoj": [
+                "NEGATIVE_TEST_REQUIRED"
+              ],
+              "moguc": [
+                "NEGATIVE_TEST_REQUIRED"
+              ],
+              "testiranj": [
+                "NEGATIVE_TEST_REQUIRED",
+                "QUARANTINE_REQUIRED"
+              ],
+              "koron": [
+                "NEGATIVE_TEST_REQUIRED"
+              ],
+              "virus": [
+                "NEGATIVE_TEST_REQUIRED"
+              ],
+              "kot": [
+                "NEGATIVE_TEST_REQUIRED"
+              ],
+              "d": [
+                "NEGATIVE_TEST_REQUIRED"
+              ],
+              "ivoar": [
+                "NEGATIVE_TEST_REQUIRED"
+              ],
+              "pet": [
+                "NEGATIVE_TEST_REQUIRED",
+                "QUARANTINE_REQUIRED"
+              ],
+              "ulazi": [
+                "NEGATIVE_TEST_REQUIRED"
+              ],
+              "tanzan": [
+                "NEGATIVE_TEST_REQUIRED"
+              ],
+              "drazav": [
+                "NEGATIVE_TEST_REQUIRED"
+              ],
+              "polask": [
+                "NEGATIVE_TEST_REQUIRED"
+              ],
+              "avio-kompanij": [
+                "NEGATIVE_TEST_REQUIRED"
+              ],
+              "doputova": [
+                "NEGATIVE_TEST_REQUIRED"
+              ],
+              "traz": [
+                "NEGATIVE_TEST_REQUIRED"
+              ],
+              "putnic": [
+                "NEGATIVE_TEST_REQUIRED",
+                "QUARANTINE_REQUIRED"
+              ],
+              "pokaz": [
+                "NEGATIVE_TEST_REQUIRED"
+              ],
+              "rezulta": [
+                "NEGATIVE_TEST_REQUIRED"
+              ],
+              "dzibut": [
+                "NEGATIVE_TEST_REQUIRED"
+              ],
+              "sent": [
+                "NEGATIVE_TEST_REQUIRED"
+              ],
+              "vinsent": [
+                "NEGATIVE_TEST_REQUIRED"
+              ],
+              "grenadin": [
+                "NEGATIVE_TEST_REQUIRED"
+              ],
+              "obavez": [
+                "NEGATIVE_TEST_REQUIRED",
+                "QUARANTINE_REQUIRED"
+              ],
+              "put": [
+                "NEGATIVE_TEST_REQUIRED"
+              ],
+              "popun": [
+                "NEGATIVE_TEST_REQUIRED"
+              ],
+              "podnes": [
+                "NEGATIVE_TEST_REQUIRED"
+              ],
+              "formular": [
+                "NEGATIVE_TEST_REQUIRED"
+              ],
+              "moz": [
+                "NEGATIVE_TEST_REQUIRED"
+              ],
+              "nac": [
+                "NEGATIVE_TEST_REQUIRED"
+              ],
+              "antitel": [
+                "NEGATIVE_TEST_REQUIRED"
+              ],
+              "ic": [
+                "NEGATIVE_TEST_REQUIRED"
+              ],
+              "angol": [
+                "QUARANTINE_REQUIRED"
+              ],
+              "viz": [
+                "QUARANTINE_REQUIRED"
+              ],
+              "smesta": [
+                "QUARANTINE_REQUIRED"
+              ],
+              "drzavn": [
+                "QUARANTINE_REQUIRED"
+              ],
+              "trajanj": [
+                "QUARANTINE_REQUIRED"
+              ],
+              "zambij": [
+                "QUARANTINE_REQUIRED"
+              ],
+              "prostor": [
+                "QUARANTINE_REQUIRED"
+              ],
+              "odredi": [
+                "QUARANTINE_REQUIRED"
+              ],
+              "island": [
+                "QUARANTINE_REQUIRED"
+              ],
+              "izabra": [
+                "QUARANTINE_REQUIRED"
+              ],
+              "li": [
+                "QUARANTINE_REQUIRED"
+              ],
+              "ce": [
+                "QUARANTINE_REQUIRED"
+              ],
+              "dva": [
+                "QUARANTINE_REQUIRED"
+              ],
+              "prv": [
+                "QUARANTINE_REQUIRED"
+              ],
+              "naredn": [
+                "QUARANTINE_REQUIRED"
+              ],
+              "tok": [
+                "QUARANTINE_REQUIRED"
+              ],
+              "koji": [
+                "QUARANTINE_REQUIRED"
+              ],
+              "bit": [
+                "QUARANTINE_REQUIRED"
+              ],
+              "apri": [
+                "QUARANTINE_REQUIRED"
+              ],
+              "potrebn": [
+                "QUARANTINE_REQUIRED"
+              ],
+              "ulaz": [
+                "QUARANTINE_REQUIRED"
+              ],
+              "r": [
+                "QUARANTINE_REQUIRED"
+              ],
+              "kub": [
+                "QUARANTINE_REQUIRED"
+              ],
+              "pocev": [
+                "QUARANTINE_REQUIRED"
+              ],
+              "novembr": [
+                "QUARANTINE_REQUIRED"
+              ],
+              "podvrgava": [
+                "QUARANTINE_REQUIRED"
+              ],
+              "nakon": [
+                "QUARANTINE_REQUIRED"
+              ],
+              "ceg": [
+                "QUARANTINE_REQUIRED"
+              ],
+              "sled": [
+                "QUARANTINE_REQUIRED"
+              ],
+              "adres": [
+                "QUARANTINE_REQUIRED"
+              ],
+              "predviden": [
+                "QUARANTINE_REQUIRED"
+              ],
+              "dobijanj": [
+                "QUARANTINE_REQUIRED"
+              ],
+              "rezultat": [
+                "QUARANTINE_REQUIRED"
+              ],
+              "sva": [
+                "QUARANTINE_REQUIRED"
+              ],
+              "kroz": [
+                "QUARANTINE_REQUIRED"
+              ],
+              "samoizolacij": [
+                "QUARANTINE_REQUIRED"
+              ],
+              "leton": [
+                "QUARANTINE_REQUIRED"
+              ],
+              "dozvoljav": [
+                "QUARANTINE_REQUIRED"
+              ],
+              "boravi": [
+                "QUARANTINE_REQUIRED"
+              ],
+              "pogoden": [
+                "QUARANTINE_REQUIRED"
+              ],
+              "zarazn": [
+                "QUARANTINE_REQUIRED"
+              ],
+              "bolesc": [
+                "QUARANTINE_REQUIRED"
+              ],
+              "covid-19": [
+                "QUARANTINE_REQUIRED"
+              ],
+              "broj": [
+                "QUARANTINE_REQUIRED"
+              ],
+              "obolel": [
+                "QUARANTINE_REQUIRED"
+              ],
+              "vec": [
+                "QUARANTINE_REQUIRED"
+              ],
+              "000": [
+                "QUARANTINE_REQUIRED"
+              ],
+              "stanovnik": [
+                "QUARANTINE_REQUIRED"
+              ]
+            },
+            "neuralNetwork": {
+              "settings": {
+                "locale": "sr",
+                "tag": "nlu-sr",
+                "keepStopwords": true,
+                "nonefeatureValue": 1,
+                "nonedeltaMultiplier": 1.2,
+                "spellCheck": false,
+                "spellCheckDistance": 1,
+                "filterZeros": true,
+                "log": true
+              },
+              "features": [
+                "drzavljan",
+                "srbij",
+                "ne",
+                "mog",
+                "da",
+                "ud",
+                "u",
+                "zemlj",
+                "granic",
+                "i",
+                "aerodrom",
+                "su",
+                "zatvoren",
+                "72",
+                "uc",
+                "argentin",
+                "osim",
+                "lic",
+                "koj",
+                "ima",
+                "regulisa",
+                "boravak",
+                "il",
+                "nek",
+                "od",
+                "pogranicn",
+                "drzav",
+                "ka",
+                "nosioc",
+                "diplomatsk",
+                "sluzben",
+                "pasos",
+                "neophoda",
+                "je",
+                "negativn",
+                "pcr",
+                "test",
+                "starij",
+                "sat",
+                "onih",
+                "odobren",
+                "staln",
+                "clanov",
+                "njihov",
+                "uz",
+                "porodic",
+                "mogucn",
+                "ulask",
+                "postoj",
+                "ak",
+                "pitanj",
+                "humanitarn",
+                "dovoljn",
+                "ubedljiv",
+                "razlog",
+                "prethodn",
+                "pribavljanj",
+                "dozvol",
+                "stran",
+                "nadlezn",
+                "organ",
+                "nij",
+                "dozvolen",
+                "ulazak",
+                "austrij",
+                "posebn",
+                "slucaj",
+                "to",
+                "za",
+                "putuj",
+                "iz",
+                "poslovn",
+                "jedn",
+                "pratnj",
+                "osob",
+                "dolaz",
+                "svrh",
+                "medicinsk",
+                "lecenj",
+                "rad",
+                "pocetk",
+                "nastavk",
+                "studij",
+                "odnosn",
+                "cilj",
+                "naucn",
+                "istrazivanj",
+                "ucesc",
+                "skolsk",
+                "aktivnost",
+                "prisustvovanj",
+                "sudsk",
+                "administrativn",
+                "postupc",
+                "pred",
+                "austrijsk",
+                "osoblj",
+                "predstavnistav",
+                "zaposlen",
+                "medunarodn",
+                "organizacij",
+                "sa",
+                "njima",
+                "ziv",
+                "zajednick",
+                "domacinstv",
+                "zbog",
+                "planiran",
+                "vazn",
+                "dogadaj",
+                "krug",
+                "vencanj",
+                "krstenj",
+                "rodendan",
+                "neperiodicn",
+                "poset",
+                "zivotn",
+                "partner",
+                "sve",
+                "naveden",
+                "kategorij",
+                "prilik",
+                "moraj",
+                "bocvan",
+                "regulisan",
+                "boravk",
+                "obaveza",
+                "14-dnevn",
+                "karantin",
+                "svim",
+                "ukljucuj",
+                "do",
+                "daljn",
+                "zabranen",
+                "bez",
+                "ogranicenj",
+                "alban",
+                "tranzitir",
+                "nem",
+                "uslov",
+                "12",
+                "bih",
+                "septembr",
+                "potreba",
+                "brazi",
+                "vazdusn",
+                "pute",
+                "strani",
+                "kopnen",
+                "voden",
+                "putev",
+                "bugarsk",
+                "clanic",
+                "e",
+                "sengensk",
+                "sporazum",
+                "san",
+                "marin",
+                "andor",
+                "monak",
+                "vatika",
+                "v",
+                "britanij",
+                "severn",
+                "irsk",
+                "australij",
+                "kanad",
+                "gruzij",
+                "japan",
+                "nov",
+                "zeland",
+                "ruand",
+                "republik",
+                "korej",
+                "tajland",
+                "tunis",
+                "urugvaj",
+                "ujedinen",
+                "arapsk",
+                "emirat",
+                "belorusij",
+                "tursk",
+                "navedan",
+                "na",
+                "jamajk",
+                "pre",
+                "putovanj",
+                "neophodn",
+                "prijavi",
+                "se",
+                "sledec",
+                "sajt",
+                "pri",
+                "obavezn",
+                "lekarsk",
+                "pregled",
+                "merenj",
+                "temperatur",
+                "3",
+                "avi",
+                "let",
+                "dan",
+                "vaz",
+                "teritorij",
+                "kipr",
+                "ukolik",
+                "poseduj",
+                "odreden",
+                "urad",
+                "po",
+                "dolask",
+                "kipar",
+                "o",
+                "sopstven",
+                "trosk",
+                "kiparsk",
+                "supruznic",
+                "drugi",
+                "zemalj",
+                "maloletn",
+                "dec",
+                "specijaln",
+                "vlad",
+                "kojoj",
+                "moguc",
+                "testiranj",
+                "koron",
+                "virus",
+                "kot",
+                "d",
+                "ivoar",
+                "pet",
+                "ulazi",
+                "tanzan",
+                "drazav",
+                "polask",
+                "avio-kompanij",
+                "doputova",
+                "traz",
+                "putnic",
+                "pokaz",
+                "rezulta",
+                "dzibut",
+                "5",
+                "48",
+                "sent",
+                "vinsent",
+                "grenadin",
+                "obavez",
+                "put",
+                "popun",
+                "podnes",
+                "formular",
+                "moz",
+                "nac",
+                "antitel",
+                "ic",
+                "14",
+                "angol",
+                "viz",
+                "smesta",
+                "drzavn",
+                "trajanj",
+                "zambij",
+                "prostor",
+                "odredi",
+                "island",
+                "izabra",
+                "li",
+                "ce",
+                "dva",
+                "prv",
+                "naredn",
+                "tok",
+                "koji",
+                "bit",
+                "13",
+                "apri",
+                "potrebn",
+                "ulaz",
+                "r",
+                "15",
+                "kub",
+                "pocev",
+                "novembr",
+                "podvrgava",
+                "nakon",
+                "ceg",
+                "sled",
+                "adres",
+                "predviden",
+                "dobijanj",
+                "rezultat",
+                "25",
+                "100",
+                "sva",
+                "kroz",
+                "samoizolacij",
+                "leton",
+                "dozvoljav",
+                "boravi",
+                "pogoden",
+                "zarazn",
+                "bolesc",
+                "covid-19",
+                "broj",
+                "obolel",
+                "vec",
+                "000",
+                "stanovnik"
+              ],
+              "intents": [
+                "CLOSED_BORDER",
+                "OPEN_BORDER",
+                "NEGATIVE_TEST_REQUIRED",
+                "QUARANTINE_REQUIRED"
+              ],
+              "perceptrons": [
+                [
+                  0.2825111448764801,
+                  0.2825111448764801,
+                  1.7426575422286987,
+                  -0.7078438997268677,
+                  -0.7191852331161499,
+                  -0.6577191352844238,
+                  0.6185337901115417,
+                  2.2278499603271484,
+                  2.306513786315918,
+                  1.8016867637634277,
+                  2.306513786315918,
+                  2.1763625144958496,
+                  2.306513786315918,
+                  0.031565167009830475,
+                  0.11540935188531876,
+                  1.3468323945999146,
+                  2.9662270545959473,
+                  2.0249428749084473,
+                  -0.3466479182243347,
+                  1.189288854598999,
+                  0.8485894799232483,
+                  1.2590423822402954,
+                  -1.3963555097579956,
+                  1.3468323945999146,
+                  -1.9510612487792969,
+                  1.3468323945999146,
+                  -0.16134312748908997,
+                  0.8224062323570251,
+                  1.3468323945999146,
+                  1.3734915256500244,
+                  1.3468323945999146,
+                  1.3468323945999146,
+                  0.5298083424568176,
+                  1.1344026327133179,
+                  -2.0163073539733887,
+                  -1.3952049016952515,
+                  -2.0163073539733887,
+                  -0.5245838165283203,
+                  -0.03818872943520546,
+                  0.42531880736351013,
+                  0.42531880736351013,
+                  0.42531880736351013,
+                  0.4614648222923279,
+                  -0.09958324581384659,
+                  -0.13082988560199738,
+                  0.4614648222923279,
+                  0.42531880736351013,
+                  -0.5040199756622314,
+                  0.010919899679720402,
+                  -0.3917054235935211,
+                  0.42531880736351013,
+                  0.4614648222923279,
+                  0.42531880736351013,
+                  0.42531880736351013,
+                  0.4614648222923279,
+                  -0.8080837726593018,
+                  0.42531880736351013,
+                  -0.09958324581384659,
+                  -0.3169446587562561,
+                  0.4614648222923279,
+                  0.4614648222923279,
+                  -1.3128421306610107,
+                  0.02908559888601303,
+                  0.7726434469223022,
+                  0.02908559888601303,
+                  -0.7707359194755554,
+                  0.02908559888601303,
+                  0.02908559888601303,
+                  -1.4270284175872803,
+                  0.02908559888601303,
+                  -2.6718342304229736,
+                  0.02908559888601303,
+                  0.02908559888601303,
+                  0.02908559888601303,
+                  0.02908559888601303,
+                  -1.7292201519012451,
+                  0.02908559888601303,
+                  0.02908559888601303,
+                  0.02908559888601303,
+                  0.02908559888601303,
+                  0.02908559888601303,
+                  0.02908559888601303,
+                  0.02908559888601303,
+                  0.02908559888601303,
+                  0.02908559888601303,
+                  0.02908559888601303,
+                  0.02908559888601303,
+                  0.02908559888601303,
+                  0.02908559888601303,
+                  0.02908559888601303,
+                  0.02908559888601303,
+                  0.02908559888601303,
+                  0.02908559888601303,
+                  0.02908559888601303,
+                  0.02908559888601303,
+                  0.02908559888601303,
+                  0.02908559888601303,
+                  0.02908559888601303,
+                  0.02908559888601303,
+                  0.02908559888601303,
+                  0.02908559888601303,
+                  1.2426224946975708,
+                  0.02908559888601303,
+                  0.02908559888601303,
+                  0.02908559888601303,
+                  0.02908559888601303,
+                  0.02908559888601303,
+                  0.02908559888601303,
+                  0.02908559888601303,
+                  0.02908559888601303,
+                  0.02908559888601303,
+                  0.02908559888601303,
+                  0.02908559888601303,
+                  0.02908559888601303,
+                  0.02908559888601303,
+                  0.02908559888601303,
+                  0.02908559888601303,
+                  0.02908559888601303,
+                  0.02908559888601303,
+                  -0.4573092758655548,
+                  -0.49581626057624817,
+                  -0.1056213453412056,
+                  -0.04066808521747589,
+                  1.1726194620132446,
+                  1.1726194620132446,
+                  1.1726194620132446,
+                  0.6943512558937073,
+                  1.1726194620132446,
+                  0.6245973706245422,
+                  1.641329050064087,
+                  0.8243038058280945,
+                  1.641329050064087,
+                  1.641329050064087,
+                  1.641329050064087,
+                  -2.394589900970459,
+                  -1.0711742639541626,
+                  -0.3999107778072357,
+                  -2.0207736492156982,
+                  -0.3999107778072357,
+                  -0.790130078792572,
+                  -0.47130805253982544,
+                  -0.47130805253982544,
+                  -0.47130805253982544,
+                  -0.47130805253982544,
+                  -1.0986653566360474,
+                  -1.0986653566360474,
+                  -1.0986653566360474,
+                  -1.0986653566360474,
+                  -1.0986653566360474,
+                  -1.0986653566360474,
+                  -1.0986653566360474,
+                  -0.40851232409477234,
+                  -0.40851232409477234,
+                  -0.40851232409477234,
+                  -0.40851232409477234,
+                  -0.40851232409477234,
+                  -0.40851232409477234,
+                  -0.40851232409477234,
+                  -0.40851232409477234,
+                  -0.40851232409477234,
+                  -0.40851232409477234,
+                  -0.40851232409477234,
+                  -0.40851232409477234,
+                  -0.40851232409477234,
+                  -0.40851232409477234,
+                  -0.40851232409477234,
+                  -0.40851232409477234,
+                  -0.40851232409477234,
+                  -0.40851232409477234,
+                  -0.40851232409477234,
+                  -0.40851232409477234,
+                  -0.40851232409477234,
+                  -0.40851232409477234,
+                  -0.8717513680458069,
+                  -0.40851232409477234,
+                  -0.40851232409477234,
+                  -0.40851232409477234,
+                  -0.40851232409477234,
+                  -0.40851232409477234,
+                  -0.40851232409477234,
+                  -0.40851232409477234,
+                  -0.819968044757843,
+                  -0.40851232409477234,
+                  -1.2750213146209717,
+                  -0.24942736327648163,
+                  -0.32760244607925415,
+                  -0.4148320257663727,
+                  -0.24942736327648163,
+                  -0.24942736327648163,
+                  -1.2750213146209717,
+                  -0.24942736327648163,
+                  -0.24942736327648163,
+                  -0.20719954371452332,
+                  -0.4528854489326477,
+                  -0.20719954371452332,
+                  -0.20719954371452332,
+                  -0.20719954371452332,
+                  -0.20719954371452332,
+                  -0.42332255840301514,
+                  -0.42332255840301514,
+                  -0.42332255840301514,
+                  -1.4017257690429688,
+                  -0.42332255840301514,
+                  -0.2624511420726776,
+                  -0.2624511420726776,
+                  -0.5495757460594177,
+                  -0.2624511420726776,
+                  -0.2624511420726776,
+                  -0.2624511420726776,
+                  -0.8129150867462158,
+                  -0.2624511420726776,
+                  -0.2624511420726776,
+                  -0.2624511420726776,
+                  -0.2624511420726776,
+                  -0.2624511420726776,
+                  -0.2624511420726776,
+                  -0.2624511420726776,
+                  -0.2624511420726776,
+                  -0.2624511420726776,
+                  -0.2624511420726776,
+                  -0.2624511420726776,
+                  -0.2624511420726776,
+                  -0.2624511420726776,
+                  -0.2624511420726776,
+                  -0.2624511420726776,
+                  -0.2624511420726776,
+                  -0.2624511420726776,
+                  -0.2624511420726776,
+                  0,
+                  0,
+                  0,
+                  0,
+                  -0.0902862399816513,
+                  -0.0902862399816513,
+                  -0.0902862399816513,
+                  -0.0902862399816513,
+                  -0.0902862399816513,
+                  -0.0902862399816513,
+                  -0.0902862399816513,
+                  -0.14737357199192047,
+                  -0.0902862399816513,
+                  -0.0902862399816513,
+                  0,
+                  -0.03487691283226013,
+                  -0.03487691283226013,
+                  -0.03487691283226013,
+                  -0.03487691283226013,
+                  -0.03487691283226013,
+                  -0.4032110273838043,
+                  -0.03487691283226013,
+                  -0.03487691283226013,
+                  -0.03487691283226013,
+                  -0.03487691283226013,
+                  -0.03487691283226013,
+                  -0.03487691283226013,
+                  -0.03487691283226013,
+                  -0.03487691283226013,
+                  -0.8101778030395508,
+                  0,
+                  -0.15685482323169708,
+                  0,
+                  0,
+                  -0.5123972296714783,
+                  -0.11554303765296936,
+                  -0.11554303765296936,
+                  -0.11554303765296936,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  -0.15685482323169708,
+                  -0.15685482323169708,
+                  -0.15685482323169708,
+                  -0.15685482323169708,
+                  -0.15685482323169708,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  -0.32028985023498535,
+                  -0.32028985023498535,
+                  -0.32028985023498535,
+                  -0.32028985023498535,
+                  -0.32028985023498535,
+                  -0.32028985023498535,
+                  -0.32028985023498535,
+                  -0.32028985023498535,
+                  -0.32028985023498535,
+                  -0.32028985023498535,
+                  -0.32028985023498535,
+                  -0.32028985023498535,
+                  -0.32028985023498535,
+                  -0.32028985023498535,
+                  -0.32028985023498535,
+                  -0.32028985023498535,
+                  -0.32028985023498535,
+                  0.14250862257871105
+                ],
+                [
+                  0.5594291687011719,
+                  0.5594291687011719,
+                  -2.0870323181152344,
+                  1.0192514657974243,
+                  -0.9133669137954712,
+                  -0.05195308104157448,
+                  -1.1891809701919556,
+                  -0.8050839900970459,
+                  -0.4252254068851471,
+                  0.39500775933265686,
+                  -0.4252254068851471,
+                  -1.1505593061447144,
+                  -0.4252254068851471,
+                  -0.4508805572986603,
+                  1.9001569747924805,
+                  0,
+                  -0.248575359582901,
+                  -1.1976666450500488,
+                  -1.6283906698226929,
+                  -0.5061820149421692,
+                  -0.5061820149421692,
+                  -0.9331200122833252,
+                  1.9866039752960205,
+                  0,
+                  -2.1951780319213867,
+                  0,
+                  -0.7669766545295715,
+                  -0.41447651386260986,
+                  0,
+                  0,
+                  0,
+                  0,
+                  -1.835168480873108,
+                  0.6772560477256775,
+                  -2.1116905212402344,
+                  0.39235395193099976,
+                  -2.144151210784912,
+                  -3.4001405239105225,
+                  -0.4508805572986603,
+                  0,
+                  0,
+                  0,
+                  0,
+                  -0.5061820149421692,
+                  -1.253401756286621,
+                  0,
+                  0,
+                  0.5421812534332275,
+                  1.3711345195770264,
+                  0.5614833831787109,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0.5614833831787109,
+                  0,
+                  -0.5061820149421692,
+                  -1.2785255908966064,
+                  0,
+                  0,
+                  -0.4508805572986603,
+                  0,
+                  -1.1766302585601807,
+                  0,
+                  0.7654749751091003,
+                  0,
+                  0,
+                  -3.2086880207061768,
+                  0,
+                  1.4178718328475952,
+                  0,
+                  0,
+                  0,
+                  0,
+                  -0.48334142565727234,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  -0.248575359582901,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  -1.253401756286621,
+                  -0.5061820149421692,
+                  -0.41447651386260986,
+                  0,
+                  -0.248575359582901,
+                  -0.5588632822036743,
+                  -0.248575359582901,
+                  -0.5414853096008301,
+                  -0.248575359582901,
+                  -0.9267356395721436,
+                  -0.2908116579055786,
+                  0.10166183114051819,
+                  -0.2908116579055786,
+                  -0.2908116579055786,
+                  -0.2908116579055786,
+                  4.534384250640869,
+                  2.634227991104126,
+                  0.7654749751091003,
+                  2.634227991104126,
+                  0.7654749751091003,
+                  -0.06347827613353729,
+                  1.8687525987625122,
+                  1.8687525987625122,
+                  1.8687525987625122,
+                  1.8687525987625122,
+                  2.2449164390563965,
+                  2.2449164390563965,
+                  2.2449164390563965,
+                  2.2449164390563965,
+                  2.2449164390563965,
+                  2.2449164390563965,
+                  2.2449164390563965,
+                  0.5614833831787109,
+                  0.5614833831787109,
+                  0.5614833831787109,
+                  0.5614833831787109,
+                  0.5614833831787109,
+                  0.5614833831787109,
+                  0.5614833831787109,
+                  0.5614833831787109,
+                  0.5614833831787109,
+                  0.5614833831787109,
+                  0.5614833831787109,
+                  0.5614833831787109,
+                  0.5614833831787109,
+                  0.5614833831787109,
+                  0.5614833831787109,
+                  0.5614833831787109,
+                  0.5614833831787109,
+                  0.5614833831787109,
+                  0.5614833831787109,
+                  0.5614833831787109,
+                  0.5614833831787109,
+                  0.5614833831787109,
+                  0.5614833831787109,
+                  0.5614833831787109,
+                  0.5614833831787109,
+                  0.5614833831787109,
+                  0.5614833831787109,
+                  0.5614833831787109,
+                  0.5614833831787109,
+                  0.5614833831787109,
+                  1.9326180219650269,
+                  0.5614833831787109,
+                  0.35609063506126404,
+                  1.748609185218811,
+                  1.748609185218811,
+                  0.9196565747261047,
+                  1.748609185218811,
+                  1.748609185218811,
+                  0.3885514736175537,
+                  1.748609185218811,
+                  1.748609185218811,
+                  1.3711345195770264,
+                  0.19448721408843994,
+                  1.3711345195770264,
+                  1.3711345195770264,
+                  1.3711345195770264,
+                  1.3711345195770264,
+                  -1.253401756286621,
+                  -1.253401756286621,
+                  -1.253401756286621,
+                  -3.4831275939941406,
+                  -1.253401756286621,
+                  -0.9331200122833252,
+                  -0.5061820149421692,
+                  -1.6813803911209106,
+                  -0.9331200122833252,
+                  -0.5061820149421692,
+                  -0.775503396987915,
+                  -1.1628193855285645,
+                  -1.1628193855285645,
+                  -0.5061820149421692,
+                  -0.5061820149421692,
+                  -0.5061820149421692,
+                  -0.5061820149421692,
+                  -0.5061820149421692,
+                  -0.5061820149421692,
+                  -0.5061820149421692,
+                  -0.5061820149421692,
+                  -0.5061820149421692,
+                  -0.5061820149421692,
+                  -0.5061820149421692,
+                  -0.5061820149421692,
+                  -0.5061820149421692,
+                  -0.5061820149421692,
+                  -0.775503396987915,
+                  -0.5061820149421692,
+                  -0.5061820149421692,
+                  -0.661514163017273,
+                  -0.661514163017273,
+                  -0.661514163017273,
+                  -0.9840713143348694,
+                  -0.41447651386260986,
+                  -0.41447651386260986,
+                  -0.41447651386260986,
+                  -0.41447651386260986,
+                  -0.41447651386260986,
+                  -0.41447651386260986,
+                  -0.41447651386260986,
+                  -0.6379451751708984,
+                  -0.41447651386260986,
+                  -0.41447651386260986,
+                  -0.7519329786300659,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  -0.5780749917030334,
+                  -0.1738469898700714,
+                  -0.1738469898700714,
+                  -0.1738469898700714,
+                  -0.1738469898700714,
+                  -0.4598992168903351,
+                  -0.1854351907968521,
+                  -0.1854351907968521,
+                  -0.1854351907968521,
+                  -0.016230395063757896,
+                  -0.016230395063757896,
+                  -0.016230395063757896,
+                  -0.016230395063757896,
+                  -0.016230395063757896,
+                  -0.016230395063757896,
+                  -0.016230395063757896,
+                  -0.016230395063757896,
+                  -0.016230395063757896,
+                  -0.016230395063757896,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0.27971464224515186
+                ],
+                [
+                  -0.6631273627281189,
+                  -0.6631273627281189,
+                  0.2825736999511719,
+                  -0.27382850646972656,
+                  1.099161982536316,
+                  1.1891955137252808,
+                  -0.03731725364923477,
+                  -0.7248806953430176,
+                  -0.7952049970626831,
+                  -1.652141809463501,
+                  -1.0374947786331177,
+                  -0.26030290126800537,
+                  -0.7952049970626831,
+                  -0.8188515305519104,
+                  -2.262876272201538,
+                  -0.8453384041786194,
+                  -1.3255391120910645,
+                  -0.7267338633537292,
+                  -0.5358313322067261,
+                  0.0010800963500514627,
+                  -0.5993438363075256,
+                  -1.9208664894104004,
+                  -3.222679615020752,
+                  -0.8453384041786194,
+                  -1.4288767576217651,
+                  -0.8453384041786194,
+                  -1.0462201833724976,
+                  -0.45245110988616943,
+                  -0.8453384041786194,
+                  -1.1481189727783203,
+                  -0.8453384041786194,
+                  -0.8453384041786194,
+                  2.2544167041778564,
+                  0.005159884225577116,
+                  3.9931230545043945,
+                  1.8293964862823486,
+                  3.0532264709472656,
+                  1.742875576019287,
+                  -0.09103736281394958,
+                  -0.06392111629247665,
+                  -0.06392111629247665,
+                  -0.06392111629247665,
+                  -0.2825984060764313,
+                  0.6189952492713928,
+                  1.6799834966659546,
+                  -0.2825984060764313,
+                  -0.06392111629247665,
+                  0.25522753596305847,
+                  -0.3669174909591675,
+                  -0.20540961623191833,
+                  -0.06392111629247665,
+                  -0.2825984060764313,
+                  -0.06392111629247665,
+                  -0.06392111629247665,
+                  -0.2825984060764313,
+                  -0.20540961623191833,
+                  -0.06392111629247665,
+                  0.6189952492713928,
+                  0.3458905518054962,
+                  -0.2825984060764313,
+                  -0.2825984060764313,
+                  0.29257500171661377,
+                  -0.1742677092552185,
+                  0.3570878505706787,
+                  -0.1742677092552185,
+                  -0.20945005118846893,
+                  -0.1742677092552185,
+                  -0.1742677092552185,
+                  1.73591148853302,
+                  -0.1742677092552185,
+                  -0.9050948023796082,
+                  -0.1742677092552185,
+                  -0.1742677092552185,
+                  -0.1742677092552185,
+                  -0.1742677092552185,
+                  -0.456434965133667,
+                  -0.1742677092552185,
+                  -0.1742677092552185,
+                  -0.1742677092552185,
+                  -0.1742677092552185,
+                  -0.1742677092552185,
+                  -0.1742677092552185,
+                  -0.1742677092552185,
+                  -0.1742677092552185,
+                  -0.1742677092552185,
+                  -0.1742677092552185,
+                  -0.1742677092552185,
+                  -0.1742677092552185,
+                  -0.1742677092552185,
+                  -0.1742677092552185,
+                  -0.1742677092552185,
+                  -0.1742677092552185,
+                  -0.1742677092552185,
+                  -0.1742677092552185,
+                  -0.1742677092552185,
+                  -0.1742677092552185,
+                  -0.1742677092552185,
+                  -0.1742677092552185,
+                  -0.1742677092552185,
+                  -0.38411951065063477,
+                  -0.1742677092552185,
+                  -0.1742677092552185,
+                  -0.1742677092552185,
+                  -0.1742677092552185,
+                  -0.1742677092552185,
+                  -0.1742677092552185,
+                  -0.1742677092552185,
+                  -0.1742677092552185,
+                  -0.1742677092552185,
+                  -0.1742677092552185,
+                  -0.1742677092552185,
+                  -0.1742677092552185,
+                  -0.1742677092552185,
+                  -0.1742677092552185,
+                  -0.1742677092552185,
+                  -0.1742677092552185,
+                  -0.1742677092552185,
+                  -0.1742677092552185,
+                  -0.1742677092552185,
+                  0.8452577590942383,
+                  0.5120828151702881,
+                  0.6589750647544861,
+                  0.49351102113723755,
+                  0,
+                  -0.5970662832260132,
+                  -0.1421850323677063,
+                  -0.5603193640708923,
+                  0,
+                  -1.867889165878296,
+                  -0.2985168993473053,
+                  -0.23103052377700806,
+                  -0.2985168993473053,
+                  -0.08755794167518616,
+                  -0.08755794167518616,
+                  -2.392949104309082,
+                  -1.0491108894348145,
+                  -0.005164873320609331,
+                  -1.0491108894348145,
+                  -0.005164873320609331,
+                  0.8829479217529297,
+                  -1.024844765663147,
+                  -1.024844765663147,
+                  -1.024844765663147,
+                  -1.024844765663147,
+                  -0.2308240532875061,
+                  -0.2308240532875061,
+                  -0.2308240532875061,
+                  -0.2308240532875061,
+                  -0.2308240532875061,
+                  -0.2308240532875061,
+                  -0.2308240532875061,
+                  -0.10975397378206253,
+                  -0.10975397378206253,
+                  -0.10975397378206253,
+                  -0.10975397378206253,
+                  -0.10975397378206253,
+                  -0.10975397378206253,
+                  -0.10975397378206253,
+                  -0.10975397378206253,
+                  -0.10975397378206253,
+                  -0.10975397378206253,
+                  -0.10975397378206253,
+                  -0.10975397378206253,
+                  -0.10975397378206253,
+                  -0.10975397378206253,
+                  -0.10975397378206253,
+                  -0.10975397378206253,
+                  -0.10975397378206253,
+                  -0.10975397378206253,
+                  -0.10975397378206253,
+                  -0.10975397378206253,
+                  -0.10975397378206253,
+                  -0.10975397378206253,
+                  -0.10975397378206253,
+                  -0.10975397378206253,
+                  -0.10975397378206253,
+                  -0.10975397378206253,
+                  -0.10975397378206253,
+                  -0.10975397378206253,
+                  -0.10975397378206253,
+                  -0.10975397378206253,
+                  -0.43578335642814636,
+                  -0.10975397378206253,
+                  -1.0947529077529907,
+                  -0.2755579650402069,
+                  0.292894184589386,
+                  0.45835816860198975,
+                  -0.2755579650402069,
+                  -0.2755579650402069,
+                  -0.3457423746585846,
+                  -0.2755579650402069,
+                  -0.2755579650402069,
+                  -0.2661651074886322,
+                  -0.5772122740745544,
+                  -0.2661651074886322,
+                  -0.2661651074886322,
+                  -0.2661651074886322,
+                  -0.2661651074886322,
+                  0.8886711001396179,
+                  1.0795608758926392,
+                  1.0795608758926392,
+                  -0.03397628664970398,
+                  1.0795608758926392,
+                  -0.44774696230888367,
+                  0.7463855147361755,
+                  0.4455309212207794,
+                  -0.44774696230888367,
+                  0.7463855147361755,
+                  -0.0026242185849696398,
+                  -1.3876464366912842,
+                  -1.3876464366912842,
+                  0.7463855147361755,
+                  0.7463855147361755,
+                  0.7463855147361755,
+                  0.7463855147361755,
+                  0.7463855147361755,
+                  0.7463855147361755,
+                  0.7463855147361755,
+                  0.7463855147361755,
+                  0.7463855147361755,
+                  0.7463855147361755,
+                  0.7463855147361755,
+                  0.7463855147361755,
+                  0.7463855147361755,
+                  0.7463855147361755,
+                  -0.0026242185849696398,
+                  0.7463855147361755,
+                  0.7463855147361755,
+                  0.7543529868125916,
+                  0.7543529868125916,
+                  0.7543529868125916,
+                  0.005342567805200815,
+                  0.8932777643203735,
+                  0.8932777643203735,
+                  0.8932777643203735,
+                  0.8932777643203735,
+                  0.8932777643203735,
+                  0.8932777643203735,
+                  0.8932777643203735,
+                  0.6811926364898682,
+                  0.8932777643203735,
+                  0.8932777643203735,
+                  2.8309977054595947,
+                  0.7278136610984802,
+                  0.7278136610984802,
+                  0.7278136610984802,
+                  0.7278136610984802,
+                  0.7278136610984802,
+                  0.7278136610984802,
+                  0.7278136610984802,
+                  0.7278136610984802,
+                  0.7278136610984802,
+                  0.7278136610984802,
+                  0.7278136610984802,
+                  0.7278136610984802,
+                  0.7278136610984802,
+                  0.7278136610984802,
+                  -1.9673476219177246,
+                  -0.5970662832260132,
+                  -0.5970662832260132,
+                  -0.5970662832260132,
+                  -0.5970662832260132,
+                  -1.3323900699615479,
+                  -0.2875240445137024,
+                  -0.2875240445137024,
+                  -0.2875240445137024,
+                  -0.40600961446762085,
+                  -0.40600961446762085,
+                  -0.40600961446762085,
+                  -0.40600961446762085,
+                  -0.40600961446762085,
+                  -0.40600961446762085,
+                  -0.40600961446762085,
+                  -0.40600961446762085,
+                  -0.40600961446762085,
+                  -0.40600961446762085,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  -0.1421850323677063,
+                  -0.1421850323677063,
+                  -0.1421850323677063,
+                  -0.1421850323677063,
+                  -0.1421850323677063,
+                  -0.1421850323677063,
+                  -0.1421850323677063,
+                  -0.1421850323677063,
+                  -0.1421850323677063,
+                  -0.1421850323677063,
+                  -0.1421850323677063,
+                  -0.1421850323677063,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  -0.3315630673800984
+                ],
+                [
+                  -0.7171137928962708,
+                  -0.7171137928962708,
+                  -2.594971179962158,
+                  -1.352402925491333,
+                  -0.5215639472007751,
+                  -0.8731547594070435,
+                  -0.9312168955802917,
+                  -0.8887954950332642,
+                  -0.4506472945213318,
+                  -1.6003724336624146,
+                  -0.46414417028427124,
+                  -0.5672147274017334,
+                  -0.4506472945213318,
+                  -0.9178678393363953,
+                  -0.47924938797950745,
+                  -0.46271052956581116,
+                  -1.7023926973342896,
+                  -1.630307674407959,
+                  0.9950284361839294,
+                  -1.2485464811325073,
+                  -0.9178678393363953,
+                  -0.8771341443061829,
+                  -0.6792575716972351,
+                  -0.46271052956581116,
+                  1.5989304780960083,
+                  -0.46271052956581116,
+                  0.3727264702320099,
+                  -0.511324405670166,
+                  -0.46271052956581116,
+                  -0.7413560748100281,
+                  -0.46271052956581116,
+                  -0.46271052956581116,
+                  -0.46271052956581116,
+                  -0.23777207732200623,
+                  -1.3541204929351807,
+                  -1.0422910451889038,
+                  -0.5961195230484009,
+                  -1.0378080606460571,
+                  -1.0378080606460571,
+                  -0.11669447273015976,
+                  -0.11669447273015976,
+                  -0.11669447273015976,
+                  -0.19293616712093353,
+                  -0.18283484876155853,
+                  -0.1773301512002945,
+                  -0.19293616712093353,
+                  -0.11669447273015976,
+                  0.23949886858463287,
+                  -0.11669447273015976,
+                  -0.11669447273015976,
+                  -0.11669447273015976,
+                  -0.19293616712093353,
+                  -0.11669447273015976,
+                  -0.11669447273015976,
+                  -0.19293616712093353,
+                  0.33407947421073914,
+                  -0.11669447273015976,
+                  -0.18283484876155853,
+                  -0.38357263803482056,
+                  -0.19293616712093353,
+                  -0.19293616712093353,
+                  -0.10812443494796753,
+                  -0.04729030281305313,
+                  0.01813739910721779,
+                  -0.04729030281305313,
+                  -0.3216296136379242,
+                  -0.04729030281305313,
+                  -0.04729030281305313,
+                  0.8199877738952637,
+                  -0.04729030281305313,
+                  0.01802472025156021,
+                  -0.04729030281305313,
+                  -0.04729030281305313,
+                  -0.04729030281305313,
+                  -0.04729030281305313,
+                  0.7858899831771851,
+                  -0.04729030281305313,
+                  -0.04729030281305313,
+                  -0.04729030281305313,
+                  -0.04729030281305313,
+                  -0.04729030281305313,
+                  -0.04729030281305313,
+                  -0.04729030281305313,
+                  -0.04729030281305313,
+                  -0.04729030281305313,
+                  -0.04729030281305313,
+                  -0.04729030281305313,
+                  -0.04729030281305313,
+                  -0.04729030281305313,
+                  -0.04729030281305313,
+                  -0.04729030281305313,
+                  -0.04729030281305313,
+                  -0.04729030281305313,
+                  -0.04729030281305313,
+                  -0.04729030281305313,
+                  -0.04729030281305313,
+                  -0.04729030281305313,
+                  -0.04729030281305313,
+                  -0.04729030281305313,
+                  0.3425697386264801,
+                  -0.04729030281305313,
+                  -0.6102501153945923,
+                  -0.04729030281305313,
+                  -0.04729030281305313,
+                  -0.04729030281305313,
+                  -0.04729030281305313,
+                  -0.04729030281305313,
+                  -0.04729030281305313,
+                  -0.04729030281305313,
+                  -0.04729030281305313,
+                  -0.04729030281305313,
+                  -0.04729030281305313,
+                  -0.04729030281305313,
+                  -0.04729030281305313,
+                  -0.04729030281305313,
+                  -0.04729030281305313,
+                  -0.04729030281305313,
+                  -0.04729030281305313,
+                  -0.04729030281305313,
+                  -0.04729030281305313,
+                  -0.10812443494796753,
+                  -0.04729030281305313,
+                  -0.10261973738670349,
+                  -0.504544198513031,
+                  -0.47816362977027893,
+                  -0.4328562319278717,
+                  1.4824442863464355,
+                  -0.504544198513031,
+                  2.2570910453796387,
+                  0.11556964367628098,
+                  -0.16079039871692657,
+                  0.11556964367628098,
+                  -0.16079039871692657,
+                  -0.16079039871692657,
+                  -0.3218095302581787,
+                  -0.5047460198402405,
+                  -0.24151073396205902,
+                  -0.2593044936656952,
+                  -0.24151073396205902,
+                  -0.24151073396205902,
+                  -0.16084671020507812,
+                  -0.16084671020507812,
+                  -0.16084671020507812,
+                  -0.16084671020507812,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0.5427749156951904,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1.4230471849441528,
+                  -0.12433619052171707,
+                  -0.2053760141134262,
+                  -0.12433619052171707,
+                  -0.12433619052171707,
+                  -0.12433619052171707,
+                  0.9768761992454529,
+                  -0.12433619052171707,
+                  -0.12433619052171707,
+                  0,
+                  0.39184293150901794,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0.43715032935142517,
+                  0,
+                  0,
+                  3.6357758045196533,
+                  0,
+                  0.3174649775028229,
+                  -0.03718898072838783,
+                  0.3174649775028229,
+                  0.3174649775028229,
+                  -0.03718898072838783,
+                  0.371793657541275,
+                  1.7094628810882568,
+                  1.200786828994751,
+                  -0.03718898072838783,
+                  -0.03718898072838783,
+                  -0.03718898072838783,
+                  -0.03718898072838783,
+                  -0.03718898072838783,
+                  -0.03718898072838783,
+                  -0.03718898072838783,
+                  -0.03718898072838783,
+                  -0.03718898072838783,
+                  -0.03718898072838783,
+                  -0.03718898072838783,
+                  -0.03718898072838783,
+                  -0.03718898072838783,
+                  -0.03718898072838783,
+                  0.371793657541275,
+                  -0.03718898072838783,
+                  -0.03718898072838783,
+                  0,
+                  0,
+                  0,
+                  0.44617173075675964,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0.8199533820152283,
+                  0,
+                  0,
+                  0,
+                  -0.031684283167123795,
+                  -0.031684283167123795,
+                  -0.031684283167123795,
+                  -0.031684283167123795,
+                  -0.031684283167123795,
+                  0.445308119058609,
+                  -0.031684283167123795,
+                  -0.031684283167123795,
+                  -0.031684283167123795,
+                  -0.031684283167123795,
+                  -0.031684283167123795,
+                  -0.031684283167123795,
+                  -0.031684283167123795,
+                  -0.031684283167123795,
+                  3.261991262435913,
+                  0.39184293150901794,
+                  0.9346177577972412,
+                  0.39184293150901794,
+                  0.39184293150901794,
+                  2.2730464935302734,
+                  1.3725250959396362,
+                  1.3725250959396362,
+                  1.3725250959396362,
+                  0.44617173075675964,
+                  0.44617173075675964,
+                  0.44617173075675964,
+                  0.44617173075675964,
+                  0.44617173075675964,
+                  0.44617173075675964,
+                  0.44617173075675964,
+                  0.44617173075675964,
+                  0.44617173075675964,
+                  0.44617173075675964,
+                  0.5427749156951904,
+                  0.5427749156951904,
+                  0.5427749156951904,
+                  0.5427749156951904,
+                  0.5427749156951904,
+                  0.43715032935142517,
+                  0.43715032935142517,
+                  0.43715032935142517,
+                  0.43715032935142517,
+                  0.43715032935142517,
+                  0.43715032935142517,
+                  0.43715032935142517,
+                  0.43715032935142517,
+                  0.43715032935142517,
+                  0.43715032935142517,
+                  0.43715032935142517,
+                  0.43715032935142517,
+                  0.5086771249771118,
+                  0.5086771249771118,
+                  0.5086771249771118,
+                  0.5086771249771118,
+                  0.5086771249771118,
+                  0.5086771249771118,
+                  0.5086771249771118,
+                  0.5086771249771118,
+                  0.5086771249771118,
+                  0.5086771249771118,
+                  0.5086771249771118,
+                  0.5086771249771118,
+                  0.5086771249771118,
+                  0.5086771249771118,
+                  0.5086771249771118,
+                  0.5086771249771118,
+                  0.5086771249771118,
+                  -0.35855695659758174
+                ]
+              ]
+            }
+          }
+        }
+      }
+    },
+    "intentDomains": {},
+    "extraSentences": [
+      [
+        "sr",
+        "Drzavljani Srbije ne mogu da udu u zemlju. Granice i aerodromi su zatvoreni."
+      ],
+      [
+        "sr",
+        "Drzavljani Srbije ne mogu uci u Argentinu osim lica koja imaju regulisan boravak u Argentini ili nekoj od pogranicnih drzava, kao i nosioci diplomatskih i sluzbenih pasosa.,Neophodan je negativan PCR test, ne stariji od 72 sata."
+      ],
+      [
+        "sr",
+        "Drzavljani Srbije ne mogu da udu u zemlju, osim onih lica koja imaju odobren stalni boravak i clanova njihove uze porodice. Mogucnost ulaska postoji ako su u pitanju humanitarni ili dovoljno ubedljivi razlozi, uz prethodno pribavljanje dozvole od strane nadleznih organa."
+      ],
+      [
+        "sr",
+        "Drzavljanima Srbije nije dozvoljen ulazak u Austriju osim licima koja imaju regulisan boravak, kao i u posebnim slucajevima, i to za lica koja u Austriju putuju: iz poslovnih razloga; jednom licu u pratnji osobe koja u Austriju dolazi u svrhu medicinskog lecenja; radi pocetka ili nastavka studija, odnosno u cilju naucnog istrazivanja; radi ucesca u skolskim aktivnostima; radi prisustvovanja sudskim ili administrativnim postupcima pred austrijskim nadleznim organima; clanovima osoblja diplomatskih predstavnistava, zaposlenima u medunarodnim organizacijama i licima koja sa njima zive u zajednickom domacinstvu; humanitarno osoblje; zbog planiranih vaznih dogadaja u krugu porodice (vencanja, krstenja, rodendani, neperiodicne posete zivotnom partneru).,Sve navedene kategorije lica prilikom ulaska u Austriju moraju da imaju negativan PCR test, ne stariji od 72 sata."
+      ],
+      [
+        "sr",
+        "Drzavljani Srbije ne mogu da udu u Bocvanu osim lica sa regulisanim boravkom. Obavezan je 14-dnevni karantin."
+      ],
+      [
+        "sr",
+        "Svim stranim drzavljanima, ukljucujuci i drzavljane Srbije, do daljnjeg je zabranjen ulazak u zemlju."
+      ],
+      [
+        "sr",
+        "Drzavljani Srbije mogu bez ogranicenja da udu u Albaniju ili tranzitiraju. Nema posebnih uslova."
+      ],
+      [
+        "sr",
+        "Drzavljani Srbije mogu bez ogranicenja iz Srbije da udu u BiH ili da tranzitiraju.,Od 12.septembra stranim drzavljanima je potreban negativan PCR test."
+      ],
+      [
+        "sr",
+        "Drzavljani Srbije mogu da udu u Brazil vazdusnim putem.,Strani drzavljani ne mogu da udu u Brazil kopnenim i vodenim putevima."
+      ],
+      [
+        "sr",
+        "Drzavljani Srbije mogu uci u Bugarsku bez negativnog PCR testa ako dolaze iz Srbije ili drzava clanica EU ili Sengenskog sporazuma (ukljucujuci San Marino, Andoru, Monako i Vatikan), V.Britanije, Severne Irske, Australije, Kanade, Gruzije, Japana, Novog Zelanda, Ruande, Republike Koreje, Tajlanda, Tunisa, Urugvaja, Ujedinjenih Arapskih Emirata, Belorusije i Turske. Ako drzavljanin Srbije dolazi iz zemlje koja nije prethodno navedana, neophodan je negativan PCR test, ne stariji od 72 sata."
+      ],
+      [
+        "sr",
+        "Drzavljani Srbije mogu da udu na Jamajku. Pre putovanja, neophodno je prijaviti se na sledecem sajtu: "
+      ],
+      [
+        "sr",
+        "Drzavljani Srbije mogu uci u Tursku bez negativnog PCR testa. Pri ulasku u zemlju postoji obavezni lekarski pregled i merenje temperature."
+      ],
+      [
+        "sr",
+        "Drzavljani Srbije mogu da udu u zemlju avio letom uz negativan test, ne stariji od 3 dana. Navedeno vazi i za strane drzavljane."
+      ],
+      [
+        "sr",
+        "Drzavljani Srbije mogu da udu na teritoriju Kipra ukoliko poseduju negativan PCR test, ne stariji od 72 sata. Odredene kategorije lica test mogu da urade po dolasku na Kipar (o sopstvenom trosku): kiparski drzavljani, njihovi supruznici iz drugih zemalja i njihova maloletna deca; lica koja imaju regulisan boravak na Kipru; lica koja imaju specijalnu dozvolu za ulazak od strane Vlade Kipara; lica koja dolaze iz drzave u kojoj nije moguce da se uradi testiranje na korona virus."
+      ],
+      [
+        "sr",
+        "Drzavljani Srbije mogu da udu u Kot D'Ivoar. Neophodan je negativan PCR test, ne stariji od pet dana."
+      ],
+      [
+        "sr",
+        "Drzavljani Srbije mogu ulaziti u Tanzaniju. Ukoliko drazava polaska ili avio-kompanija kojom su doputovali traze negativan test kao uslov za putovanje, putnici su obavezni da pokazu rezultate testa prilikom ulaska u Tanzaniju"
+      ],
+      [
+        "sr",
+        "Drzavljani Srbije mogu da udu u Dzibuti. Neophodan je negativan PCR test."
+      ],
+      [
+        "sr",
+        "Drzavljani Srbije mogu da udu u Sent Vinsent i Grenadine uz obavezu da pre puta popune i podnesu formular koji se moze naci na ,. Putnici koji imaju negativan PCR test, ne stariji od 48 sati ili negativan test na antitela, ne stariji od 5 dana, ne moraju ici u karantin"
+      ],
+      [
+        "sr",
+        "Drzavljani Srbije mogu da udu na teritoriju Angole ukoliko poseduju vizu ili regulisani boravak. Po dolasku, smestaju se u obavezni drzavni karantin u trajanju od 14 dana."
+      ],
+      [
+        "sr",
+        "Drzavljani Srbije mogu da udu u Zambiju. Obavezan je karantin u trajanju od 14 dana u prostorima koje je odredila drzava."
+      ],
+      [
+        "sr",
+        "Drzavljani Srbije mogu uci na Island.,Putnici koji dolaze na Island mogu izabrati da li ce da urade dva testa, prvi po dolasku i naredni za pet dana tokom kojih ce biti u karantinu ili ce bez testiranja biti u karantinu 14 dana po dolasku."
+      ],
+      [
+        "sr",
+        "Drzavljanima Srbije je od 13. aprila potrebna viza za ulaz u R. Koreju. Obavezan je karantin od 14 dana."
+      ],
+      [
+        "sr",
+        "Drzavljani Srbije mogu da udu na Kubu pocev od 15.novembra.,Po dolasku na Kubu, na svim medunarodnim aerodromima, putnici se podvrgavaju PCR testu, nakon cega sledi obavezan karantin na adresi predvidenog boravka, do dobijanja rezultata testa (do 3 dana)."
+      ],
+      [
+        "sr",
+        "Drzavljani Srbije, kao i sva lica koja dolaze iz Srbije ili tranzitiraju kroz Srbiju, u obavezi su na samoizolaciju u trajanju od 14 dana po ulasku u Letoniju. Ne dozvoljava se ulazak stranim drzavljanima koji su prethodnih 14 dana boravili ili tranzitirali u zemljama pogodenim zaraznom bolescu COVID-19, u kojima je broj obolelih 25, ili veci, na 100.000 stanovnika."
+      ]
+    ]
+  },
+  "ner": {
+    "settings": {
+      "tag": "ner",
+      "entityPreffix": "%",
+      "entitySuffix": "%"
+    },
+    "rules": {}
+  },
+  "nlgManager": {
+    "settings": {
+      "tag": "nlg-manager"
+    },
+    "responses": {}
+  },
+  "actionManager": {
+    "settings": {
+      "tag": "action-manager"
+    },
+    "actions": {}
+  },
+  "slotManager": {}
+}

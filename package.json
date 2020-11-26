@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "babel src --copy-files --out-dir dist",
-    "classifier:remove": "rimraf src/nlp/classifier.json",
+    "classifier:remove": "rimraf src/nlp/model.nlp",
     "preclassifier:train-save": "npm run classifier:remove",
     "classifier:train-save": "babel-node src/nlp/classifier",
     "dev": "NODE_ENV=development nodemon -r dotenv/config --exec babel-node src",
@@ -21,7 +21,6 @@
     "@hapi/boom": "^9.1.0",
     "axios": "^0.21.0",
     "body-parser": "^1.18.3",
-    "celebrate": "^13.0.3",
     "cheerio": "^1.0.0-rc.3",
     "cors": "^2.8.5",
     "cron": "^1.8.2",
@@ -31,7 +30,7 @@
     "latinize": "^0.4.1",
     "mongoose": "^5.10.15",
     "morgan": "^1.9.1",
-    "natural": "^2.1.5"
+    "node-nlp": "^4.16.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.2.3",

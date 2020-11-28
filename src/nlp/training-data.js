@@ -1,5 +1,5 @@
 import {
-  CLOSED_BORDER, NEGATIVE_TEST_REQUIRED, NO_TEST_REQUIRED, OPEN_BORDER, QUARANTINE_REQUIRED,
+  CLOSED_BORDER, NEGATIVE_TEST_REQUIRED, NO_TEST_REQUIRED, OPEN_BORDER, QUARANTINE_REQUIRED, SKIP_SENTENCE,
 } from '../config/constants';
 
 export const trainingData = [{
@@ -176,4 +176,7 @@ export const trainingData = [{
 }, {
   text: 'Mogu ući pod uslovom poštovanja epidemioloških mera (izolacija u kućnim uslovima, do dobijanja negativnog testa koji se radi najranije petog dana izolacije)',
   category: QUARANTINE_REQUIRED,
+}, {
+  text: 'Formular se može naći i podneti na',
+  category: SKIP_SENTENCE,
 }];

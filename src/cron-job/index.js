@@ -2,7 +2,7 @@ import path from 'path';
 import latinize from 'latinize';
 import { NlpManager } from 'node-nlp';
 import * as countriesService from '../api/countries/countries.service';
-import config, { CLOSED_BORDER, NO_TEST_REQUIRED, OPEN_BORDER } from '../config/constants';
+import config, { CLOSED_BORDER, NO_TEST_REQUIRED, OPEN_BORDER, SKIP_INTENTS, SKIP_SENTENCE } from '../config/constants';
 import { getPageSource, getParsedPageSource } from '../scraper';
 // import { data } from '../scraper/page-source';
 
@@ -19,20 +19,23 @@ export const upsertData = async () => {
       for (let i = 0; i < infoSentences.length; i += 1) {
         const countryInfo = latinize(infoSentences[i]);
         try {
-          const { intent: status } = await nlpManager.process(countryInfo);
-          if (i === infoSentences.length - 1 && status === OPEN_BORDER || i === 1 && status === CLOSED_BORDER) {
+          const { intent } = await nlpManager.process(countryInfo);
+          if (intent === SKIP_SENTENCE) {
+            continue;
+          }
+          if (i === infoSentences.length - 1 && SKIP_INTENTS.includes(intent) || i === 1 && intent === CLOSED_BORDER) {
             return {
               ...country,
               status: NO_TEST_REQUIRED,
             };
           }
-          if (status === OPEN_BORDER) {
+          if (intent === OPEN_BORDER) {
             continue;
           }
 
           return {
             ...country,
-            status,
+            status: intent,
           };
         } catch (err) {
           console.log('Not classified:', countryInfo);

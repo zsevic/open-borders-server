@@ -28,7 +28,7 @@ export const getParsedPageSource = (data) => {
     const [countryName, info] = countryInfo;
     return {
       name: countryName,
-      info: info.join(),
+      info: info.join(' '),
     };
   });
 };

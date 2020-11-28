@@ -15,14 +15,11 @@ export const upsertData = async () => {
     const data = await getPageSource(config.WEBPAGE_URL);
     const parsedPageSource = getParsedPageSource(data);
     const countries = await Promise.all(parsedPageSource.map(async (country) => {
-      const infoSentences = country.info.split('.');
+      const infoSentences = country.info.replace(/([.?!])\s*(?=[A-Z])/g, "$1|").split("|");
       for (let i = 0; i < infoSentences.length; i += 1) {
         const countryInfo = latinize(infoSentences[i]);
         try {
           const { intent: status } = await nlpManager.process(countryInfo);
-          if (status === 'None') {
-            continue;
-          }
           if (i === infoSentences.length - 1 && status === OPEN_BORDER || i === 1 && status === CLOSED_BORDER) {
             return {
               ...country,

@@ -6,6 +6,7 @@ const config = {
 
 export const CLOSED_BORDER = 'CLOSED_BORDER';
 export const NEGATIVE_TEST_REQUIRED = 'NEGATIVE_TEST_REQUIRED';
+export const NO_TEST_REQUIRED = 'NO_TEST_REQUIRED';
 export const OPEN_BORDER = 'OPEN_BORDER';
 export const QUARANTINE_REQUIRED = 'QUARANTINE_REQUIRED';
 

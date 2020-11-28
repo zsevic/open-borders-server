@@ -2,7 +2,7 @@ import path from 'path';
 import latinize from 'latinize';
 import { NlpManager } from 'node-nlp';
 import * as countriesService from '../api/countries/countries.service';
-import config, { CLOSED_BORDER, NO_TEST_REQUIRED, OPEN_BORDER, SKIP_INTENTS, SKIP_SENTENCE } from '../config/constants';
+import config, { CLOSED_BORDER, NO_TEST_REQUIRED, SKIP_INTENTS } from '../config/constants';
 import { getPageSource, getParsedPageSource } from '../scraper';
 // import { data } from '../scraper/page-source';
 
@@ -15,7 +15,7 @@ export const upsertData = async () => {
     const data = await getPageSource(config.WEBPAGE_URL);
     const parsedPageSource = getParsedPageSource(data);
     const countries = await Promise.all(parsedPageSource.map(async (country) => {
-      const infoSentences = country.info.replace(/([.?!])\s*(?=[A-Z])/g, "$1|").split("|");
+      const infoSentences = country.info.replace(/V\./g, 'V').replace(/([.?!])\s*(?=[A-Z])/g, "$1|").split("|");
       for (let i = 0; i < infoSentences.length; i += 1) {
         const countryInfo = latinize(infoSentences[i]);
         const { intent } = await nlpManager.process(countryInfo);

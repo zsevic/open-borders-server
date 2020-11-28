@@ -153,6 +153,9 @@ export const trainingData = [{
   text: 'Mogu ući u Sloveniju uz obavezni karantin od 10 dana ili posedovanje PCR testa, ne stariji od 48 sati, urađen u jednoj od zemalja EU ili u Srbiji',
   category: NEGATIVE_TEST_REQUIRED,
 }, {
+  text: 'Od putnika se traži da poseduju negativan PCR',
+  category: NEGATIVE_TEST_REQUIRED,
+}, {
   text: 'Po dolasku, smeštaju se u obavezni državni karantin u trajanju od 14 dana',
   category: QUARANTINE_REQUIRED,
 }, {
@@ -177,6 +180,30 @@ export const trainingData = [{
   text: 'Mogu ući pod uslovom poštovanja epidemioloških mera (izolacija u kućnim uslovima, do dobijanja negativnog testa koji se radi najranije petog dana izolacije)',
   category: QUARANTINE_REQUIRED,
 }, {
+  text: 'Obavezna je samoizolacija u trajanju od dve nedelje',
+  category: QUARANTINE_REQUIRED,
+}, {
   text: 'Formular se može naći i podneti na',
+  category: SKIP_SENTENCE,
+}, {
+  text: 'Aerodromi su otvoreni dok prelazak granice drumskim i vodenim putem nije moguc',
+  category: SKIP_SENTENCE,
+}, {
+  text: 'Državljani Srbije, kao i svi ostali putnici, pri ulasku u Irsku imaju obavezu da popune formular Passenger Locator Form',
+  category: SKIP_SENTENCE,
+}, {
+  text: 'Za ulazak stranih državljana je neophodna boravišna dozvola',
+  category: SKIP_SENTENCE,
+}, {
+  text: 'Zahtevaju od svih putnika starijih od 5 godina da u roku od pet dana pre puta posredstvom Portala za kontrolu putnika predaju rezultate testa na COVID-19',
+  category: SKIP_SENTENCE,
+}, {
+  text: 'Pre ulaska u zemlju potrebno je popuniti zdravstveni upitnik na sajtu',
+  category: SKIP_SENTENCE,
+}, {
+  text: 'Zdravstvene vlasti mogu, na osnovu upitnika, odbiti ulaz određenim putnicima',
+  category: SKIP_SENTENCE,
+}, {
+  text: 'Na međunarodnom aerodromu u Brazavilu uvedena su obavezna testiranja prilikom dolaska i odlaska',
   category: SKIP_SENTENCE,
 }];

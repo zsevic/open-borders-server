@@ -18,32 +18,21 @@ export const upsertData = async () => {
       const infoSentences = country.info.replace(/([.?!])\s*(?=[A-Z])/g, "$1|").split("|");
       for (let i = 0; i < infoSentences.length; i += 1) {
         const countryInfo = latinize(infoSentences[i]);
-        try {
-          const { intent } = await nlpManager.process(countryInfo);
-          if (intent === SKIP_SENTENCE) {
-            continue;
-          }
-          if (i === infoSentences.length - 1 && SKIP_INTENTS.includes(intent) || i === 1 && intent === CLOSED_BORDER) {
-            return {
-              ...country,
-              status: NO_TEST_REQUIRED,
-            };
-          }
-          if (intent === OPEN_BORDER) {
-            continue;
-          }
-
+        const { intent } = await nlpManager.process(countryInfo);
+        if (i === infoSentences.length - 1 && SKIP_INTENTS.includes(intent) || i === 1 && intent === CLOSED_BORDER) {
           return {
             ...country,
-            status: intent,
-          };
-        } catch (err) {
-          console.log('Not classified:', countryInfo);
-          return {
-            ...country,
-            status: 'None',
+            status: NO_TEST_REQUIRED,
           };
         }
+        if (SKIP_INTENTS.includes(intent)) {
+          continue;
+        }
+
+        return {
+          ...country,
+          status: intent,
+        };
       }
     }));
     return countriesService.bulkUpsert(countries).then(() => console.log('Finished upsertData cron job...'));

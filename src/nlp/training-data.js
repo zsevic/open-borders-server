@@ -78,6 +78,9 @@ export const trainingData = [{
   text: 'Nije potrebno testiranje',
   category: NO_TEST_REQUIRED,
 }, {
+  text: 'Ukoliko državljani Srbije na teritoriju Moldavije ulaze ili tranzitiraju iz zemalja koje se nalaze u „crvenoj zoni" (Rumunija, Ukrajina, itd), obavezan je karantin u trajanju od 14 dana',
+  category: NO_TEST_REQUIRED,
+}, {
   text: 'Državljani Srbije mogu da uđu u Brazil vazdušnim putem',
   category: OPEN_BORDER,
 }, {
@@ -208,5 +211,8 @@ export const trainingData = [{
   category: SKIP_SENTENCE,
 }, {
   text: 'Na međunarodnom aerodromu u Brazavilu uvedena su obavezna testiranja prilikom dolaska i odlaska',
+  category: SKIP_SENTENCE,
+}, {
+  text: 'Lica koja imaju stalni boravak u Ukrajini su izuzeta od posedovanja polise zdravstvenog osiguranja',
   category: SKIP_SENTENCE,
 }];

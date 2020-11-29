@@ -22,6 +22,12 @@ export const getParsedPageSource = (data) => {
       if (countries.length === 0) return;
       return countries[countries.length - 1][1].push(element.data);
     }
+    if (element.name === 'a') {
+      if (countries.length === 0) return;
+      const { href } = element.attribs;
+      const url = `<a href="${href}" target="_blank" rel="noopener noreferrer">${href}</a>`;
+      return countries[countries.length - 1][1].push(url);
+    }
   });
 
   return countries.map((countryInfo) => {

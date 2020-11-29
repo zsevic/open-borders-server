@@ -20,7 +20,10 @@ module.exports = {
     'consistent-return': 'off',
     'import/prefer-default-export': 'off',
     'max-len': 'off',
+    'no-await-in-loop': 'warn',
     'no-console': 'off',
+    'no-continue': 'warn',
+    'no-mixed-operators': 'warn',
     'no-useless-escape': 'off',
   },
 };

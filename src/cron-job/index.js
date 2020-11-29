@@ -15,7 +15,7 @@ export const upsertData = async () => {
     const data = await getPageSource(config.WEBPAGE_URL);
     const parsedPageSource = getParsedPageSource(data);
     const countries = await Promise.all(parsedPageSource.map(async (country) => {
-      const infoSentences = country.info.replace(/V\./g, 'V').replace(/([.?!])\s*(?=[A-Z])/g, "$1|").split("|");
+      const infoSentences = country.info.replace(/V\./g, 'V').replace(/([.?!])\s*(?=[A-Z])/g, '$1|').split('|');
       for (let i = 0; i < infoSentences.length; i += 1) {
         const countryInfo = latinize(infoSentences[i]);
         const { intent } = await nlpManager.process(countryInfo);

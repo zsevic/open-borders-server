@@ -73,7 +73,7 @@ export const trainingData = [{
   category: NO_TEST_REQUIRED,
 }, {
   text: 'Državljani Srbije mogu da uđu u Severnu Makedoniju bez posedovanja negativnog PCR testa',
-  category: NO_TEST_REQUIRED
+  category: NO_TEST_REQUIRED,
 }, {
   text: 'Nije potrebno testiranje',
   category: NO_TEST_REQUIRED,

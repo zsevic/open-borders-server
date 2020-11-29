@@ -19,13 +19,11 @@ export const getClassifiedCountries = async (countries, nlpManager) => Promise.a
         status: NO_TEST_REQUIRED,
       };
     }
-    if (SKIP_INTENTS.includes(intent)) {
-      continue;
+    if (!SKIP_INTENTS.includes(intent)) {
+      return {
+        ...country,
+        status: intent,
+      };
     }
-
-    return {
-      ...country,
-      status: intent,
-    };
   }
 }));

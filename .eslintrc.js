@@ -22,7 +22,6 @@ module.exports = {
     'max-len': 'off',
     'no-await-in-loop': 'warn',
     'no-console': 'off',
-    'no-continue': 'warn',
     'no-mixed-operators': 'warn',
     'no-useless-escape': 'off',
   },

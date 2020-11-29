@@ -12,8 +12,8 @@ export const upsertData = async () => {
     const modelFileName = path.join(__dirname, '../nlp/model.nlp');
     const nlpManager = new NlpManager({ languages: ['sr'], modelFileName });
     nlpManager.load(modelFileName);
-    const data = await getPageSource(config.WEBPAGE_URL);
-    const parsedPageSource = getParsedPageSource(data);
+    const pageSource = await getPageSource(config.WEBPAGE_URL);
+    const parsedPageSource = getParsedPageSource(pageSource);
     const classifiedCountries = await getClassifiedCountries(parsedPageSource, nlpManager);
     return countriesService.bulkUpsert(classifiedCountries).then(() => console.log('Finished upsertData cron job...'));
   } catch (err) {

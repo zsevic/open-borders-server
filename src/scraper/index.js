@@ -1,10 +1,23 @@
-import axios from 'axios';
 import cheerio from 'cheerio';
+import puppeteer from 'puppeteer';
 
-export const getPageSource = async (url) => axios(url).then((res) => res.data);
+export const getPageSource = async (url) => {
+  const browser = await puppeteer.launch({
+    args: [
+      '--no-sandbox',
+      '--disable-setuid-sandbox',
+    ],
+  });
+  const page = await browser.newPage();
+  await page.goto(url);
+  await page.waitForSelector('body');
+  const html = await page.evaluate(() => document.body.innerHTML); // eslint-disable-line
+  await page.close();
+  return html;
+};
 
-export const getParsedPageSource = (data) => {
-  const $ = cheerio.load(data);
+export const getParsedPageSource = (html) => {
+  const $ = cheerio.load(html);
   const countryElements = $('#text strong');
   const elements = countryElements.parent().contents();
 
@@ -25,8 +38,13 @@ export const getParsedPageSource = (data) => {
     if (element.name === 'a') {
       if (countries.length === 0) return;
       const { href } = element.attribs;
-      const url = `<a href="${href}" target="_blank" rel="noopener noreferrer">${href}</a>`;
-      return countries[countries.length - 1][1].push(url);
+      let text = href;
+      if (href.startsWith('mailto:')) {
+        const [, email] = href.split('mailto:');
+        text = email;
+      }
+      const link = `<a href="${href}" target="_blank" rel="noopener noreferrer">${text}</a>`;
+      return countries[countries.length - 1][1].push(link);
     }
   });
 

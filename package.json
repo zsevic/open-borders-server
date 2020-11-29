@@ -19,7 +19,6 @@
   "license": "MIT",
   "dependencies": {
     "@hapi/boom": "^9.1.0",
-    "axios": "^0.21.0",
     "body-parser": "^1.18.3",
     "cheerio": "^1.0.0-rc.3",
     "cors": "^2.8.5",
@@ -30,7 +29,8 @@
     "latinize": "^0.4.1",
     "mongoose": "^5.10.15",
     "morgan": "^1.9.1",
-    "node-nlp": "^4.16.0"
+    "node-nlp": "^4.16.0",
+    "puppeteer": "^5.5.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.2.3",

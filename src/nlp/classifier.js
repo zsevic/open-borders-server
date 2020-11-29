@@ -1,13 +1,6 @@
 import path from 'path';
-import latinize from 'latinize';
 import { NlpManager } from 'node-nlp';
-import { trainingData } from './training-data';
-
-function addTrainingData(manager) {
-  trainingData.forEach((data) => {
-    manager.addDocument('sr', latinize(data.text), data.category);
-  });
-}
+import { addTrainingData } from './utils';
 
 (async () => {
   const modelFileName = path.join(__dirname, 'model.nlp');

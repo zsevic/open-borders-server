@@ -13,7 +13,9 @@ export const getClassifiedCountries = async (countries, nlpManager) => Promise.a
   for (let i = 0; i < infoSentences.length; i += 1) {
     const countryInfo = latinize(infoSentences[i]);
     const { intent } = await nlpManager.process(countryInfo);
-    if (i === infoSentences.length - 1 && SKIP_INTENTS.includes(intent) || i === 1 && intent === CLOSED_BORDER) {
+    const skipLastSentenceIntent = i === infoSentences.length - 1 && SKIP_INTENTS.includes(intent);
+    const skipSecondSentenceClosedBorderIntent = i === 1 && intent === CLOSED_BORDER;
+    if (skipLastSentenceIntent || skipSecondSentenceClosedBorderIntent) {
       return {
         ...country,
         status: NO_TEST_REQUIRED,

@@ -81,6 +81,9 @@ export const trainingData = [{
   text: 'Ukoliko državljani Srbije na teritoriju Moldavije ulaze ili tranzitiraju iz zemalja koje se nalaze u „crvenoj zoni" (Rumunija, Ukrajina, itd), obavezan je karantin u trajanju od 14 dana',
   category: NO_TEST_REQUIRED,
 }, {
+  text: 'Za lica koja pokazu simptome medicinsko osoblje na aerodromu odlucuje da li ce zahtevati test na koronu',
+  category: NO_TEST_REQUIRED,
+}, {
   text: 'Državljani Srbije mogu da uđu u Brazil vazdušnim putem',
   category: OPEN_BORDER,
 }, {

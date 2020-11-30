@@ -4,7 +4,7 @@ import * as countriesService from '../api/countries/countries.service';
 import config from '../config/constants';
 import { getClassifiedCountries } from '../nlp/utils';
 import { getPageSource, getParsedPageSource } from '../scraper';
-// import { data } from '../scraper/page-source';
+// import { data as pageSource } from '../scraper/page-source';
 
 export const upsertData = async () => {
   console.log('Started upsertData cron job...');

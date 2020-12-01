@@ -12,12 +12,16 @@ module.exports = {
     SharedArrayBuffer: 'readonly',
     api: true,
   },
+  parser: 'babel-eslint',
   parserOptions: {
+    allowImportExportEverywhere: true,
     ecmaVersion: 2018,
     sourceType: 'module',
   },
   rules: {
     'consistent-return': 'off',
+    'import/no-named-as-default': 'off',
+    'import/no-named-as-default-member': 'off',
     'import/prefer-default-export': 'off',
     'max-len': 'off',
     'no-await-in-loop': 'warn',

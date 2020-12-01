@@ -7,3 +7,7 @@ export function asyncWrap(fn) {
     }
   };
 }
+
+export function isEnv(environment) {
+  return process.env.NODE_ENV === environment;
+}

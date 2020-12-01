@@ -9,7 +9,7 @@ git clone https://github.com/zsevic/open-borders-server
 cd open-borders-server
 cp .env.sample .env # change values
 npm i
-mongod --dbpath=mongodb/data
+redis-server /usr/local/etc/redis.conf
 npm run dev
 ```
 
@@ -39,7 +39,7 @@ Generated at `/api-docs` endpoint
 
 ### Technologies used
 
-- Node.js, Express, MongoDB (for API)
+- Node.js, Express, Redis (for API)
 - cron (for cron job)
 - cheerio (for scraping)
 - node-nlp (for NLP)

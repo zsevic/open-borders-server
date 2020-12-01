@@ -17,4 +17,4 @@ export const getCountryList = async () => Country.find({
   status: {
     $in: [NEGATIVE_TEST_REQUIRED, NO_TEST_REQUIRED, QUARANTINE_REQUIRED],
   },
-});
+}).lean();

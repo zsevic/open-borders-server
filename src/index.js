@@ -1,5 +1,6 @@
 import express from 'express';
 import bodyParser from 'body-parser';
+import compression from 'compression';
 import cors from 'cors';
 import { CronJob } from 'cron';
 import expressOasGenerator from 'express-oas-generator';
@@ -12,6 +13,7 @@ import { upsertData } from './cron-job';
 const app = express();
 const { PORT } = constants;
 
+app.use(compression());
 app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));

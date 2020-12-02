@@ -5,7 +5,7 @@ import { CronJob } from 'cron';
 import expressOasGenerator from 'express-oas-generator';
 import { NlpManager } from 'node-nlp';
 import redis from 'redis';
-import config, { OPEN_BORDER_INTENTS } from './config/constants';
+import config, { COUNTRY_FLAGS, OPEN_BORDER_INTENTS } from './config/constants';
 import registerMiddlewares from './middlewares';
 import { errorHandler } from './middlewares/error-handler';
 import { getClassifiedCountries } from './nlp/utils';
@@ -49,7 +49,9 @@ const getCountriesHandler = async (_, res) => {
   if (!classifiedCountries) return res.json([]);
 
   const countries = JSON.parse(classifiedCountries);
-  const openBorderCountries = countries.filter((country) => OPEN_BORDER_INTENTS.includes(country.status));
+  const openBorderCountries = countries
+    .filter((country) => OPEN_BORDER_INTENTS.includes(country.status))
+    .map((country) => ({ ...country, flag: COUNTRY_FLAGS[country.name] || '🇷🇸' }));
   return res.json(openBorderCountries);
 };
 app.get('/api/countries', asyncWrap(getCountriesHandler));

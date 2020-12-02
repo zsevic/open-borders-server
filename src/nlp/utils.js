@@ -9,7 +9,10 @@ export const addTrainingData = (manager) => {
 };
 
 export const getClassifiedCountries = async (countries, nlpManager) => Promise.all(countries.map(async (country) => {
-  const infoSentences = country.info.replace(/([VRSU])\./g, '$1').replace(/<a.*<\/a>/g, '').replace(/([.?!])\s*(?=[A-Z])/g, '$1|').split('|');
+  const infoSentences = country.info.replace(/([VRSU])\./g, '$1')
+    .replace(/<a[^>]*>([^<]+)<\/a>/g, '')
+    .replace(/([.?!])\s*(?=[A-Z])/g, '$1|')
+    .split('|');
   for (let i = 0; i < infoSentences.length; i += 1) {
     const countryInfo = latinize(infoSentences[i]);
     const { intent } = await nlpManager.process(countryInfo);

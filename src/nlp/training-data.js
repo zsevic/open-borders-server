@@ -192,6 +192,9 @@ export const trainingData = [{
   text: 'Svi putnici, ukljucujuci i drzavljane Srbije, ukoliko dolaze iz Srbije, duzni su da budu u samoizolaciji u trajanju od dve nedelje',
   category: QUARANTINE_REQUIRED,
 }, {
+  text: 'Nakon cega sledi jednonedeljni karantin u hotelu',
+  category: QUARANTINE_REQUIRED,
+}, {
   text: 'Formular se može naći i podneti na',
   category: SKIP_SENTENCE,
 }, {

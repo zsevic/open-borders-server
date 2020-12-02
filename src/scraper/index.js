@@ -52,7 +52,7 @@ export const getParsedPageSource = (html) => {
     const [countryName, info] = countryInfo;
     return {
       name: countryName.replace(/\:$/, ''),
-      info: info.join(' '),
+      info: info.join(' ').replace(/^,/, ''),
     };
   });
 };

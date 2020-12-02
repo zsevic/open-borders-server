@@ -2,6 +2,13 @@
 
 > Back-end for [open-borders](https://github.com/zsevic/open-borders)
 
+## Getting started
+
+### Prerequisites
+
+- Node.js installed (version 14)
+- Local Redis database
+
 ### Setup
 
 ```bash

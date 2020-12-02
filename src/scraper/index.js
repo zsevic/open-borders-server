@@ -51,7 +51,7 @@ export const getParsedPageSource = (html) => {
   return countries.map((countryInfo) => {
     const [countryName, info] = countryInfo;
     return {
-      name: countryName,
+      name: countryName.replace(/\:$/, ''),
       info: info.join(' '),
     };
   });

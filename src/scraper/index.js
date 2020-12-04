@@ -43,7 +43,7 @@ export const getParsedPageSource = (html) => {
         const [, email] = href.split('mailto:');
         text = email;
       }
-      const link = `<a href="${href}" target="_blank" rel="noopener noreferrer">${text}</a>`;
+      const link = `<a href="${href}" class="text-info" target="_blank" rel="noopener noreferrer">${text}</a>`;
       return countries[countries.length - 1][1].push(link);
     }
   });

@@ -26,6 +26,8 @@
     "cron": "^1.8.2",
     "express": "^4.16.4",
     "express-oas-generator": "^1.0.28",
+    "express-rate-limit": "^5.2.3",
+    "helmet": "^4.2.0",
     "joi": "^17.2.1",
     "latinize": "^0.4.1",
     "morgan": "^1.9.1",

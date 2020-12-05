@@ -15,6 +15,9 @@ export const SKIP_INTENTS = [OPEN_BORDER, SKIP_SENTENCE];
 
 export default config;
 
+export const RATE_LIMIT_REQUESTS = 100;
+export const RATE_LIMIT_TIME = 15 * 60 * 1000; // 15 minutes
+
 export const COUNTRY_FLAGS = {
   ALBANIJA: '🇦🇱',
   ALŽIR: '🇩🇿',

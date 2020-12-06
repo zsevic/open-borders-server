@@ -49,9 +49,9 @@ const getCountriesHandler = async (_, res) => {
   if (!classifiedCountries) return res.json([]);
 
   const countries = JSON.parse(classifiedCountries);
-  const openBorderCountries = countries
+  const countriesData = countries
     .map((country) => ({ ...country, flag: COUNTRY_FLAGS[country.name] || '🇷🇸' }));
-  return res.json(openBorderCountries);
+  return res.json(countriesData);
 };
 app.get('/api/countries', asyncWrap(getCountriesHandler));
 app.use(errorHandler);

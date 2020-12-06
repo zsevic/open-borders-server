@@ -4,7 +4,7 @@ import { CLOSED_BORDER, NO_TEST_REQUIRED, SKIP_INTENTS } from '../config/constan
 
 export const addTrainingData = (manager) => {
   trainingData.forEach((data) => {
-    manager.addDocument('sr', latinize(data.text), data.category);
+    manager.addDocument('sr', latinize(data.utterance), data.intent);
   });
 };
 

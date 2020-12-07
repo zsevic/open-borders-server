@@ -1,5 +1,6 @@
 import path from 'path';
 import { promisify } from 'util';
+import * as Sentry from '@sentry/node';
 import express from 'express';
 import { CronJob } from 'cron';
 import expressOasGenerator from 'express-oas-generator';
@@ -41,6 +42,12 @@ redisClient.on('connect', () => {
   }, null, null, null, null, true);
   job.start();
 });
+
+if (isEnv('production')) {
+  Sentry.init({
+    dsn: process.env.SENTRY_DSN,
+  });
+}
 
 registerMiddlewares(app);
 expressOasGenerator.init(app, {});

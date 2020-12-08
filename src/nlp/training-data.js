@@ -117,6 +117,9 @@ export const trainingData = [{
   utterance: 'Državljanima Srbije je dozvoljen ulazak u Pakistan',
   intent: OPEN_BORDER,
 }, {
+  utterance: 'Drzavljani Srbije mogu da udu u Kinu ukoliko poseduju sertifikat za putovanje izdat od Ambasade Kine u Beogradu',
+  intent: OPEN_BORDER,
+}, {
   utterance: 'Po dolasku na aerodromu se obavlja zdravstveni pregled i radi prvi PCR test',
   intent: NEGATIVE_TEST_REQUIRED,
 }, {
@@ -193,6 +196,9 @@ export const trainingData = [{
   intent: QUARANTINE_REQUIRED,
 }, {
   utterance: 'Nakon cega sledi jednonedeljni karantin u hotelu',
+  intent: QUARANTINE_REQUIRED,
+}, {
+  utterance: 'Državljani Srbije mogu da uđu u Belorusiju uz obaveznu meru samoizolacije u trajanju od 10 dana',
   intent: QUARANTINE_REQUIRED,
 }, {
   utterance: 'Formular se može naći i podneti na',

@@ -16,7 +16,7 @@ export const getPageSource = async (url) => {
   return html;
 };
 
-export const getParsedPageSource = (html) => {
+export const getCountriesInfo = (html) => {
   const $ = cheerio.load(html);
   const countryElements = $('#text strong');
   const elements = countryElements.parent().contents();

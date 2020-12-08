@@ -10,7 +10,7 @@ import config, { COUNTRY_FLAGS } from './config/constants';
 import registerMiddlewares from './middlewares';
 import { errorHandler } from './middlewares/error-handler';
 import { getClassifiedCountries } from './nlp/utils';
-import { getPageSource, getParsedPageSource } from './scraper';
+import { getPageSource, getCountriesInfo } from './scraper';
 import { data as pageSourceData } from './scraper/page-source';
 import { asyncWrap, isEnv } from './utils';
 
@@ -32,9 +32,9 @@ redisClient.on('connect', () => {
       const nlpManager = new NlpManager({ languages: ['sr'], modelFileName });
       nlpManager.load(modelFileName);
       const pageSource = !isEnv('production') ? pageSourceData : await getPageSource(config.WEBPAGE_URL);
-      const parsedPageSource = getParsedPageSource(pageSource);
-      const countries = await getClassifiedCountries(parsedPageSource, nlpManager);
-      return setAsync('countries', JSON.stringify(countries))
+      const countriesInfo = getCountriesInfo(pageSource);
+      const classifiedCountries = await getClassifiedCountries(countriesInfo, nlpManager);
+      return setAsync('countries', JSON.stringify(classifiedCountries))
         .then(() => console.log('Finished upsertData cron job...'));
     } catch (err) {
       console.error(err);

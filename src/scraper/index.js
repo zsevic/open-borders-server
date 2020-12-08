@@ -24,12 +24,8 @@ export const getCountriesInfo = (html) => {
   const countries = [];
   elements.each((_, element) => {
     if (element.name === 'strong') {
-      const [mainElement, secondElement] = element.children;
-      if (!mainElement.data) {
-        if (!secondElement) return;
-        return countries.push([secondElement.data, []]);
-      }
-      return countries.push([mainElement.data, []]);
+      const { data: countryName } = element.children.find((child) => child.data);
+      return countries.push([countryName, []]);
     }
     if (element.type === 'text') {
       if (countries.length === 0) return;

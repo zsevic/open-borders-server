@@ -15,20 +15,30 @@ export const getClassifiedCountries = async (countries, nlpManager) => Promise.a
     .split('|');
   for (let i = 0; i < infoSentences.length; i += 1) {
     const countryInfo = latinize(infoSentences[i]);
-    const { intent } = await nlpManager.process(countryInfo);
-    const skipLastSentenceIntent = i === infoSentences.length - 1 && SKIP_INTENTS.includes(intent);
-    const skipSecondSentenceClosedBorderIntent = i === 1 && intent === CLOSED_BORDER;
-    if (skipLastSentenceIntent || skipSecondSentenceClosedBorderIntent) {
-      return {
-        ...country,
-        status: NO_TEST_REQUIRED,
-      };
-    }
-    if (!SKIP_INTENTS.includes(intent)) {
-      return {
-        ...country,
-        status: intent,
-      };
+    try {
+      const { intent } = await nlpManager.process(countryInfo);
+      const skipLastSentenceIntent = i === infoSentences.length - 1 && SKIP_INTENTS.includes(intent);
+      const skipSecondSentenceClosedBorderIntent = i === 1 && intent === CLOSED_BORDER;
+      if (skipLastSentenceIntent || skipSecondSentenceClosedBorderIntent) {
+        return {
+          ...country,
+          status: NO_TEST_REQUIRED,
+        };
+      }
+      if (!SKIP_INTENTS.includes(intent)) {
+        return {
+          ...country,
+          status: intent,
+        };
+      }
+    } catch (err) {
+      console.error(err.message);
+      if (i === infoSentences.length - 1) {
+        return {
+          ...country,
+          status: NO_TEST_REQUIRED,
+        };
+      }
     }
   }
 }));

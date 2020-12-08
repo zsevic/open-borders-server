@@ -1,6 +1,6 @@
 import latinize from 'latinize';
 import { trainingData } from './training-data';
-import { CLOSED_BORDER, NO_TEST_REQUIRED, SKIP_INTENTS } from '../config/constants';
+import { CLOSED_BORDER, NO_TEST_REQUIRED, SKIPPED_INTENTS } from '../config/constants';
 
 export const addTrainingData = (manager) => {
   trainingData.forEach((data) => {
@@ -17,7 +17,7 @@ export const getClassifiedCountries = async (countries, nlpManager) => Promise.a
     const countryInfo = latinize(infoSentences[i]);
     try {
       const { intent } = await nlpManager.process(countryInfo);
-      const skipLastSentenceIntent = i === infoSentences.length - 1 && SKIP_INTENTS.includes(intent);
+      const skipLastSentenceIntent = i === infoSentences.length - 1 && SKIPPED_INTENTS.includes(intent);
       const skipSecondSentenceClosedBorderIntent = i === 1 && intent === CLOSED_BORDER;
       if (skipLastSentenceIntent || skipSecondSentenceClosedBorderIntent) {
         return {
@@ -25,7 +25,7 @@ export const getClassifiedCountries = async (countries, nlpManager) => Promise.a
           status: NO_TEST_REQUIRED,
         };
       }
-      if (!SKIP_INTENTS.includes(intent)) {
+      if (!SKIPPED_INTENTS.includes(intent)) {
         return {
           ...country,
           status: intent,

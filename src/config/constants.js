@@ -10,7 +10,7 @@ export const OPEN_BORDER = 'OPEN_BORDER';
 export const QUARANTINE_REQUIRED = 'QUARANTINE_REQUIRED';
 export const SKIP_SENTENCE = 'SKIP_SENTENCE';
 
-export const SKIP_INTENTS = [OPEN_BORDER, SKIP_SENTENCE];
+export const SKIPPED_INTENTS = [OPEN_BORDER, SKIP_SENTENCE];
 
 export default config;
 

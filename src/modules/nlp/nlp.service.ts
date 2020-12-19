@@ -23,7 +23,7 @@ export class NlpService {
     });
   };
 
-  getClassifiedCountries = (countries: CountryInfo[]) => {
+  getClassifiedCountries = async (countries: CountryInfo[]) => {
     const nlpManager = this.getNlpManagerWithTrainedModel();
     return Promise.all(
       countries.map(async country => {

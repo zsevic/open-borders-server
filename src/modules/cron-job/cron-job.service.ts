@@ -29,7 +29,7 @@ export class CronJobService {
       ? pageSourceData
       : await this.scraperService.getPageSource(WEBPAGE_URL);
     const countriesInfo = this.scraperService.getCountriesInfo(pageSource);
-    const classifiedCountries = this.nlpService.getClassifiedCountries(
+    const classifiedCountries = await this.nlpService.getClassifiedCountries(
       countriesInfo,
     );
     await this.redisCacheService.set(

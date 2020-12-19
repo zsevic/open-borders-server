@@ -11,7 +11,8 @@ export class CountryService {
     const classifiedCountries = await this.redisCacheService.get('countries');
     if (!classifiedCountries) return [];
 
-    return classifiedCountries.map(
+    const countries = JSON.parse(classifiedCountries);
+    return countries.map(
       (country: CountryInfo): CountryInfo => ({
         ...country,
         flag: COUNTRY_FLAGS[country.name] || '🇷🇸',

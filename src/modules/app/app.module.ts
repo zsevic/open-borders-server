@@ -5,13 +5,12 @@ import {
   OnApplicationShutdown,
 } from '@nestjs/common';
 import { ConfigService, ConfigModule } from '@nestjs/config';
-import { ScheduleModule, SchedulerRegistry } from '@nestjs/schedule';
+import { ScheduleModule } from '@nestjs/schedule';
 import * as Joi from 'joi';
 import { Subject } from 'rxjs';
 import config from 'common/config';
 import { PORT } from 'common/config/constants';
 import { CountryModule } from 'modules/country/country.module';
-import { UPSERT_DATA_CRON_JOB } from 'modules/cron-job/cron-job.constants';
 import { CronJobModule } from 'modules/cron-job/cron-job.module';
 import { AppController } from './app.controller';
 

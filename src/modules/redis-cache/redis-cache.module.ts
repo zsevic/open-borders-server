@@ -11,6 +11,8 @@ import { RedisCacheService } from './redis-cache.service';
       inject: [ConfigService],
       useFactory: async (configService: ConfigService) => ({
         store: redisStore,
+        auth_pass: configService.get('REDIS_PASSWORD'),
+        db: configService.get('REDIS_DB'),
         host: configService.get('REDIS_HOST'),
         port: configService.get('REDIS_PORT'),
         ttl: CACHE_TTL,

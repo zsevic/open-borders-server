@@ -22,7 +22,7 @@ export class CronJobService {
     name: UPSERT_DATA_CRON_JOB,
     timeZone: 'Europe/Belgrade',
   })
-  async handleCron() {
+  async upsertData() {
     this.logger.log(`Started ${UPSERT_DATA_CRON_JOB} cron job...`);
 
     const pageSource = !isEnv('production')

@@ -11,5 +11,5 @@ import { CronJobService } from './cron-job.service';
 export class CronJobModule implements OnModuleInit {
   constructor(private readonly cronJobService: CronJobService) {}
 
-  onModuleInit = async () => this.cronJobService.handleCron();
+  onModuleInit = async () => this.cronJobService.upsertData();
 }

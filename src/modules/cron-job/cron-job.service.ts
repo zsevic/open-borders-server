@@ -18,7 +18,7 @@ export class CronJobService {
     private readonly scraperService: ScraperService,
   ) {}
 
-  @Cron(CronExpression.EVERY_10_SECONDS, {
+  @Cron(CronExpression.EVERY_12_HOURS, {
     name: UPSERT_DATA_CRON_JOB,
     timeZone: 'Europe/Belgrade',
   })

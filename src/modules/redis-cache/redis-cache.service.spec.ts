@@ -23,7 +23,7 @@ describe('RedisCacheService', () => {
           provide: CACHE_MANAGER,
           useValue: {
             get: async () => Promise.resolve(JSON.stringify(countries)),
-            set: async () => Promise.resolve(null),
+            set: async () => Promise.resolve(),
           },
         },
       ],
@@ -41,6 +41,6 @@ describe('RedisCacheService', () => {
   it('should set the data to the Redis database', async () => {
     expect(
       await redisCacheService.set('countries', JSON.stringify(countries)),
-    ).toBe(null);
+    ).toBe(undefined);
   });
 });

@@ -1,11 +1,15 @@
 import { Injectable } from '@nestjs/common';
 import cheerio from 'cheerio';
 import puppeteer from 'puppeteer';
+import { isEnv } from 'common/utils';
 import { CountryInfo } from 'modules/country/country.types';
+import { data } from './scraper.data';
 
 @Injectable()
 export class ScraperService {
   getPageSource = async (url: string): Promise<string> => {
+    if (isEnv('development')) return data;
+
     const browser = await puppeteer.launch({
       args: ['--no-sandbox', '--disable-setuid-sandbox'],
     });

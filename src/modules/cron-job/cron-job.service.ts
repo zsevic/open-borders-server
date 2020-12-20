@@ -1,12 +1,10 @@
 import { Injectable, Logger } from '@nestjs/common';
 import { Cron, CronExpression } from '@nestjs/schedule';
 import { WEBPAGE_URL } from 'common/config/constants';
-import { isEnv } from 'common/utils';
 import { COUNTRY_FLAGS } from 'modules/country/country.constants';
 import { CountryInfo } from 'modules/country/country.types';
 import { NlpService } from 'modules/nlp/nlp.service';
 import { RedisCacheService } from 'modules/redis-cache/redis-cache.service';
-import { data as pageSourceData } from 'modules/scraper/scraper.data';
 import { ScraperService } from 'modules/scraper/scraper.service';
 import { UPSERT_DATA_CRON_JOB } from './cron-job.constants';
 
@@ -24,12 +22,10 @@ export class CronJobService {
     name: UPSERT_DATA_CRON_JOB,
     timeZone: 'Europe/Belgrade',
   })
-  async upsertData() {
+  async upsertData(): Promise<CountryInfo[]> {
     this.logger.log(`Started ${UPSERT_DATA_CRON_JOB} cron job...`);
     try {
-      const pageSource = !isEnv('production')
-        ? pageSourceData
-        : await this.scraperService.getPageSource(WEBPAGE_URL);
+      const pageSource = await this.scraperService.getPageSource(WEBPAGE_URL);
       const countriesInfo = this.scraperService.getCountriesInfo(pageSource);
       const classifiedCountries = await this.nlpService.getClassifiedCountries(
         countriesInfo,
@@ -44,6 +40,7 @@ export class CronJobService {
       );
 
       this.logger.log(`Finished ${UPSERT_DATA_CRON_JOB} cron job...`);
+      return countriesData;
     } catch (err) {
       this.logger.error(err);
     }

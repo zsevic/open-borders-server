@@ -23,50 +23,54 @@ export class NlpService {
     });
   };
 
-  getClassifiedCountries = async (countries: CountryInfo[]) => {
+  getClassifiedCountries = async (
+    countries: CountryInfo[],
+  ): Promise<CountryInfo[]> => {
     const nlpManager = this.getNlpManagerWithTrainedModel();
     return Promise.all(
-      countries.map(async country => {
-        const infoSentences = country.info
-          .replace(/([VRSU])\./g, '$1')
-          .replace(/<a[^>]*>([^<]+)<\/a>/g, '')
-          .replace(/([.?!])\s*(?=[A-Z])/g, '$1|')
-          .split('|');
-        for (let i = 0; i < infoSentences.length; i += 1) {
-          const countryInfo = latinize(infoSentences[i]);
-          try {
-            const { intent } = await nlpManager.process(countryInfo);
-            const skipLastSentenceIntent =
-              i === infoSentences.length - 1 &&
-              SKIPPED_INTENTS.includes(intent);
-            const skipSecondSentenceClosedBorderIntent =
-              i === 1 && intent === CLOSED_BORDER;
-            if (
-              skipLastSentenceIntent ||
-              skipSecondSentenceClosedBorderIntent
-            ) {
-              return {
-                ...country,
-                status: NO_TEST_REQUIRED,
-              };
-            }
-            if (!SKIPPED_INTENTS.includes(intent)) {
-              return {
-                ...country,
-                status: intent,
-              };
-            }
-          } catch (err) {
-            console.error(err.message);
-            if (i === infoSentences.length - 1) {
-              return {
-                ...country,
-                status: NO_TEST_REQUIRED,
-              };
+      countries.map(
+        async (country: CountryInfo): Promise<CountryInfo> => {
+          const infoSentences = country.info
+            .replace(/([VRSU])\./g, '$1')
+            .replace(/<a[^>]*>([^<]+)<\/a>/g, '')
+            .replace(/([.?!])\s*(?=[A-Z])/g, '$1|')
+            .split('|');
+          for (let i = 0; i < infoSentences.length; i += 1) {
+            const countryInfo = latinize(infoSentences[i]);
+            try {
+              const { intent } = await nlpManager.process(countryInfo);
+              const skipLastSentenceIntent =
+                i === infoSentences.length - 1 &&
+                SKIPPED_INTENTS.includes(intent);
+              const skipSecondSentenceClosedBorderIntent =
+                i === 1 && intent === CLOSED_BORDER;
+              if (
+                skipLastSentenceIntent ||
+                skipSecondSentenceClosedBorderIntent
+              ) {
+                return {
+                  ...country,
+                  status: NO_TEST_REQUIRED,
+                };
+              }
+              if (!SKIPPED_INTENTS.includes(intent)) {
+                return {
+                  ...country,
+                  status: intent,
+                };
+              }
+            } catch (err) {
+              console.error(err.message);
+              if (i === infoSentences.length - 1) {
+                return {
+                  ...country,
+                  status: NO_TEST_REQUIRED,
+                };
+              }
             }
           }
-        }
-      }),
+        },
+      ),
     );
   };
 
@@ -89,7 +93,7 @@ export class NlpService {
     return nlpManager;
   };
 
-  trainAndSaveModel = async () => {
+  trainAndSaveModel = async (): Promise<void> => {
     const modelFileName = this.getModelFileName();
     const manager = this.getNlpManager(modelFileName);
     this.addTrainingData(manager);

@@ -1,5 +1,5 @@
 import path from 'path';
-import { Injectable } from '@nestjs/common';
+import { Injectable, Logger } from '@nestjs/common';
 import latinize from 'latinize';
 import { NlpManager } from 'node-nlp';
 import { CountryInfo } from 'modules/country/country.types';
@@ -13,6 +13,8 @@ import { trainingData } from './nlp.data';
 
 @Injectable()
 export class NlpService {
+  private readonly logger = new Logger(NlpService.name);
+
   addTrainingData = (manager): void => {
     trainingData.forEach(data => {
       manager.addDocument(
@@ -60,7 +62,7 @@ export class NlpService {
                 };
               }
             } catch (err) {
-              console.error(err.message);
+              this.logger.error(err.message);
               if (i === infoSentences.length - 1) {
                 return {
                   ...country,

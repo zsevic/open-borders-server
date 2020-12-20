@@ -6,8 +6,8 @@ import { CountryService } from './country.service';
 import { CountryInfo } from './country.types';
 
 describe('CountryController', () => {
-  let controller: CountryController;
-  let service: CountryService;
+  let countryController: CountryController;
+  let countryService: CountryService;
 
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
@@ -15,8 +15,8 @@ describe('CountryController', () => {
       providers: [CountryService, { provide: RedisCacheService, useValue: {} }],
     }).compile();
 
-    controller = module.get<CountryController>(CountryController);
-    service = module.get<CountryService>(CountryService);
+    countryController = module.get<CountryController>(CountryController);
+    countryService = module.get<CountryService>(CountryService);
   });
 
   it('should get country list', async () => {
@@ -28,8 +28,8 @@ describe('CountryController', () => {
         flag: '🇷🇸',
       },
     ];
-    jest.spyOn(service, 'getCountryList').mockResolvedValue(result);
+    jest.spyOn(countryService, 'getCountryList').mockResolvedValue(result);
 
-    expect(await controller.getCountryList()).toBe(result);
+    expect(await countryController.getCountryList()).toBe(result);
   });
 });

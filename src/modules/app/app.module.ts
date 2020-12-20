@@ -12,7 +12,6 @@ import config from 'common/config';
 import { PORT } from 'common/config/constants';
 import { CountryModule } from 'modules/country/country.module';
 import { CronJobModule } from 'modules/cron-job/cron-job.module';
-import { AppController } from './app.controller';
 
 @Module({
   imports: [
@@ -38,7 +37,6 @@ import { AppController } from './app.controller';
     CronJobModule,
     CountryModule,
   ],
-  controllers: [AppController],
   providers: [
     {
       provide: 'configService',

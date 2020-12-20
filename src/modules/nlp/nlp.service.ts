@@ -38,8 +38,8 @@ export class NlpService {
             .replace(/([.?!])\s*(?=[A-Z])/g, '$1|')
             .split('|');
           for (let i = 0; i < infoSentences.length; i += 1) {
-            const countryInfo = latinize(infoSentences[i]);
             try {
+              const countryInfo = latinize(infoSentences[i]);
               const { intent } = await nlpManager.process(countryInfo);
               const skipLastSentenceIntent =
                 i === infoSentences.length - 1 &&

@@ -26,23 +26,26 @@ export class CronJobService {
   })
   async upsertData() {
     this.logger.log(`Started ${UPSERT_DATA_CRON_JOB} cron job...`);
+    try {
+      const pageSource = !isEnv('production')
+        ? pageSourceData
+        : await this.scraperService.getPageSource(WEBPAGE_URL);
+      const countriesInfo = this.scraperService.getCountriesInfo(pageSource);
+      const classifiedCountries = await this.nlpService.getClassifiedCountries(
+        countriesInfo,
+      );
+      const countriesData = classifiedCountries.map((country: CountryInfo) => ({
+        ...country,
+        flag: COUNTRY_FLAGS[country.name] || '🇷🇸',
+      }));
+      await this.redisCacheService.set(
+        'countries',
+        JSON.stringify(countriesData),
+      );
 
-    const pageSource = !isEnv('production')
-      ? pageSourceData
-      : await this.scraperService.getPageSource(WEBPAGE_URL);
-    const countriesInfo = this.scraperService.getCountriesInfo(pageSource);
-    const classifiedCountries = await this.nlpService.getClassifiedCountries(
-      countriesInfo,
-    );
-    const countriesData = classifiedCountries.map((country: CountryInfo) => ({
-      ...country,
-      flag: COUNTRY_FLAGS[country.name] || '🇷🇸',
-    }));
-    await this.redisCacheService.set(
-      'countries',
-      JSON.stringify(countriesData),
-    );
-
-    this.logger.log(`Finished ${UPSERT_DATA_CRON_JOB} cron job...`);
+      this.logger.log(`Finished ${UPSERT_DATA_CRON_JOB} cron job...`);
+    } catch (err) {
+      this.logger.error(err);
+    }
   }
 }

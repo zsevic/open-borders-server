@@ -6,7 +6,6 @@ import { CountryInfo } from './country.types';
 
 describe('CountryService', () => {
   let countryService: CountryService;
-  let redisCacheService: RedisCacheService;
   const result: CountryInfo[] = [
     {
       name: 'country',
@@ -30,7 +29,6 @@ describe('CountryService', () => {
     }).compile();
 
     countryService = module.get<CountryService>(CountryService);
-    redisCacheService = module.get<RedisCacheService>(RedisCacheService);
   });
 
   it('should get country list', async () => {

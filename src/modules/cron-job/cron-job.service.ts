@@ -2,6 +2,8 @@ import { Injectable, Logger } from '@nestjs/common';
 import { Cron, CronExpression } from '@nestjs/schedule';
 import { WEBPAGE_URL } from 'common/config/constants';
 import { isEnv } from 'common/utils';
+import { COUNTRY_FLAGS } from 'modules/country/country.constants';
+import { CountryInfo } from 'modules/country/country.types';
 import { NlpService } from 'modules/nlp/nlp.service';
 import { RedisCacheService } from 'modules/redis-cache/redis-cache.service';
 import { data as pageSourceData } from 'modules/scraper/scraper.data';
@@ -32,9 +34,13 @@ export class CronJobService {
     const classifiedCountries = await this.nlpService.getClassifiedCountries(
       countriesInfo,
     );
+    const countriesData = classifiedCountries.map((country: CountryInfo) => ({
+      ...country,
+      flag: COUNTRY_FLAGS[country.name] || '🇷🇸',
+    }));
     await this.redisCacheService.set(
       'countries',
-      JSON.stringify(classifiedCountries),
+      JSON.stringify(countriesData),
     );
 
     this.logger.log(`Finished ${UPSERT_DATA_CRON_JOB} cron job...`);

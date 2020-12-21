@@ -1,4 +1,6 @@
 import { Logger } from '@nestjs/common';
+import { NestFactory } from '@nestjs/core';
+import { NestExpressApplication } from '@nestjs/platform-express';
 import * as Sentry from '@sentry/node';
 import compression from 'compression';
 import helmet from 'helmet';
@@ -7,12 +9,13 @@ import { setupApiDocs } from 'common/config/api-docs';
 import { RATE_LIMIT_REQUESTS, RATE_LIMIT_TIME } from 'common/config/rate-limit';
 import { AllExceptionsFilter } from 'common/filters';
 import { loggerMiddleware } from 'common/middlewares';
-import { isEnv } from 'common/utils';
+import { isEnv, logger as appLogger } from 'common/utils';
 import { AppModule } from 'modules/app/app.module';
-import { application } from './app';
 
 async function bootstrap(): Promise<void> {
-  const app = await application.get();
+  const app = await NestFactory.create<NestExpressApplication>(AppModule, {
+    logger: appLogger,
+  });
 
   const logger = new Logger(bootstrap.name);
   const configService = app.get('configService');

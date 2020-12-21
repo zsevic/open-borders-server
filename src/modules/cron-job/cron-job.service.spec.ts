@@ -35,12 +35,12 @@ describe('CronJobService', () => {
   it('should upsert the data', async () => {
     const pageSource = `<div id="text">
     (ažurirano 08.12.2020.)<br><br><strong>AZERBEJDžAN</strong><br>Državljani Srbije ne mogu da uđu ili tranzitiraju jer su sve granice Azerbejdzana zatvorene za putnički saobraćaj. Državljani Srbije koji u hitnom slučaju treba da putuju u Azerbejdzan treba da podnesu zahtev za vizu u Ambasadi Azerbejdzana u Beogradu.<br>Strani državljani da bi dobili dozvolu za ulazak u zemlju moraju da dostave lekarsko uverenje o negativnom rezultatu testa. Po dolasku u Azerbejdzan, strani državljani se pregledaju i u slučaju sumnje na infekciju, lice se, bez obzira na državljanstvo, nacionalnost i svrhu putovanja, smešta u karantin od 14 dana u specijalizovanoj medicinskoj ustanovi.<br><br></div>`;
-    const countryInfo = {
+    const countryInfo: CountryInfo = {
       name: 'AZERBEJDžAN',
       info:
         'Državljani Srbije ne mogu da uđu ili tranzitiraju jer su sve granice Azerbejdzana zatvorene za putnički saobraćaj. Državljani Srbije koji u hitnom slučaju treba da putuju u Azerbejdzan treba da podnesu zahtev za vizu u Ambasadi Azerbejdzana u Beogradu. Strani državljani da bi dobili dozvolu za ulazak u zemlju moraju da dostave lekarsko uverenje o negativnom rezultatu testa. Po dolasku u Azerbejdzan, strani državljani se pregledaju i u slučaju sumnje na infekciju, lice se, bez obzira na državljanstvo, nacionalnost i svrhu putovanja, smešta u karantin od 14 dana u specijalizovanoj medicinskoj ustanovi.',
     };
-    const countriesInfo = [
+    const countriesInfo: CountryInfo[] = [
       {
         ...countryInfo,
       },
@@ -48,7 +48,7 @@ describe('CronJobService', () => {
     const classifiedCountries: CountryInfo[] = [
       { ...countryInfo, status: CLOSED_BORDER },
     ];
-    const countryData = [
+    const result: CountryInfo[] = [
       {
         ...countryInfo,
         flag: COUNTRY_FLAGS[countryInfo.name],
@@ -62,6 +62,8 @@ describe('CronJobService', () => {
       .spyOn(nlpService, 'getClassifiedCountries')
       .mockResolvedValue(classifiedCountries);
 
-    expect(await cronJobService.upsertData()).toMatchObject(countryData);
+    const countryData = await cronJobService.upsertData();
+
+    expect(countryData).toMatchObject(result);
   });
 });

@@ -1,6 +1,5 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { CountryInfo } from 'modules/country/country.types';
-import { CLOSED_BORDER } from './nlp.constants';
 import { NlpService } from './nlp.service';
 
 describe('NlpService', () => {

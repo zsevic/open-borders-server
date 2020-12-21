@@ -30,6 +30,8 @@ describe('CountryController', () => {
     ];
     jest.spyOn(countryService, 'getCountryList').mockResolvedValue(result);
 
-    expect(await countryController.getCountryList()).toBe(result);
+    const countryList: CountryInfo[] = await countryController.getCountryList();
+
+    expect(countryList).toBe(result);
   });
 });

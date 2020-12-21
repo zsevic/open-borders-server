@@ -3,12 +3,12 @@ import cheerio from 'cheerio';
 import puppeteer from 'puppeteer';
 import { isEnv } from 'common/utils';
 import { CountryInfo } from 'modules/country/country.types';
-import { data } from './scraper.data';
+import { pageSource } from './scraper.data';
 
 @Injectable()
 export class ScraperService {
   getPageSource = async (url: string): Promise<string> => {
-    if (isEnv('development')) return data;
+    if (isEnv('development')) return pageSource;
 
     const browser = await puppeteer.launch({
       args: ['--no-sandbox', '--disable-setuid-sandbox'],
@@ -51,12 +51,14 @@ export class ScraperService {
       }
     });
 
-    return countries.map(countryInfo => {
-      const [countryName, info] = countryInfo;
-      return {
-        name: countryName.replace(/\:$/, ''),
-        info: info.join(' ').replace(/^,/, ''),
-      };
-    });
+    return countries.map(
+      (countryInfo): CountryInfo => {
+        const [countryName, info] = countryInfo;
+        return {
+          name: countryName.replace(/\:$/, ''),
+          info: info.join(' ').replace(/^,/, ''),
+        };
+      },
+    );
   };
 }

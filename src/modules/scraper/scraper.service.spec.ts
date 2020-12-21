@@ -1,6 +1,6 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { CountryInfo } from 'modules/country/country.types';
-import { data as pageSource } from './scraper.data';
+import { pageSource } from './scraper.data';
 import { ScraperService } from './scraper.service';
 
 describe('ScraperService', () => {

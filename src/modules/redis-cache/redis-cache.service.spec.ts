@@ -6,7 +6,7 @@ import { RedisCacheService } from './redis-cache.service';
 
 describe('RedisCacheService', () => {
   let redisCacheService: RedisCacheService;
-  const countries: CountryInfo[] = [
+  const result: CountryInfo[] = [
     {
       name: 'country',
       info: 'info',
@@ -22,7 +22,7 @@ describe('RedisCacheService', () => {
         {
           provide: CACHE_MANAGER,
           useValue: {
-            get: async () => Promise.resolve(JSON.stringify(countries)),
+            get: async () => Promise.resolve(JSON.stringify(result)),
             set: async () => Promise.resolve(),
           },
         },
@@ -33,14 +33,17 @@ describe('RedisCacheService', () => {
   });
 
   it('should get the data from Redis database', async () => {
-    expect(await redisCacheService.get('countries')).toBe(
-      JSON.stringify(countries),
-    );
+    const countries = await redisCacheService.get('countries');
+
+    expect(countries).toBe(JSON.stringify(result));
   });
 
   it('should set the data to the Redis database', async () => {
-    expect(
-      await redisCacheService.set('countries', JSON.stringify(countries)),
-    ).toBe(undefined);
+    const response = await redisCacheService.set(
+      'countries',
+      JSON.stringify(result),
+    );
+
+    expect(response).toBe(undefined);
   });
 });

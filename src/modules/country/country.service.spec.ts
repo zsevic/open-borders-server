@@ -32,6 +32,8 @@ describe('CountryService', () => {
   });
 
   it('should get country list', async () => {
-    expect(await countryService.getCountryList()).toMatchObject(result);
+    const countryList: CountryInfo[] = await countryService.getCountryList();
+
+    expect(countryList).toMatchObject(result);
   });
 });

@@ -9,7 +9,7 @@ import {
   NO_TEST_REQUIRED,
   SKIPPED_INTENTS,
 } from './nlp.constants';
-import { trainingData } from './nlp.data';
+import { trainingData } from './nlp.training-data';
 
 @Injectable()
 export class NlpService {

@@ -3,7 +3,7 @@ import cheerio from 'cheerio';
 import puppeteer from 'puppeteer';
 import { isEnv } from 'common/utils';
 import { CountryInfo } from 'modules/country/country.types';
-import { pageSource } from './scraper.data';
+import { pageSource } from './scraper.scraped-data';
 
 @Injectable()
 export class ScraperService {
@@ -16,7 +16,9 @@ export class ScraperService {
     const page = await browser.newPage();
     await page.goto(url);
     await page.waitForSelector('body');
-    const html = await page.evaluate((): string => document.body.innerHTML); // eslint-disable-line
+    const html = await page.evaluate(
+      (): string => document.getElementById('text').outerHTML,
+    );
     await page.close();
     return html;
   };

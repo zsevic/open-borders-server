@@ -1,17 +1,26 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { NO_TEST_REQUIRED } from 'modules/nlp/nlp.constants';
+import {
+  NO_TEST_REQUIRED,
+  QUARANTINE_REQUIRED,
+} from 'modules/nlp/nlp.constants';
 import { RedisCacheService } from 'modules/redis-cache/redis-cache.service';
 import { CountryService } from './country.service';
 import { CountryInfo } from './country.types';
 
 describe('CountryService', () => {
   let countryService: CountryService;
-  const result: CountryInfo[] = [
+  const countries: CountryInfo[] = [
     {
-      name: 'country',
+      name: 'BOSNA I HERCEGOVINA',
       info: 'info',
       status: NO_TEST_REQUIRED,
-      flag: '🇷🇸',
+      flag: '🇧🇦',
+    },
+    {
+      name: 'SAD',
+      info: 'info',
+      status: QUARANTINE_REQUIRED,
+      flag: '🇺🇸',
     },
   ];
 
@@ -22,7 +31,7 @@ describe('CountryService', () => {
         {
           provide: RedisCacheService,
           useValue: {
-            get: async () => Promise.resolve(JSON.stringify(result)),
+            get: async () => Promise.resolve(JSON.stringify(countries)),
           },
         },
       ],
@@ -32,6 +41,20 @@ describe('CountryService', () => {
   });
 
   it('should get country list', async () => {
+    const result: CountryInfo[] = [
+      {
+        name: 'Bosna i Hercegovina',
+        info: 'info',
+        status: NO_TEST_REQUIRED,
+        flag: '🇧🇦',
+      },
+      {
+        name: 'SAD',
+        info: 'info',
+        status: QUARANTINE_REQUIRED,
+        flag: '🇺🇸',
+      },
+    ];
     const countryList: CountryInfo[] = await countryService.getCountryList();
 
     expect(countryList).toMatchObject(result);

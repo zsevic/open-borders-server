@@ -184,6 +184,10 @@ export const trainingData = [
     intent: OPEN_BORDER,
   },
   {
+    utterance: 'Stranim državljanima dozvoljen je ulazak u zemlju',
+    intent: OPEN_BORDER,
+  },
+  {
     utterance:
       'Po dolasku na aerodromu se obavlja zdravstveni pregled i radi prvi PCR test',
     intent: NEGATIVE_TEST_REQUIRED,

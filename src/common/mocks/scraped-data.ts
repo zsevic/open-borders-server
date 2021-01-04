@@ -325,7 +325,7 @@ export const countriesInfo = [
   {
     name: 'KABO VERDE',
     info:
-      'Od 19. marta 2020. godine, licima koja nisu državljani Kabo Verde nije dozvoljen ulazak u zemlju, uključujući državljane Srbije.',
+      'Stranim državljanima, uključujući državljane Srbije, dozvoljen je ulazak u zemlju. Neophodan je negativan PCR test, antigenski test ili bilo koji drugi odobren molekularno biološki test na SARS-COV-2, ne stariji od 72 sata, osim za decu mlađu od sedam godina.',
   },
   {
     name: 'KAZAHSTAN',
@@ -435,7 +435,7 @@ export const countriesInfo = [
   {
     name: 'KUVAJT',
     info:
-      'Državljani Srbije ne mogu da uđu u Kuvajt. Suspendovani su svi letovi u civilnom saobraćaju.',
+      'Državljani Srbije ne mogu da uđu u Kuvajt direktno iz Srbije. Počev od 2. januara 2021.godine državljani Srbije mogu da uđu u Kuvajt ukoliko su prethodno boravili 14 dana u nekoj trećoj zemlji koju Kuvajt ne smatra zemljom visokog rizika (npr. Turska, Kipar). Neophodan je negativan PCR test, ne stariji od 72 sata.',
   },
   {
     name: 'LAOS',
@@ -839,7 +839,7 @@ export const countriesInfo = [
   {
     name: 'UJEDINjENI ARAPSKI EMIRATI',
     info:
-      'Državljani Srbije mogu da uđu u UAE. Neophodan je negativan PCR test, ne stariji od 48 sati. Dvostruko testiranje (PCR- test), pre putovanja i po dolasku u UAE nije više obavezno za UAE rezidente, turiste i tranzitne turiste koji dolaze iz 60-tak zemalja, uključujući Srbiju. Oni imaju mogućnost da se testiraju u Srbiji (test ne stariji od 48 sati) ili po sletanju na Dubai aerodrom. Nalaz testa sa aerodroma se dobija u roku od jednog do dva dana na mobilni telefon. U emiratu Dubai je obavezna samoizolacija do dobijanja rezultata testa sa aerodroma. Praćenje pridržavanja mere samoizolacije se takođe obavlja preko mobilnog telefona (obavezna instalacija Al Hosn aplikacije). U emiratu Abu Dabi nije dozvoljen ulazak turista preko aerodroma u Abu Dabiju. Za povratak rezidenata, obavezna je samoizolacija u trajanju od 14 dana koja se prati preko narukvice koja se dobija na aerodormu. Nepridržavanje samoizolacije se kažnjava novčano u lokalnoj valuti u vrednosti oko 12.000,00 evra. Specifičnost UAE je da između emirata Abu Dabi i Dubai postoji kontrolni punkt koji se ne može preći bez negativnog nalaza PCR ili DPI testa. Takođe, svi nerezidenti i rezidenti UAE, koji preko Dubai aerodroma dođu u UAE i nastave kopnom ka Abu Dabiju, na punktu će dobiti narukvicu kojom se prati obavezna samoizolacija u trajanju od 14 dana. Od 08. novembra, svi rezidenti UAE, prilikom dolaska na kontrolni punkt između Dubaija i Abu Dabija su dužni da pokažu negativan DPI ili PCR test, ne stariji od 48 sati. Za one koji planiraju boravak u Abu Dabiju od 4 ili više dana, neophodno je da urade još dva PCR testa i to jedan četvrtog, a drugi osmog dana od dana ulaska u Abu Dabi.',
+      'Državljani Srbije mogu da uđu u UAE. Neophodan je negativan PCR test, ne stariji od 48 sati (za sve emirate osim za Abu Dabi). Dvostruko testiranje (PCR-test), pre putovanja i po dolasku u UAE nije više obavezno za UAE rezidente, turiste i tranzitne turiste koji dolaze iz 60-tak zemalja, uključujući Srbiju. Oni imaju mogućnost da se testiraju u Srbiji (test ne stariji od 48 sati) ili po sletanju na Dubai aerodrom. Nalaz testa sa aerodroma se dobija u roku od jednog do dva dana na mobilni telefon. U emiratu Dubai je obavezna samoizolacija do dobijanja rezultata testa sa aerodroma. Praćenje pridržavanja mere samoizolacije se obavlja preko mobilnog telefona (obavezna instalacija Al Hosn aplikacije). Za ulazak u Abu Dabi je neophodan PCR test, ne stariji od 72 sata. Putnici iz zemalja koje su na \'\'zelenoj listi\'\' i imaju negativan test nemaju obavezu karantina. Za putnike iz ostalih zemalja je obavezan karantin u trajanju od 10 dana i nošenje GPS narukvice. Po dolasku u Abu Dabi na aerodromu se radi dodatno PCR testiranje. Za one koji ostaju u Abu Dabiju duže od 6 dana neprekidno, obavezan je PCR test šestog dana i još jedan dvanaestog dana. Lista zemalja na zelenoj listi se može naći u sledećem linku: https://visitabudhabi.ae/en/plan-your-trip/covid-safe-travel/permitted-countries Specifičnost UAE je da između emirata Abu Dabi i Dubai postoji kontrolni punkt koji se ne može preći bez negativnog nalaza PCR ili DPI testa. Takođe, svi nerezidenti i rezidenti UAE, koji preko Dubai aerodroma dođu u UAE i nastave kopnom ka Abu Dabiju, na punktu će dobiti narukvicu kojom se prati obavezna samoizolacija u trajanju od 10 dana. Više informacija o režimu ulaska u Abu Dabi se može naći u sldećem linku:  <a href="https://visitabudhabi.ae/en/plan-your-trip/covid-safe-travel" class="text-info" target="_blank" rel="noopener noreferrer">https://visitabudhabi.ae/en/plan-your-trip/covid-safe-travel</a>',
   },
   {
     name: 'UKRAJINA',

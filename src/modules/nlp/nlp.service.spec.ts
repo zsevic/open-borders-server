@@ -866,7 +866,7 @@ describe('NlpService', () => {
         status: 'NEGATIVE_TEST_REQUIRED',
       },
       {
-        name: 'Devičanska ostrva SAD (U.S. Virgin Islands)',
+        name: 'Devičanska ostrva SAD',
         info:
           ' zahtevaju od svih putnika starijih od 5 godina da u roku od pet dana pre puta posredstvom Portala za kontrolu putnika (U.S. Virgin Islands Travel Screening Portal  <a href="https://usvitravelportal.com/" class="text-info" target="_blank" rel="noopener noreferrer">https://usvitravelportal.com/</a> ) predaju rezultate testa na COVID-19. Od putnika se traži da poseduju negativan PCR ili antigen (Rapid) test, ne stariji od 5 dana, odnosno pozitivan test na antitela, ne stariji od 4 meseca. Original testa putnik mora imati kod sebe prilikom dolaska. Putnici koji ne poseduju test upućuju se u obavezni 14-dnevni karantin, uz mogućnost da po dolasku na ostrva o svom trošku urade test i, u slučaju da je rezultat testa negativan, prekinu karantin.',
         status: 'NEGATIVE_TEST_REQUIRED',

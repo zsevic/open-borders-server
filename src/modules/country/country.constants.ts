@@ -29,7 +29,7 @@ export const COUNTRY_FLAGS = {
   'ČEŠKA REPUBLIKA': '🇨🇿',
   ČILE: '🇨🇱',
   DANSKA: '🇩🇰',
-  'Devičanska ostrva SAD (U.S. Virgin Islands)': '🇻🇮',
+  'Devičanska ostrva SAD': '🇻🇮',
   DOMINIKA: '🇩🇲',
   'DOMINIKANSKA REPUBLIKA': '🇩🇴',
   'Država Njujork': '🇺🇸',

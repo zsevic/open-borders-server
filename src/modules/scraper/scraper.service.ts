@@ -56,8 +56,9 @@ export class ScraperService {
     return countries.map(
       (countryInfo): CountryInfo => {
         const [countryName, info] = countryInfo;
+        const [name] = countryName.split(' (');
         return {
-          name: countryName.replace(/\:$/, ''),
+          name: name.replace(/\:$/, ''),
           info: info.join(' ').replace(/^,/, ''),
         };
       },

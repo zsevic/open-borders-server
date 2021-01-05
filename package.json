@@ -7,7 +7,8 @@
   "scripts": {
     "prebuild": "rimraf dist",
     "build": "nest build",
-    "postbuild": "copyfiles -u 1 src/**/*.json dist/",
+    "postbuild": "npm run copy-files",
+    "copy-files": "copyfiles -u 1 src/**/*.json dist/",
     "classifier:remove": "rimraf src/modules/nlp/nlp.model.json",
     "preclassifier:train-save": "npm run classifier:remove",
     "classifier:train-save": "ts-node -r tsconfig-paths/register src/scripts/train-save-model",
@@ -17,6 +18,7 @@
     "scraper:update-scraped-data": "ts-node -r tsconfig-paths/register src/scripts/update-scraped-data",
     "postscraper:update-scraped-data": "npm run format",
     "start": "nest start",
+    "prestart:dev": "npm run copy-files",
     "start:dev": "NODE_ENV=development nest start --watch",
     "start:debug": "nest start --debug --watch",
     "start:prod": "NODE_PATH=./dist NODE_ENV=production node dist/main.js",

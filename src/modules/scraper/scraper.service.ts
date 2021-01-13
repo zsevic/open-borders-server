@@ -2,6 +2,7 @@ import { Injectable } from '@nestjs/common';
 import cheerio from 'cheerio';
 import puppeteer from 'puppeteer';
 import { isEnv } from 'common/utils';
+import { COUNTRY_FLAGS } from 'modules/country/country.constants';
 import { CountryInfo } from 'modules/country/country.types';
 import { pageSource } from './scraper.scraped-data';
 
@@ -34,7 +35,12 @@ export class ScraperService {
         const { data: countryName } = element.children.find(
           child => child.data,
         );
-        return countries.push([countryName, []]);
+        const [formattedCountryName] = countryName
+          .replace(/\:$/, '')
+          .split(' (');
+        if (!!COUNTRY_FLAGS[formattedCountryName])
+          return countries.push([formattedCountryName, []]);
+        return countries[countries.length - 1][1].push(countryName);
       }
       if (element.type === 'text') {
         if (countries.length === 0) return;
@@ -55,10 +61,9 @@ export class ScraperService {
 
     return countries.map(
       (countryInfo): CountryInfo => {
-        const [countryName, info] = countryInfo;
-        const [name] = countryName.split(' (');
+        const [name, info] = countryInfo;
         return {
-          name: name.replace(/\:$/, ''),
+          name,
           info: info.join(' ').replace(/^,/, ''),
         };
       },

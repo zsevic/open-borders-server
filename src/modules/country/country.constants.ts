@@ -136,6 +136,7 @@ export const COUNTRY_FLAGS = {
   PANAMA: '🇵🇦',
   'PAPUA NOVA GVINEJA': '🇵🇬',
   PARAGVAJ: '🇵🇾',
+  Peking: '🇨🇳',
   PERU: '🇵🇪',
   POLjSKA: '🇵🇱',
   Portoriko: '🇵🇷',

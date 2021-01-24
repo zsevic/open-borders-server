@@ -131,6 +131,11 @@ export const trainingData = [
     intent: NO_TEST_REQUIRED,
   },
   {
+    utterance:
+      'Državljani Srbije mogu da uđu ili tranzitiraju kroz Sudan bez testova',
+    intent: NO_TEST_REQUIRED,
+  },
+  {
     utterance: 'Državljani Srbije mogu da uđu u Brazil vazdušnim putem',
     intent: OPEN_BORDER,
   },
@@ -185,6 +190,10 @@ export const trainingData = [
   },
   {
     utterance: 'Stranim državljanima dozvoljen je ulazak u zemlju',
+    intent: OPEN_BORDER,
+  },
+  {
+    utterance: 'Drzavljani Srbije mogu da udu i tranzitiraju kroz Irsku',
     intent: OPEN_BORDER,
   },
   {
@@ -357,6 +366,15 @@ export const trainingData = [
   {
     utterance:
       'Lica koja imaju stalni boravak u Ukrajini su izuzeta od posedovanja polise zdravstvenog osiguranja',
+    intent: SKIP_SENTENCE,
+  },
+  {
+    utterance: 'Za Kneževinu Monako važi isti režim ulaska kao za Francusku',
+    intent: SKIP_SENTENCE,
+  },
+  {
+    utterance:
+      'Meksiko nije usvojio ograničenja ulaska stranaca u zemlju, ali se preduzimaju odgovarajuće mere ukoliko osobe ispoljavaju simptome na korona virus',
     intent: SKIP_SENTENCE,
   },
 ];

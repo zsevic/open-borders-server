@@ -176,7 +176,7 @@ describe('NlpService', () => {
         name: 'VELIKA BRITANIJA',
         info:
           'Državljani Srbije mogu ući ili tranzitirati kroz Ujedinjeno Kraljevstvo pod uslovom da imaju validnu vizu. Pri ulasku neophodno je da se elektronskim putem unapred popuni formular za praćenje kretanja - Passenger Locator Form. Putnici u tranzitu, takođe, su u obavezi da unapred popune ovaj formular. Svi putnici, uključujući i državljane Srbije, ukoliko dolaze iz Srbije ili iz zemalja koje se uz Srbiju ne nalaze na listi sigurnih zemalja a u kojima su do ulaska u Ujedinjeno Kraljevstvo boravili dve nedelje ili kroz koje su tranzitirali, dužni su da budu u samoizolaciji u trajanju od dve nedelje. Sa početkom važenja od 15. decembra 2020. god. period trajanja dvonedeljne samoizolacije može biti skraćen ukoliko putnici najranije petog dana po dolasku urade test i dobiju negativan rezultat. Testovi se rade o trošku putnika u nekoj od akreditovanih laboratorija. Za putnike koji putuju u Škotsku, Vels i S. Irsku i dalje važi obaveza dvonedeljne samoizolacije bez mogućnosti skraćenja.',
-        status: 'CLOSED_BORDER',
+        status: QUARANTINE_REQUIRED,
       },
       {
         name: 'VENECUELA',

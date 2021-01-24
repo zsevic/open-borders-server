@@ -4,7 +4,6 @@ import latinize from 'latinize';
 import { NlpManager } from 'node-nlp';
 import { CountryInfo } from 'modules/country/country.types';
 import {
-  CLOSED_BORDER,
   MODEL_LANGUAGE,
   NO_TEST_REQUIRED,
   SKIPPED_INTENTS,
@@ -41,14 +40,9 @@ export class NlpService {
             try {
               const countryInfo = latinize(infoSentences[i]);
               const { intent } = await nlpManager.process(countryInfo);
-              const skipLastSentenceIntent =
-                i === infoSentences.length - 1 &&
-                SKIPPED_INTENTS.includes(intent);
-              const skipSecondSentenceClosedBorderIntent =
-                i === 1 && intent === CLOSED_BORDER;
               if (
-                skipLastSentenceIntent ||
-                skipSecondSentenceClosedBorderIntent
+                i === infoSentences.length - 1 &&
+                SKIPPED_INTENTS.includes(intent)
               ) {
                 return {
                   ...country,

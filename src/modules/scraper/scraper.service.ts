@@ -42,12 +42,12 @@ export class ScraperService {
           return countries.push([formattedCountryName, []]);
         return countries[countries.length - 1][1].push(countryName);
       }
+      if (countries.length === 0) return;
+
       if (element.type === 'text') {
-        if (countries.length === 0) return;
         return countries[countries.length - 1][1].push(element.data);
       }
       if (element.name === 'a') {
-        if (countries.length === 0) return;
         const { href } = element.attribs;
         let text = href;
         if (href.startsWith('mailto:')) {
@@ -56,6 +56,11 @@ export class ScraperService {
         }
         const link = `<a href="${href}" class="text-info" target="_blank" rel="noopener noreferrer">${text}</a>`;
         return countries[countries.length - 1][1].push(link);
+      }
+      if (element.name === 'div') {
+        const { data } = element.children.find(child => child.data);
+        if (!data) return;
+        return countries[countries.length - 1][1].push(data);
       }
     });
 

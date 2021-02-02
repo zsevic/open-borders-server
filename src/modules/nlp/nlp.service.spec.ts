@@ -230,7 +230,7 @@ describe('NlpService', () => {
         name: 'GRUZIJA',
         info:
           'Državljani Srbije mogu ući u Gruziju ukoliko prilikom ulaska pruže na uvid dokumenta koja potvrđuju da su primljene obe doze bilo koje od postojećih vakcina protiv virusa Covid-19.',
-        status: 'NO_TEST_REQUIRED',
+        status: 'VACCINATION_REQUIRED',
       },
       {
         name: 'GRČKA',

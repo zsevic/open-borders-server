@@ -5,6 +5,7 @@ import {
   OPEN_BORDER,
   QUARANTINE_REQUIRED,
   SKIP_SENTENCE,
+  VACCINATION_REQUIRED,
 } from './nlp.constants';
 
 export const trainingData = [
@@ -376,5 +377,15 @@ export const trainingData = [
     utterance:
       'Meksiko nije usvojio ograničenja ulaska stranaca u zemlju, ali se preduzimaju odgovarajuće mere ukoliko osobe ispoljavaju simptome na korona virus',
     intent: SKIP_SENTENCE,
+  },
+  {
+    utterance:
+      'Drzavljani Srbije morace da snose troskove obaveznog testiranja',
+    intent: SKIP_SENTENCE,
+  },
+  {
+    utterance:
+      'Državljani Srbije mogu ući u Gruziju ukoliko prilikom ulaska pruže na uvid dokumenta koja potvrđuju da su primljene obe doze bilo koje od postojećih vakcina protiv virusa Covid-19.',
+    intent: VACCINATION_REQUIRED,
   },
 ];

@@ -34,7 +34,6 @@ export class CronJobService {
         ...country,
         flag: COUNTRY_FLAGS[country.name] || '🇷🇸',
       }));
-      console.log(countriesData);
       await this.redisCacheService.set(
         'countries',
         JSON.stringify(countriesData),

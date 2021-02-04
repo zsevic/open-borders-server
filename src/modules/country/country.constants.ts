@@ -182,6 +182,7 @@ export const COUNTRY_FLAGS = {
   'UJEDINjENI ARAPSKI EMIRATI': '🇦🇪',
   UKRAJINA: '🇺🇦',
   URUGVAJ: '🇺🇾',
+  UZBEKISTAN: '🇺🇿',
   VANUATU: '🇻🇺',
   'VELIKA BRITANIJA': '🇬🇧',
   VENECUELA: '🇻🇪',

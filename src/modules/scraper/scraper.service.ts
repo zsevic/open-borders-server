@@ -35,12 +35,9 @@ export class ScraperService {
         const { data: countryName } = element.children.find(
           child => child.data,
         );
-        const [formattedCountryName] = countryName
-          .replace(/\:$/, '')
-          .split(' (');
-        if (!!COUNTRY_FLAGS[formattedCountryName])
+        const formattedCountryName = this.getFormattedCountryName(countryName);
+        if (formattedCountryName)
           return countries.push([formattedCountryName, []]);
-        return countries[countries.length - 1][1].push(countryName);
       }
       if (countries.length === 0) return;
 
@@ -58,20 +55,41 @@ export class ScraperService {
         return countries[countries.length - 1][1].push(link);
       }
       if (element.name === 'div') {
-        const { data } = element.children.find(child => child.data);
-        if (!data) return;
-        return countries[countries.length - 1][1].push(data);
+        const elementChild = element.children.find(child => child.data);
+        if (!elementChild) {
+          const elementChildren = element.children.find(
+            child => child.children,
+          );
+          const { data } = elementChildren.children.find(child => child.data);
+          if (!data) return;
+
+          const formattedCountryName = this.getFormattedCountryName(data);
+          if (formattedCountryName)
+            return countries.push([formattedCountryName, []]);
+        }
+        return countries[countries.length - 1][1].push(elementChild.data);
       }
     });
 
-    return countries.map(
-      (countryInfo): CountryInfo => {
-        const [name, info] = countryInfo;
-        return {
-          name,
-          info: info.join(' ').replace(/^,/, ''),
-        };
-      },
-    );
+    return countries
+      .map(
+        (countryInfo): CountryInfo => {
+          const [name, info] = countryInfo;
+          return {
+            name,
+            info: info
+              .filter((info: string) => info !== '\n')
+              .join(' ')
+              .replace(/^,/, '')
+              .trim(),
+          };
+        },
+      )
+      .filter((countryInfo): boolean => countryInfo.info.length > 0);
+  };
+
+  private getFormattedCountryName = (countryName: string): string => {
+    const [formattedCountryName] = countryName.replace(/\:$/, '').split(' (');
+    if (!!COUNTRY_FLAGS[formattedCountryName]) return formattedCountryName;
   };
 }

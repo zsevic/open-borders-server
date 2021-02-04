@@ -12,10 +12,10 @@ export const pageSource = `<div id="text">
  var suffix = '';
  var attribs = '';
  var path = 'hr' + 'ef' + '=';
- var addy700 = 's&#101;rv&#105;c&#101;.v&#105;s&#97;s' + '&#64;';
- addy700 = addy700 + 'm&#97;&#101;' + '&#46;' + '&#101;t&#97;t' + '&#46;' + 'l&#117;';
- document.write( '<a ' + path + '\'' + prefix + addy700 + suffix + '\'' + attribs + '>' );
- document.write( addy700 );
+ var addy78173 = 's&#101;rv&#105;c&#101;.v&#105;s&#97;s' + '&#64;';
+ addy78173 = addy78173 + 'm&#97;&#101;' + '&#46;' + '&#101;t&#97;t' + '&#46;' + 'l&#117;';
+ document.write( '<a ' + path + '\'' + prefix + addy78173 + suffix + '\'' + attribs + '>' );
+ document.write( addy78173 );
  document.write( '<\/a>' );
  //-->
  </script><a href="mailto:service.visas@mae.etat.lu">service.visas@mae.etat.lu</a><script language="JavaScript" type="text/javascript">
@@ -35,10 +35,10 @@ export const pageSource = `<div id="text">
  var suffix = '';
  var attribs = '';
  var path = 'hr' + 'ef' + '=';
- var addy7348 = 'c&#111;v&#105;d19' + '&#64;';
- addy7348 = addy7348 + 'g&#111;&#117;v' + '&#46;' + 'mc';
- document.write( '<a ' + path + '\'' + prefix + addy7348 + suffix + '\'' + attribs + '>' );
- document.write( addy7348 );
+ var addy11243 = 'c&#111;v&#105;d19' + '&#64;';
+ addy11243 = addy11243 + 'g&#111;&#117;v' + '&#46;' + 'mc';
+ document.write( '<a ' + path + '\'' + prefix + addy11243 + suffix + '\'' + attribs + '>' );
+ document.write( addy11243 );
  document.write( '<\/a>' );
  //-->
  </script><a href="mailto:covid19@gouv.mc">covid19@gouv.mc</a><script language="JavaScript" type="text/javascript">
@@ -58,10 +58,10 @@ export const pageSource = `<div id="text">
  var suffix = '';
  var attribs = '';
  var path = 'hr' + 'ef' + '=';
- var addy43626 = 'bp&#111;lp' + '&#64;';
- addy43626 = addy43626 + 'p&#111;l&#105;z&#101;&#105;' + '&#46;' + 'b&#117;nd' + '&#46;' + 'd&#101;';
- document.write( '<a ' + path + '\'' + prefix + addy43626 + suffix + '\'' + attribs + '>' );
- document.write( addy43626 );
+ var addy39475 = 'bp&#111;lp' + '&#64;';
+ addy39475 = addy39475 + 'p&#111;l&#105;z&#101;&#105;' + '&#46;' + 'b&#117;nd' + '&#46;' + 'd&#101;';
+ document.write( '<a ' + path + '\'' + prefix + addy39475 + suffix + '\'' + attribs + '>' );
+ document.write( addy39475 );
  document.write( '<\/a>' );
  //-->
  </script><a href="mailto:bpolp@polizei.bund.de">bpolp@polizei.bund.de</a><script language="JavaScript" type="text/javascript">
@@ -81,10 +81,10 @@ export const pageSource = `<div id="text">
  var suffix = '';
  var attribs = '';
  var path = 'hr' + 'ef' + '=';
- var addy53007 = '&#105;p&#101;r&#117;' + '&#64;';
- addy53007 = addy53007 + 'pr&#111;mp&#101;r&#117;' + '&#46;' + 'g&#111;b' + '&#46;' + 'p&#101;';
- document.write( '<a ' + path + '\'' + prefix + addy53007 + suffix + '\'' + attribs + '>' );
- document.write( addy53007 );
+ var addy16206 = '&#105;p&#101;r&#117;' + '&#64;';
+ addy16206 = addy16206 + 'pr&#111;mp&#101;r&#117;' + '&#46;' + 'g&#111;b' + '&#46;' + 'p&#101;';
+ document.write( '<a ' + path + '\'' + prefix + addy16206 + suffix + '\'' + attribs + '>' );
+ document.write( addy16206 );
  document.write( '<\/a>' );
  //-->
  </script><a href="mailto:iperu@promperu.gob.pe">iperu@promperu.gob.pe</a><script language="JavaScript" type="text/javascript">
@@ -104,10 +104,10 @@ export const pageSource = `<div id="text">
  var suffix = '';
  var attribs = '';
  var path = 'hr' + 'ef' + '=';
- var addy44819 = 'p&#101;r&#117;l&#105;m&#97;&#97;pt&#111;' + '&#64;';
- addy44819 = addy44819 + 'pr&#111;mp&#101;r&#117;' + '&#46;' + 'g&#111;b' + '&#46;' + 'p&#101;';
- document.write( '<a ' + path + '\'' + prefix + addy44819 + suffix + '\'' + attribs + '>' );
- document.write( addy44819 );
+ var addy35678 = 'p&#101;r&#117;l&#105;m&#97;&#97;pt&#111;' + '&#64;';
+ addy35678 = addy35678 + 'pr&#111;mp&#101;r&#117;' + '&#46;' + 'g&#111;b' + '&#46;' + 'p&#101;';
+ document.write( '<a ' + path + '\'' + prefix + addy35678 + suffix + '\'' + attribs + '>' );
+ document.write( addy35678 );
  document.write( '<\/a>' );
  //-->
  </script><a href="mailto:perulimaapto@promperu.gob.pe">perulimaapto@promperu.gob.pe</a><script language="JavaScript" type="text/javascript">
@@ -127,10 +127,10 @@ export const pageSource = `<div id="text">
  var suffix = '';
  var attribs = '';
  var path = 'hr' + 'ef' + '=';
- var addy98352 = 'v&#105;&#97;gg&#105;&#97;r&#101;&#105;nf&#111;rm&#97;t&#105;' + '&#64;';
- addy98352 = addy98352 + '&#101;st&#101;r&#105;' + '&#46;' + 'sm';
- document.write( '<a ' + path + '\'' + prefix + addy98352 + suffix + '\'' + attribs + '>' );
- document.write( addy98352 );
+ var addy5711 = 'v&#105;&#97;gg&#105;&#97;r&#101;&#105;nf&#111;rm&#97;t&#105;' + '&#64;';
+ addy5711 = addy5711 + '&#101;st&#101;r&#105;' + '&#46;' + 'sm';
+ document.write( '<a ' + path + '\'' + prefix + addy5711 + suffix + '\'' + attribs + '>' );
+ document.write( addy5711 );
  document.write( '<\/a>' );
  //-->
  </script><a href="mailto:viaggiareinformati@esteri.sm">viaggiareinformati@esteri.sm</a><script language="JavaScript" type="text/javascript">
@@ -152,10 +152,10 @@ export const pageSource = `<div id="text">
  var suffix = '';
  var attribs = '';
  var path = 'hr' + 'ef' + '=';
- var addy29763 = 'r&#97;j&#97;v&#97;rt&#105;&#111;l&#97;&#105;t&#111;s' + '&#64;';
- addy29763 = addy29763 + 'r&#97;j&#97;' + '&#46;' + 'f&#105;';
- document.write( '<a ' + path + '\'' + prefix + addy29763 + suffix + '\'' + attribs + '>' );
- document.write( addy29763 );
+ var addy94992 = 'r&#97;j&#97;v&#97;rt&#105;&#111;l&#97;&#105;t&#111;s' + '&#64;';
+ addy94992 = addy94992 + 'r&#97;j&#97;' + '&#46;' + 'f&#105;';
+ document.write( '<a ' + path + '\'' + prefix + addy94992 + suffix + '\'' + attribs + '>' );
+ document.write( addy94992 );
  document.write( '<\/a>' );
  //-->
  </script><a href="mailto:rajavartiolaitos@raja.fi">rajavartiolaitos@raja.fi</a><script language="JavaScript" type="text/javascript">

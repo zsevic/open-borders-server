@@ -385,6 +385,11 @@ export const trainingData = [
   },
   {
     utterance:
+      'Ulaz u SAD i dalje je zabranjen licima koja su boravila duze od 14 dana u Kini, Irskoj, VBritaniji, Iranu i zemljama Sengena',
+    intent: SKIP_SENTENCE,
+  },
+  {
+    utterance:
       'Državljani Srbije mogu ući u Gruziju ukoliko prilikom ulaska pruže na uvid dokumenta koja potvrđuju da su primljene obe doze bilo koje od postojećih vakcina protiv virusa Covid-19.',
     intent: VACCINATION_REQUIRED,
   },

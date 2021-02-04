@@ -792,7 +792,7 @@ describe('NlpService', () => {
         name: 'SAD',
         info:
           'Državljani Srbije mogu da uđu u SAD. Ulaz u SAD i dalje je zabranjen licima koja su boravila duže od 14 dana u Kini, Irskoj, V.Britaniji, Iranu i zemljama Šengena. Od 26.janura 2021. je obavezan negativan PCR ili NAAT test ne stariji od 3 dana, odnosno pozitivan test, ne stariji od 3 meseca, za one koji su preležali bolest, uz lekarsku potvrdu kojom se tvrdi da je lice bezbedno za putovanje. Test je obavezan i za decu počev od dve godine. Kontrolu posedovanja testa vrši avio prevoznik. Takođe, preporučuje se da se test uradi i u SAD, između trećeg i petog dana po dolasku, kao i da se bude 7 dana u samoizolaciji. Ukoliko dođe do odlaganja leta, iz bilo kojih razloga, putnici će morati da rade novi test ukoliko se ne uklapaju u traženi rok od 3 dana pre putovanja. Dodatne informacije se mogu naći u sledećem linku:  <a href="https://www.cdc.gov/coronavirus/2019-ncov/travelers/testing-international-air-travelers.html" class="text-info" target="_blank" rel="noopener noreferrer">https://www.cdc.gov/coronavirus/2019-ncov/travelers/testing-international-air-travelers.html</a>',
-        status: 'QUARANTINE_REQUIRED',
+        status: 'NEGATIVE_TEST_REQUIRED',
       },
       {
         name: 'SAMOA',

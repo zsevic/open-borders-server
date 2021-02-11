@@ -60,10 +60,14 @@ export class ScraperService {
           const elementChildren = element.children.find(
             child => child.children,
           );
-          const { data } = elementChildren.children.find(child => child.data);
-          if (!data) return;
+          const elementChildrenChild = elementChildren.children.find(
+            child => child.data,
+          );
+          if (!elementChildrenChild) return;
 
-          const formattedCountryName = this.getFormattedCountryName(data);
+          const formattedCountryName = this.getFormattedCountryName(
+            elementChildrenChild.data,
+          );
           if (formattedCountryName)
             return countries.push([formattedCountryName, []]);
         }

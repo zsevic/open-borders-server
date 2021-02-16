@@ -18,7 +18,7 @@ export class ScraperService {
     await page.goto(url);
     await page.waitForSelector('body');
     const html = await page.evaluate(
-      (): string => document.getElementById('text').outerHTML,
+      (): string => document.querySelector('.field--text').outerHTML,
     );
     await page.close();
     return html;

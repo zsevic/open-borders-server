@@ -26,16 +26,18 @@ export class ScraperService {
 
   getCountriesInfo = (html: string): CountryInfo[] => {
     const $ = cheerio.load(html);
-    const countryElements = $('#text strong');
+    const countryElements = $('.field--text strong');
     const elements = countryElements.parent().contents();
 
     const countries = [];
     elements.each((_, element) => {
       if (element.name === 'strong') {
-        const { data: countryName } = element.children.find(
-          child => child.data,
+        const countryName = element.children.find(child => child.data);
+        if (!countryName) return;
+
+        const formattedCountryName = this.getFormattedCountryName(
+          countryName.data,
         );
-        const formattedCountryName = this.getFormattedCountryName(countryName);
         if (formattedCountryName)
           return countries.push([formattedCountryName, []]);
       }

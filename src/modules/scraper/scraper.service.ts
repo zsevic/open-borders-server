@@ -26,20 +26,23 @@ export class ScraperService {
 
   getCountriesInfo = (html: string): CountryInfo[] => {
     const $ = cheerio.load(html);
-    const countryElements = $('.field--text strong');
-    const elements = countryElements.parent().contents();
+    const countryElements = $('.field--text p');
+    const elements = countryElements.contents();
 
     const countries = [];
     elements.each((_, element) => {
       if (element.name === 'strong') {
         const countryName = element.children.find(child => child.data);
-        if (!countryName) return;
+        if (!countryName || countryName.data.trim().length === 0) return;
 
         const formattedCountryName = this.getFormattedCountryName(
           countryName.data,
         );
         if (formattedCountryName)
           return countries.push([formattedCountryName, []]);
+        if (countries.length > 0) {
+          return countries[countries.length - 1][1].push(countryName.data);
+        }
       }
       if (countries.length === 0) return;
 
@@ -47,6 +50,8 @@ export class ScraperService {
         return countries[countries.length - 1][1].push(element.data);
       }
       if (element.name === 'a') {
+        if (!element.attribs.href) return;
+
         const { href } = element.attribs;
         let text = href;
         if (href.startsWith('mailto:')) {
@@ -56,24 +61,11 @@ export class ScraperService {
         const link = `<a href="${href}" class="text-info" target="_blank" rel="noopener noreferrer">${text}</a>`;
         return countries[countries.length - 1][1].push(link);
       }
-      if (element.name === 'div') {
-        const elementChild = element.children.find(child => child.data);
-        if (!elementChild) {
-          const elementChildren = element.children.find(
-            child => child.children,
-          );
-          const elementChildrenChild = elementChildren.children.find(
-            child => child.data,
-          );
-          if (!elementChildrenChild) return;
+      if (['u', 'em'].includes(element.name)) {
+        const text = element.children.find(child => child.data);
+        if (!text || text.data.trim().length === 0) return;
 
-          const formattedCountryName = this.getFormattedCountryName(
-            elementChildrenChild.data,
-          );
-          if (formattedCountryName)
-            return countries.push([formattedCountryName, []]);
-        }
-        return countries[countries.length - 1][1].push(elementChild.data);
+        return countries[countries.length - 1][1].push(text.data);
       }
     });
 
@@ -95,7 +87,10 @@ export class ScraperService {
   };
 
   private getFormattedCountryName = (countryName: string): string => {
-    const [formattedCountryName] = countryName.replace(/\:$/, '').split(' (');
+    const [formattedCountryName] = countryName
+      .replace(/\: $/, '')
+      .trim()
+      .split(' (');
     if (!!COUNTRY_FLAGS[formattedCountryName]) return formattedCountryName;
   };
 }

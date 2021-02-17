@@ -50,12 +50,8 @@ export class ScraperService {
         return countries[countries.length - 1][1].push(element.data);
       }
       if (element.name === 'a') {
-        if (!element.attribs.href) {
-          const text = element.children.find(child => child.data);
-          if (!text || text.data.trim().length === 0) return;
-
-          return countries[countries.length - 1][1].push(text.data);
-        }
+        if (!element.attribs.href)
+          return this.addCountryInfo(countries, element);
 
         const { href } = element.attribs;
         let text = href;
@@ -66,12 +62,8 @@ export class ScraperService {
         const link = `<a href="${href}" class="text-info" target="_blank" rel="noopener noreferrer">${text}</a>`;
         return countries[countries.length - 1][1].push(link);
       }
-      if (['u', 'em'].includes(element.name)) {
-        const text = element.children.find(child => child.data);
-        if (!text || text.data.trim().length === 0) return;
-
-        return countries[countries.length - 1][1].push(text.data);
-      }
+      if (['u', 'em'].includes(element.name))
+        return this.addCountryInfo(countries, element);
     });
 
     return countries
@@ -89,6 +81,13 @@ export class ScraperService {
         },
       )
       .filter((countryInfo): boolean => countryInfo.info.length > 0);
+  };
+
+  private addCountryInfo = (countries: CountryInfo[], element): number => {
+    const text = element.children.find(child => child.data);
+    if (!text || text.data.trim().length === 0) return;
+
+    return countries[countries.length - 1][1].push(text.data);
   };
 
   private getFormattedCountryName = (countryName: string): string => {

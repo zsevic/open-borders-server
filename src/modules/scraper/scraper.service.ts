@@ -50,7 +50,12 @@ export class ScraperService {
         return countries[countries.length - 1][1].push(element.data);
       }
       if (element.name === 'a') {
-        if (!element.attribs.href) return;
+        if (!element.attribs.href) {
+          const text = element.children.find(child => child.data);
+          if (!text || text.data.trim().length === 0) return;
+
+          return countries[countries.length - 1][1].push(text.data);
+        }
 
         const { href } = element.attribs;
         let text = href;

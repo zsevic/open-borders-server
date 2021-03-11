@@ -17,7 +17,7 @@ cd open-borders-server
 cp .env.sample .env # change values
 npm i
 redis-server /usr/local/etc/redis.conf
-npm run dev
+npm run start:dev
 ```
 
 ### Build

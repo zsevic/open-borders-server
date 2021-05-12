@@ -766,7 +766,7 @@ describe('NlpService', () => {
           'Tranzit kroz Nemačku je moguć ukoliko državljani Srbije imaju dokaz o pravu ulaska u zemlju u koju putuju. Tranzit mora biti obavljen najkraćim mogućim putem i bez nepotrebnog zadržavanja. Obaveza kućne samoizolacije i obaveza posedovanja negativnog PCR testa ne važi za putnike u drumskom tranzitu, pod uslovom da koriste najkraću rutu. Za tranzit vazdušnim putem test na COVID-19 je obavezan čak i ako se u Nemačkoj ne napušta međunarodna tranzitna zonu. Ukoliko se napušta međunarodna tranzitna zona radi presedanja na let kojim se odlazi na drugi aerodrom unutar Evropske unije, test na COVID-19 i elektronska prijava za ulazak u zemlju su obavezni pre ulaska u Nemačku. \n' +
           'Prilikom prelaska granice putnici moraju predočiti dokaze o neophodnosti putovanja. Konačnu procenu i odluku o ulasku u Nemačku uvek donosi postupajući službenik granične policije. \n' +
           'Detaljne informacije o režimu ulaska u Nemačku mogu se naći na sajtu Ambasade Srbije u Berlinu: <a href="http://berlin.mfa.gov.rs/cir/index.php" class="text-info" target="_blank" rel="noopener noreferrer">http://berlin.mfa.gov.rs/cir/index.php</a>',
-        status: 'QUARANTINE_REQUIRED',
+        status: 'CLOSED_BORDER',
       },
       {
         name: 'NIGER',

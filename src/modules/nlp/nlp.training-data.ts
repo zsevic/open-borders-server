@@ -95,6 +95,11 @@ export const trainingData = [
   },
   {
     utterance:
+      'Turistička putovanja u Nemačku u cilju posete i dalje nisu dozvoljena',
+    intent: CLOSED_BORDER,
+  },
+  {
+    utterance:
       'Državljani Srbije mogu bez ograničenja da uđu u Albaniju ili tranzitiraju',
     intent: NO_TEST_REQUIRED,
   },

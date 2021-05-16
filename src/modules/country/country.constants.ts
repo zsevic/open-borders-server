@@ -108,6 +108,7 @@ export const COUNTRY_FLAGS = {
   LUKSEMBURG: '🇱🇺',
   MADAGASKAR: '🇲🇬',
   MADjARSKA: '🇭🇺',
+  MAĐARSKA: '🇭🇺',
   Makao: '🇲🇴',
   MALAVI: '🇲🇼',
   MALDIVI: '🇲🇻',

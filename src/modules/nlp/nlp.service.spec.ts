@@ -256,7 +256,7 @@ describe('NlpService', () => {
         name: 'GRUZIJA',
         info:
           'Državljani Srbije mogu ući u Gruziju avionom iz bilo koje zemlje pod uslovom da prilikom ulaska u zemlju pruže na uvid dokument kojim se potvrđuju da su primljene obe doze bilo koje od postojećih vakcina protiv virusa Covid-19. Sledeće kategorije su oslobođene navedene obaveze: Predstavnici diplomatskih misija i međunarodnih organizacija akreditovanih u Gruziji i članovi njihovih porodica; članovi porodica gruzijskih državljana, bez obzira na državljanstvo (supružnik, deca mlađa od 18 godina); osobe koje u Gruziju stižu kao deo humanitarne misije; članovi zvaničnih delegacija (odlučuje se od slučaja do slučaja); lica angažovana u međunarodnom saobraćaju.',
-        status: 'VACCINATION_REQUIRED',
+        status: 'VACCINATION_CERTIFICATE',
       },
       {
         name: 'GRČKA',
@@ -660,7 +660,7 @@ describe('NlpService', () => {
         name: 'MAĐARSKA',
         info:
           'Državljani Srbije mogu da uđu na teritoriju Mađarske bez obaveze karantina ili testiranja, pod uslovom da poseduju potvrdu o završenoj vakcinaciji (bez obzira koja vrsta vakcine je u pitanju). Maloletna lica koja putuju u pratnji vakcinisanog odraslog lica u Mađarsku ulaze bez posedovanja negativnog PCR testa. Potvrda o vakcinaciji omogućava pristup uslugama koje zahtevaju dokaz o izvršenoj imunizaciji. Vlasnici potvrda imaju pravo odlaska u pozorišta, bioskope, fitnes klubove, zabavne parkove, biblioteke, igraonice za decu, kasina, sportske događaje i hotele, otvorene i zatvorene bazene, velnes-centre i banje. U unutrašnjim prostorijama ugostiteljskih objekata mogu da borave samo osobe sa potvrdama o vakcinaciji, dok na terasama ugostiteljskih objekata mogu da borave i lica koja ne poseduju ove potvrde. Za državljane Srbije koji nisu vakcinisani, ulazak u Mađarsku u privatne svrhe je moguć samo na osnovu dobijene saglasnosti od mađarske policije. Zahtev se podnosi preko sajta  <a href="http://www.police.hu" class="text-info" target="_blank" rel="noopener noreferrer">http://www.police.hu</a> , na mađarskom ili engleskom jeziku. Uz molbu se prilažu dokazi o razlozima putovanja (lečenje, školovanje, poslovne aktivnosti, pozivi na suđenje, porodični događaji, učešće na sportskim, kulturnim i verskim događajima od posebnog značaja i dr). Licu koje dobije saglasnost za ulazak u Mađarsku biće određen obavezan karantin u trajanju od 10 dana. Za vreme karantina moguće je testiranje o svom trošku. U slučaju dva negativna testa, urađena od strane mađarskih zdravstvenih organa u roku od 5 dana sa razmakom od najmanje 48 sati, moći će da se napusti karantin. Državljani Srbije mogu da tranzitiraju kroz Mađarsku pod određenim uslovima (utvrđena maršruta, zaustavljanje na predviđenim mestima, zemlja se mora napustiti u roku od 24 sata) i ukoliko pruže dokaze o ispunjenosti uslova za ulazak u susednu zemlju prema kojoj napuštaju teritoriju Mađarske. Državljani Srbije koji rade u pograničnoj zoni ulaze u Mađarsku bez ograničenja (posedovanja negativnog testa na COVID-19). Oni mogu da borave u Mađarskoj u dubini do 30 km od granice, najduže do 24 sata. Zbog mere ograničenja kretanja, Mađarska mora da se napusti najkasnije do 20.00 časova. Izuzetak čine samo ona lica koja zbog radnih obaveza u Mađarskoj moraju da ostanu duže (najviše do 24 sata) što dokazuju potvrdom u obliku popunjenog formulara overenog od strane poslodavca. Navedene mere se ne primenjuju na lica koja prelaze granicu Mađarske u teretnom saobraćaju.',
-        status: 'NO_TEST_REQUIRED',
+        status: 'VACCINATION_CERTIFICATE',
       },
       {
         name: 'MALAVI',
@@ -1088,7 +1088,7 @@ describe('NlpService', () => {
           'Za državljane Srbije koji nisu vakcinisani neophodan je negativan PCR test, ne stariji od 72 sata. Test je potreban za sva lica starija od šest godina. \n' +
           'U slučaju da lice ulazi u Tursku drumskim prevozom i ne poseduje negativan PCR test, obavezan je karantin na adresi koja se prijavi kao mesto boravka. Ukoliko se ne poseduje adresa boravka, mesto karantina će utvrditi nadležna zdravstvena uprava. Sedmog dana karantina se lice testira i ukoliko rezultat bude negativan, karantin se prekida. \n' +
           'U roku od 72 sata pre dolaska u Tursku neophodno je elektronski se registrovati putem sledećeg linka:  <a href="https://register.health.gov.tr/" class="text-info" target="_blank" rel="noopener noreferrer">https://register.health.gov.tr/</a>  . Tokom registracije se dodeljuje takozvani HES KOD koji predstavlja elektronski vid praćenja zdravstvenog stanja putnika. Neophodan je za ulazak u sve tržne centre, restorane, državne ustanove i druge objekte. Svi putnici su dužni da pri ulasku u Tursku pokažu isti u štampanoj ili elektronskoj formi.',
-        status: 'NO_TEST_REQUIRED',
+        status: 'VACCINATION_CERTIFICATE',
       },
       {
         name: 'TURKMENISTAN',

@@ -5,7 +5,7 @@ import {
   OPEN_BORDER,
   QUARANTINE_REQUIRED,
   SKIP_SENTENCE,
-  VACCINATION_REQUIRED,
+  VACCINATION_CERTIFICATE,
 } from './nlp.constants';
 
 export const trainingData = [
@@ -204,6 +204,11 @@ export const trainingData = [
   },
   {
     utterance:
+      'Drzavljani R Srbije mogu da udu u Izrael pod uslovom da prethodno pribave odobrenje izraelskih vlasti (organ imigracione vlasti ili Ministarstvo inostranih poslova)',
+    intent: OPEN_BORDER,
+  },
+  {
+    utterance:
       'Po dolasku na aerodromu se obavlja zdravstveni pregled i radi prvi PCR test',
     intent: NEGATIVE_TEST_REQUIRED,
   },
@@ -396,6 +401,16 @@ export const trainingData = [
   {
     utterance:
       'Državljani Srbije mogu ući u Gruziju ukoliko prilikom ulaska pruže na uvid dokumenta koja potvrđuju da su primljene obe doze bilo koje od postojećih vakcina protiv virusa Covid-19.',
-    intent: VACCINATION_REQUIRED,
+    intent: VACCINATION_CERTIFICATE,
+  },
+  {
+    utterance:
+      'Državljani Srbije mogu da uđu na teritoriju Mađarske bez obaveze karantina ili testiranja, pod uslovom da poseduju potvrdu o završenoj vakcinaciji (bez obzira koja vrsta vakcine je u pitanju)',
+    intent: VACCINATION_CERTIFICATE,
+  },
+  {
+    utterance:
+      'Državljani Srbije mogu da uđu na teritoriju Turske bez obaveze karantina ili testiranja pod uslovom da poseduju potvrdu o vakcinaciji, izdatu od strane nadležnog organa R. Srbije',
+    intent: VACCINATION_CERTIFICATE,
   },
 ];

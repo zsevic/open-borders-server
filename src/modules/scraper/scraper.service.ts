@@ -30,7 +30,7 @@ export class ScraperService {
     const elements = countryElements.contents();
 
     const countries = [];
-    elements.each((_, element) => {
+    elements.each((_, element: any) => {
       if (element.name === 'strong') {
         const countryName = element.children.find(child => child.data);
         if (!countryName || countryName.data.trim().length === 0) return;

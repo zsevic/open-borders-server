@@ -11,8 +11,11 @@ export class ScraperService {
   getPageSource = async (url: string): Promise<string> => {
     if (isEnv('development')) return pageSource;
 
+    const browserFetcher = puppeteer.createBrowserFetcher();
+    const revisionInfo = await browserFetcher.download('818858');
     const browser = await puppeteer.launch({
       args: ['--no-sandbox', '--disable-setuid-sandbox'],
+      executablePath: revisionInfo.executablePath,
     });
     const page = await browser.newPage();
     await page.goto(url);

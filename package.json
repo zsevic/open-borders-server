@@ -52,7 +52,6 @@
     "nest-winston": "^1.4.0",
     "node-nlp": "^4.17.2",
     "puppeteer": "^5.5.0",
-    "redis-url-parse": "^2.0.0",
     "reflect-metadata": "^0.1.13",
     "rxjs": "^6.5.4",
     "swagger-ui-express": "^4.1.3",

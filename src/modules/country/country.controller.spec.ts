@@ -1,6 +1,6 @@
+import { CACHE_MANAGER } from '@nestjs/common';
 import { Test, TestingModule } from '@nestjs/testing';
 import { NO_TEST_REQUIRED } from 'modules/nlp/nlp.constants';
-import { RedisCacheService } from 'modules/redis-cache/redis-cache.service';
 import { CountryController } from './country.controller';
 import { CountryService } from './country.service';
 import { CountryInfo } from './country.types';
@@ -12,7 +12,7 @@ describe('CountryController', () => {
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
       controllers: [CountryController],
-      providers: [CountryService, { provide: RedisCacheService, useValue: {} }],
+      providers: [CountryService, { provide: CACHE_MANAGER, useValue: {} }],
     }).compile();
 
     countryController = module.get<CountryController>(CountryController);

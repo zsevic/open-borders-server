@@ -1,9 +1,9 @@
+import { CACHE_MANAGER } from '@nestjs/common';
 import { Test, TestingModule } from '@nestjs/testing';
 import {
   NO_TEST_REQUIRED,
   QUARANTINE_REQUIRED,
 } from 'modules/nlp/nlp.constants';
-import { RedisCacheService } from 'modules/redis-cache/redis-cache.service';
 import { CountryService } from './country.service';
 import { CountryInfo } from './country.types';
 
@@ -29,7 +29,7 @@ describe('CountryService', () => {
       providers: [
         CountryService,
         {
-          provide: RedisCacheService,
+          provide: CACHE_MANAGER,
           useValue: {
             get: async () => Promise.resolve(JSON.stringify(countries)),
           },

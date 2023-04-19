@@ -1,9 +1,9 @@
+import { CACHE_MANAGER } from '@nestjs/common';
 import { Test, TestingModule } from '@nestjs/testing';
 import { COUNTRY_FLAGS } from 'modules/country/country.constants';
 import { CountryInfo } from 'modules/country/country.types';
 import { CLOSED_BORDER } from 'modules/nlp/nlp.constants';
 import { NlpService } from 'modules/nlp/nlp.service';
-import { RedisCacheService } from 'modules/redis-cache/redis-cache.service';
 import { ScraperService } from 'modules/scraper/scraper.service';
 import { CronJobService } from './cron-job.service';
 
@@ -19,7 +19,7 @@ describe('CronJobService', () => {
         NlpService,
         ScraperService,
         {
-          provide: RedisCacheService,
+          provide: CACHE_MANAGER,
           useValue: {
             set: async () => Promise.resolve(null),
           },

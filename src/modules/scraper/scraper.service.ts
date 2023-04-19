@@ -18,6 +18,7 @@ export class ScraperService {
       executablePath: revisionInfo.executablePath,
     });
     const page = await browser.newPage();
+    await page.setDefaultNavigationTimeout(0);
     await page.goto(url);
     await page.waitForSelector('body');
     const html = await page.evaluate(

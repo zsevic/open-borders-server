@@ -1,4 +1,4 @@
-export const CACHE_TTL = parseInt(process.env.CACHE_TTL) || 43200; // 12 hours
+export const CACHE_TTL_MS = parseInt(process.env.CACHE_TTL) || 12 * 60 * 60 * 1000; // 12 hours
 
 export const COUNTRY_FLAGS = {
   ALBANIJA: '🇦🇱',

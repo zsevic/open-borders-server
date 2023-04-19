@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, Logger } from '@nestjs/common';
 import cheerio from 'cheerio';
 import puppeteer from 'puppeteer';
 import { isEnv } from 'common/utils';
@@ -8,23 +8,33 @@ import { pageSource } from './scraper.scraped-data';
 
 @Injectable()
 export class ScraperService {
+  private readonly logger = new Logger(ScraperService.name);
+
   getPageSource = async (url: string): Promise<string> => {
     if (isEnv('development')) return pageSource;
 
     const browserFetcher = puppeteer.createBrowserFetcher();
     const revisionInfo = await browserFetcher.download('818858');
+    this.logger.log({
+      ...revisionInfo,
+      message: 'Got revision info',
+    });
     const browser = await puppeteer.launch({
       args: ['--no-sandbox', '--disable-setuid-sandbox'],
       executablePath: revisionInfo.executablePath,
     });
+    this.logger.log('Launched browser');
     const page = await browser.newPage();
-    await page.setDefaultNavigationTimeout(0);
+    this.logger.log('New browser page is created');
     await page.goto(url);
+    this.logger.log('URL is open');
     await page.waitForSelector('body');
     const html = await page.evaluate(
       (): string => document.querySelector('.field--text').outerHTML,
     );
+    this.logger.log('Got HTML');
     await page.close();
+    this.logger.log('Closed page');
     return html;
   };
 

@@ -7,7 +7,6 @@
 ### Prerequisites
 
 - Node.js installed (version 14)
-- Local Redis database
 
 ### Setup
 
@@ -16,7 +15,6 @@ git clone https://github.com/zsevic/open-borders-server
 cd open-borders-server
 cp .env.sample .env # change values
 npm i
-redis-server /usr/local/etc/redis.conf
 npm run start:dev
 ```
 
@@ -46,6 +44,6 @@ API documentation is generated using [@nestjs/swagger](https://www.npmjs.com/pac
 
 ### Technologies used
 
-- Node.js, TypeScript, NestJS, Redis (for API)
+- Node.js, TypeScript, NestJS (for API)
 - puppeteer and cheerio (for scraping)
 - node-nlp (for NLP)

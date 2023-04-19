@@ -1,10 +1,10 @@
-import { Injectable, Logger } from '@nestjs/common';
+import { CACHE_MANAGER, Inject, Injectable, Logger } from '@nestjs/common';
 import { Cron, CronExpression } from '@nestjs/schedule';
+import { Cache } from 'cache-manager';
 import { WEBPAGE_URL } from 'common/config/constants';
-import { COUNTRY_FLAGS } from 'modules/country/country.constants';
+import { CACHE_TTL, COUNTRY_FLAGS } from 'modules/country/country.constants';
 import { CountryInfo } from 'modules/country/country.types';
 import { NlpService } from 'modules/nlp/nlp.service';
-import { RedisCacheService } from 'modules/redis-cache/redis-cache.service';
 import { ScraperService } from 'modules/scraper/scraper.service';
 import { UPSERT_DATA_CRON_JOB } from './cron-job.constants';
 
@@ -13,7 +13,7 @@ export class CronJobService {
   private readonly logger = new Logger(CronJobService.name);
 
   constructor(
-    private readonly redisCacheService: RedisCacheService,
+    @Inject(CACHE_MANAGER) private cacheService: Cache,
     private readonly nlpService: NlpService,
     private readonly scraperService: ScraperService,
   ) {}
@@ -34,9 +34,12 @@ export class CronJobService {
         ...country,
         flag: COUNTRY_FLAGS[country.name] || '🇷🇸',
       }));
-      await this.redisCacheService.set(
+      await this.cacheService.set(
         'countries',
         JSON.stringify(countriesData),
+        {
+          ttl: CACHE_TTL,
+        }
       );
 
       this.logger.log(`Finished ${UPSERT_DATA_CRON_JOB} cron job...`);

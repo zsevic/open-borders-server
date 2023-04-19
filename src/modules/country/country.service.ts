@@ -1,13 +1,13 @@
-import { Injectable } from '@nestjs/common';
-import { RedisCacheService } from 'modules/redis-cache/redis-cache.service';
+import { CACHE_MANAGER, Inject, Injectable } from '@nestjs/common';
+import { Cache } from 'cache-manager';
 import { CountryInfo } from './country.types';
 
 @Injectable()
 export class CountryService {
-  constructor(private readonly redisCacheService: RedisCacheService) {}
+  constructor(@Inject(CACHE_MANAGER) private cacheService: Cache) {}
 
   getCountryList = async (): Promise<CountryInfo[]> => {
-    const classifiedCountries = await this.redisCacheService.get('countries');
+    const classifiedCountries = await this.cacheService.get('countries');
     if (!classifiedCountries) return [];
 
     const countryList = JSON.parse(classifiedCountries);

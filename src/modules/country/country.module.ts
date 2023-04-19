@@ -1,10 +1,9 @@
-import { Module } from '@nestjs/common';
-import { RedisCacheModule } from 'modules/redis-cache/redis-cache.module';
+import { CacheModule, Module } from '@nestjs/common';
 import { CountryController } from './country.controller';
 import { CountryService } from './country.service';
 
 @Module({
-  imports: [RedisCacheModule],
+  imports: [CacheModule.register()],
   controllers: [CountryController],
   providers: [CountryService],
 })

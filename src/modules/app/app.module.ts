@@ -28,9 +28,6 @@ import { CronJobModule } from 'modules/cron-job/cron-job.module';
         PORT: Joi.number()
           .default(PORT)
           .required(),
-        REDIS_URL: Joi.string()
-          .uri()
-          .required(),
       }),
     }),
     ScheduleModule.forRoot(),

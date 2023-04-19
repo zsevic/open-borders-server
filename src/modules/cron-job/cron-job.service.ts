@@ -34,13 +34,9 @@ export class CronJobService {
         ...country,
         flag: COUNTRY_FLAGS[country.name] || '🇷🇸',
       }));
-      await this.cacheService.set(
-        'countries',
-        JSON.stringify(countriesData),
-        {
-          ttl: CACHE_TTL,
-        }
-      );
+      await this.cacheService.set('countries', JSON.stringify(countriesData), {
+        ttl: CACHE_TTL,
+      });
 
       this.logger.log(`Finished ${UPSERT_DATA_CRON_JOB} cron job...`);
       return countriesData;
